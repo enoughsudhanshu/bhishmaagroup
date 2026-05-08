@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhishmaa Group Pvt Ltd</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      padding:18px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(0,0,0,0.75);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:22px;
+      font-weight:700;
+    }
+
+    .logo img{
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      object-fit:cover;
+      border:2px solid #f5a623;
+      box-shadow:0 0 18px rgba(245,166,35,0.4);
+      background:#000;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#d4d4d4;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .nav-links a:hover{
+      color:#f5a623;
+    }
+
+    .erp-btn{
+      background:linear-gradient(135deg,#f5a623,#ffcc70);
+      color:black !important;
+      padding:10px 22px;
+      border-radius:30px;
+      font-weight:700;
+      box-shadow:0 0 18px rgba(245,166,35,0.35);
+    }
+
+    .erp-btn:hover{
+      transform:translateY(-2px);
+      color:black !important;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:150px 8% 100px;
+
+      background:
+      radial-gradient(circle at top right, rgba(0,102,255,0.25), transparent 30%),
+      radial-gradient(circle at bottom left, rgba(245,166,35,0.15), transparent 35%),
+      #050816;
+    }
+
+    .hero-content{
+      max-width:900px;
+    }
+
+    .hero-logo{
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid #f5a623;
+      margin-bottom:30px;
+      box-shadow:0 0 35px rgba(245,166,35,0.5);
+
+      animation:float 4s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0px);}
+      50%{transform:translateY(-10px);}
+      100%{transform:translateY(0px);}
+    }
+
+    .hero h1{
+      font-size:72px;
+      line-height:1.1;
+      margin-bottom:20px;
+      font-weight:800;
+    }
+
+    .hero h1 span{
+      color:#f5a623;
+    }
+
+    .hero p{
+      font-size:20px;
+      color:#cfcfcf;
+      line-height:1.8;
+      margin-bottom:40px;
+    }
+
+    .btn-group{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 32px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s ease;
+    }
+
+    .primary-btn{
+      background:linear-gradient(135deg,#f5a623,#ffcc70);
+      color:black;
+      box-shadow:0 0 22px rgba(245,166,35,0.4);
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 0 28px rgba(245,166,35,0.6);
+    }
+
+    .secondary-btn{
+      border:1px solid rgba(255,255,255,0.15);
+      background:rgba(255,255,255,0.05);
+      color:white;
+    }
+
+    .secondary-btn:hover{
+      background:rgba(255,255,255,0.12);
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:18px;
+      font-weight:700;
+    }
+
+    .section-subtitle{
+      text-align:center;
+      max-width:760px;
+      margin:auto auto 60px;
+      color:#bdbdbd;
+      line-height:1.8;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px;
+      padding:35px;
+      transition:0.35s ease;
+      backdrop-filter:blur(8px);
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(245,166,35,0.45);
+      box-shadow:0 0 25px rgba(245,166,35,0.12);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#f5a623;
+      font-size:24px;
+    }
+
+    .card p{
+      color:#c7c7c7;
+      line-height:1.8;
+    }
+
+    /* STATS */
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:28px;
+      margin-top:50px;
+    }
+
+    .stat-box{
+      text-align:center;
+      padding:40px 20px;
+      border-radius:24px;
+
+      background:linear-gradient(
+      135deg,
+      rgba(0,102,255,0.16),
+      rgba(245,166,35,0.12));
+
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-box h2{
+      font-size:48px;
+      color:#f5a623;
+      margin-bottom:12px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
+      background:rgba(255,255,255,0.03);
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact p{
+      max-width:700px;
+      margin:auto;
+      color:#cfcfcf;
+      line-height:1.8;
+      margin-bottom:28px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:28px;
+      background:#03050f;
+      border-top:1px solid rgba(255,255,255,0.08);
+      color:#b0b0b0;
+    }
+
+    footer span{
+      color:#f5a623;
+      font-weight:600;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .navbar{
+        flex-direction:column;
+        gap:14px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:46px;
+      }
+
+      .hero p{
+        font-size:17px;
+      }
+
+      .section-title{
+        font-size:34px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      <img src="logo.png" alt="Bhishmaa Group Logo">
+      <div>BHISHMAA GROUP</div>
+    </div>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+
+      <a href="https://app.bhishmaagroup.in"
+         target="_blank"
+         class="erp-btn">
+         ERP Login
+      </a>
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <img src="logo.png"
+           alt="Bhishmaa Group"
+           class="hero-logo">
+
+      <h1>
+        Building The Future With
+        <span>BHISHMAA GROUP</span>
+      </h1>
+
+      <p>
+        Innovative digital solutions, AI systems, ERP software,
+        business automation, and modern technology services
+        designed for the next generation.
+      </p>
+
+      <div class="btn-group">
+
+        <a href="#services"
+           class="btn primary-btn">
+           Explore Services
+        </a>
+
+        <a href="https://app.bhishmaagroup.in"
+           target="_blank"
+           class="btn secondary-btn">
+           ERP Login
+        </a>
+
+        <a href="#contact"
+           class="btn secondary-btn">
+           Contact Us
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <h2 class="section-title">
+      Our Services
+    </h2>
+
+    <p class="section-subtitle">
+      Bhishmaa Group delivers scalable technology solutions,
+      software systems, modern web platforms,
+      and AI-powered business innovations.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="card">
+        <h3>Web Development</h3>
+
+        <p>
+          Professional responsive websites with premium UI,
+          secure systems, and high performance architecture.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Software Solutions</h3>
+
+        <p>
+          Custom software products for schools,
+          startups, businesses, automation,
+          and enterprise management.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>AI & Automation</h3>
+
+        <p>
+          Intelligent automation systems,
+          AI integrations, smart workflows,
+          and productivity-focused solutions.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Cloud Infrastructure</h3>
+
+        <p>
+          Secure deployments, cloud hosting,
+          APIs, databases, and scalable backend systems.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCTS -->
+
+  <section id="products">
+
+    <h2 class="section-title">
+      Our Products
+    </h2>
+
+    <p class="section-subtitle">
+      Smart digital products built for schools,
+      businesses, startups, and organizations.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="card">
+        <h3>School ERP</h3>
+
+        <p>
+          Complete school management system with
+          attendance, fees, student management,
+          exams, and reports.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Business ERP</h3>
+
+        <p>
+          Inventory management, workflow automation,
+          employee systems, billing,
+          and operational control.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>E-Commerce Platform</h3>
+
+        <p>
+          Modern scalable online store systems with
+          payment integration and admin dashboard.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>AI Solutions</h3>
+
+        <p>
+          AI tools, automation systems,
+          chatbot integrations,
+          and smart analytics platforms.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title">
+      Why Choose Us
+    </h2>
+
+    <p class="section-subtitle">
+      We focus on innovation, scalability,
+      security, and future-ready digital experiences.
+    </p>
+
+    <div class="stats">
+
+      <div class="stat-box">
+        <h2>100%</h2>
+        <p>Modern Technology Focus</p>
+      </div>
+
+      <div class="stat-box">
+        <h2>24/7</h2>
+        <p>Support & Assistance</p>
+      </div>
+
+      <div class="stat-box">
+        <h2>AI</h2>
+        <p>Automation Driven Systems</p>
+      </div>
+
+      <div class="stat-box">
+        <h2>∞</h2>
+        <p>Innovation & Growth Vision</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <h2 class="section-title">
+      Let’s Build Something Great
+    </h2>
+
+    <p>
+      Bhishmaa Group Pvt Ltd creates modern digital systems,
+      scalable business solutions,
+      and intelligent software products
+      for the future generation.
+    </p>
+
+    <div class="btn-group">
+
+      <a href="mailto:contact@bhishmaagroup.in"
+         class="btn primary-btn">
+         Email Us
+      </a>
+
+      <a href="#home"
+         class="btn secondary-btn">
+         Back To Top
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Bhishmaa Group Pvt Ltd.
+    All Rights Reserved.
+
+    <br><br>
+
+    Designed & Developed by
+    <span>Enoughsudhanshu</span>
+
+  </footer>
+
+</body>
+</html>
