@@ -8,7 +8,7 @@
   <meta name="title" content="Bhishmaa Group | ERP Software, AI Automation & Cloud Solutions India"/>
   <meta name="description" content="Bhishmaa Group develops intelligent ERP software, AI automation systems, school ERP, healthcare ERP, cloud infrastructure, and enterprise SaaS solutions in India."/>
 
-  <meta name="keywords" content="Bhishmaa Group, Bhishma Group, Bheeshma Group, Bheeshmaa Group, Bhismaa Group, Bhisma Group, Bhishma ERP, Bhishmaa ERP, Bheeshma ERP, Bheeshmaa ERP, Bhishmaa Software, Bhishmaa AI, Bhishmaa Automation, ERP company India, School ERP India, AI company India, Automation company India, ERP software company, Cloud infrastructure India, Enough Sudhanshu, Sudhanshu Pandey, Bhishmaa Technologies, Bhishmaa Solutions, Bhishmaa Cloud, Bhishmaa SaaS, Bhishmaa Enterprise, ERP Login Bhishmaa, app bhishmaagroup, Bhishmaa Education ERP, Hospital ERP India, Startup software company, Flask developer India, Python ERP company, AI startup India, enterprise ERP India, best ERP software India, business automation India, custom ERP development, Bhishmaa AI platform, Bhishmaa automation system, Bhishmaa enterprise software, ERP for schools, ERP for colleges, ERP for hospitals, ERP for startups, SaaS company India, intelligent ERP, AI powered ERP, cloud ERP platform, enterprise AI company, software architect India, Enoughsudhanshu, enough sudhanshu github, enough sudhanshu portfolio">
+  <meta name="keywords" content="Bhishmaa Group, Bhishma Group, Bheeshma Group, Bheeshmaa Group, Bhismaa Group, Bhishma ERP, Bhishmaa ERP, Bheeshma ERP, Bhishmaa Software, Bhishmaa AI, Bhishmaa Automation, ERP company India, School ERP India, AI company India, Automation company India, Cloud infrastructure India, Enough Sudhanshu, Sudhanshu Pandey, Bhishmaa Technologies, Bhishmaa Solutions, Bhishmaa Cloud, Bhishmaa SaaS, Bhishmaa Enterprise, app bhishmaagroup, Bhishmaa Education ERP, Hospital ERP India, Startup software company, Python ERP company, AI startup India, enterprise ERP India, best ERP software India, business automation India, custom ERP development, Bhishmaa AI platform, Bhishmaa automation system, ERP for schools, ERP for colleges, ERP for hospitals, ERP for startups, SaaS company India, software architect India, Enoughsudhanshu, enough sudhanshu github, enough sudhanshu portfolio">
 
   <meta name="author" content="Enough Sudhanshu">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -93,8 +93,6 @@
     ::-webkit-scrollbar-track { background: var(--navy); }
     ::-webkit-scrollbar-thumb { background: var(--gold); border-radius:2px; }
 
-    #hero-canvas { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; }
-
     nav {
       position:fixed; top:0; left:0; width:100%; z-index:100;
       padding:0 5vw; border-bottom: 1px solid var(--border);
@@ -103,7 +101,6 @@
     .nav-inner { max-width:1400px; margin:0 auto; display:flex; align-items:stretch; justify-content:space-between; height:72px; }
     .nav-logo { display:flex; align-items:center; gap:14px; text-decoration:none; }
     .nav-logo img { width:44px; height:44px; border-radius:50%; border:2px solid rgba(244,162,0,0.3); object-fit:cover; }
-    .logo-text { display:flex; flex-direction:column; }
     .logo-name { font-family:'Syne',sans-serif; font-weight:800; font-size:1.1rem; letter-spacing:0.05em; color:var(--white); }
     .logo-sub { font-size:0.65rem; color:var(--slate); letter-spacing:0.15em; text-transform:uppercase; }
 
@@ -111,9 +108,8 @@
     .nav-item > a { display:flex; align-items:center; gap:5px; height:72px; padding:0 18px; font-size:0.82rem; font-weight:500; color:rgba(240,246,255,0.7); text-decoration:none; transition: color 0.2s; }
     .nav-item > a:hover { color:var(--gold); }
 
-    .btn-outline { padding:9px 20px; border-radius:12px; border:1px solid var(--border); font-size:0.8rem; font-weight:500; color:var(--white); text-decoration:none; transition:0.2s; }
-    .btn-outline:hover { border-color:var(--gold); color:var(--gold); }
     .btn-primary { padding:10px 22px; border-radius:12px; background:linear-gradient(135deg, var(--gold), #e08800); font-size:0.8rem; font-weight:700; color:#050c1a; text-decoration:none; transition:0.2s; }
+    .btn-outline { padding:9px 20px; border-radius:12px; border:1px solid var(--border); font-size:0.8rem; font-weight:500; color:var(--white); text-decoration:none; transition:0.2s; }
 
     #hero { position:relative; min-height:100vh; display:flex; align-items:center; padding:120px 5vw 80px; }
     .hero-inner { max-width:1400px; margin:0 auto; width:100%; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; z-index:1; }
@@ -172,7 +168,6 @@
 </nav>
 
 <section id="hero">
-  <canvas id="hero-canvas"></canvas>
   <div class="hero-inner">
     <div>
       <div style="color:var(--gold); font-size:0.75rem; letter-spacing:0.2em; margin-bottom:20px; text-transform:uppercase;">Enterprise Software Reimagined</div>
@@ -190,7 +185,7 @@
       <div class="hero-stats reveal">
         <div><div class="stat-val">12<span>K+</span></div><div style="color:var(--slate); font-size:0.8rem;">Active Users</div></div>
         <div><div class="stat-val">99.9<span>%</span></div><div style="color:var(--slate); font-size:0.8rem;">Uptime SLA</div></div>
-        <div><div class="stat-val">6<span>+</span></div><div style="color:var(--slate); font-size:0.8rem;">Industries</div></div>
+        <div><div class="stat-val">6<span>+</span></div><div style="color:var(--slate); font-size:0.8rem;">Industries Served</div></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -220,29 +215,6 @@
   </div>
 </section>
 
-<section id="services" class="section" style="background:var(--navy2)">
-  <div class="section-inner">
-    <h2 class="section-title reveal">Core Capabilities</h2>
-    <div class="grid">
-      <div class="card reveal">
-        <div style="font-size:2rem; margin-bottom:15px;">⚡</div>
-        <h3>ERP Systems</h3>
-        <p>Multi-tenant, white-label resource planning with real-time analytics and role-based access.</p>
-      </div>
-      <div class="card reveal">
-        <div style="font-size:2rem; margin-bottom:15px;">🧠</div>
-        <h3>AI Automation</h3>
-        <p>Custom ML models, NLP document processing, and predictive analytics for business workflows.</p>
-      </div>
-      <div class="card reveal">
-        <div style="font-size:2rem; margin-bottom:15px;">☁️</div>
-        <h3>Cloud Infrastructure</h3>
-        <p>Secure PostgreSQL backends, Docker/Kubernetes deployment, and CI/CD automation.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="founder" class="section">
   <div class="section-inner">
     <div class="founder-inner">
@@ -257,7 +229,7 @@
         <span style="color:var(--gold); font-weight:700; font-size:0.7rem; letter-spacing:0.2em;">LEADERSHIP</span>
         <h2 class="section-title" style="margin-bottom:20px;">Enough Sudhanshu</h2>
         <p style="color:var(--slate); line-height:1.8; margin-bottom:20px; font-size:1.1rem;">
-          Sudhanshu Pandey is a software architect and founder of Bhishmaa Group. He specializes in building high-performance ERP systems and AI solutions that automate complex enterprise operations.
+          Enough Sudhanshu (Sudhanshu Pandey) is a software architect and founder of Bhishmaa Group. He specializes in building high-performance ERP systems and AI solutions.
         </p>
         <div style="display:flex; flex-wrap:wrap; gap:10px;">
           <span style="padding:6px 14px; border:1px solid var(--border); border-radius:50px; font-size:0.8rem;">Python / Flask</span>
@@ -273,7 +245,6 @@
 <section id="contact" class="section" style="background:var(--navy2)">
   <div class="section-inner">
     <h2 class="section-title reveal">Let's Build Together</h2>
-    <p style="color:var(--slate); margin-bottom:40px;" class="reveal">Discuss your ERP or AI requirements with our team.</p>
     <form class="contact-form reveal">
       <input type="text" placeholder="Full Name" required>
       <input type="email" placeholder="Work Email" required>
@@ -297,10 +268,9 @@
 </footer>
 
 <div style="display:none; visibility:hidden;">
-  Bhishmaa Group Bhishma Group Bheeshma Group Bheeshmaa Group Bhismaa Group Bhisma Group 
-  Bhishmaa ERP Bhishma ERP Bheeshma ERP Bheeshmaa ERP Bhishmaa Software Bhishmaa AI 
-  Bhishmaa Automation ERP company India AI company India School ERP India Enough Sudhanshu 
-  Sudhanshu Pandey Bhishmaa Technologies Bhishmaa Solutions Bhishmaa Cloud
+  Bhishmaa Group Bhishma Group Bheeshma Group Bheeshmaa Group Bhismaa Group 
+  Bhishmaa ERP Bhishmaa Software Bhishmaa AI Bhishmaa Automation 
+  ERP company India School ERP India Enough Sudhanshu Sudhanshu Pandey
 </div>
 
 <script>
@@ -331,22 +301,6 @@
     camera.position.z = 3;
     function animate(){ requestAnimationFrame(animate); globe.rotation.y += 0.002; renderer.render(scene, camera); }
     animate();
-  })();
-
-  /* PARTICLE BACKGROUND */
-  (function(){
-    const c = document.getElementById('hero-canvas');
-    const ctx = c.getContext('2d');
-    let w = c.width = window.innerWidth;
-    let h = c.height = window.innerHeight;
-    let p = Array(50).fill().map(() => ({ x:Math.random()*w, y:Math.random()*h, s:Math.random()*2 }));
-    function draw(){
-      ctx.clearRect(0,0,w,h);
-      ctx.fillStyle = "rgba(56,189,248,0.2)";
-      p.forEach(i => { ctx.beginPath(); ctx.arc(i.x, i.y, i.s, 0, 7); ctx.fill(); i.y -= 0.5; if(i.y<0) i.y=h; });
-      requestAnimationFrame(draw);
-    }
-    draw();
   })();
 </script>
 
