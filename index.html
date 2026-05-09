@@ -1,35 +1,23 @@
+# Advanced Bhishmaa Group Future Website
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bhishmaa Group | Future AI & ERP Systems</title>
+<title>Bhishmaa Group | Future AI & ERP Ecosystem</title>
 
-<meta name="description" content="Bhishmaa Group develops futuristic AI systems, ERP software, automation infrastructure, cloud applications and enterprise digital platforms.">
+<meta name="description" content="Bhishmaa Group develops futuristic AI systems, ERP ecosystems, automation infrastructure and enterprise software platforms.">
 
-<meta name="keywords" content="
-Bhishmaa Group,
-Bhishma Group,
-Bheeshma Group,
-Bhismaa Group,
-Bheeshmaa Group,
-AI Company India,
-ERP Software,
-Enough Sudhanshu,
-AI Engineer,
-Automation Company,
-Future Technology
-">
-
-<meta name="author" content="Enough Sudhanshu">
+<meta name="keywords" content="Bhishmaa Group, Bhishma Group, Bheeshma Group, AI Company, ERP Platform, Enough Sudhanshu, AI Engineer, Automation Systems, Cloud Infrastructure">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
 <style>
 
@@ -44,28 +32,60 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#020617;
 font-family:'Poppins',sans-serif;
-overflow-x:hidden;
+background:#020617;
 color:white;
+overflow-x:hidden;
 }
 
 canvas{
 position:fixed;
 top:0;
 left:0;
-z-index:-5;
+z-index:-10;
 }
 
-body::before{
-content:'';
+.loader{
 position:fixed;
 width:100%;
+height:100vh;
+background:#020617;
+z-index:99999;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+gap:20px;
+transition:1s;
+}
+
+.loader h1{
+font-family:'Orbitron',sans-serif;
+font-size:30px;
+color:#60a5fa;
+}
+
+.loader p{
+color:#94a3b8;
+}
+
+.progress{
+width:300px;
+height:6px;
+background:rgba(255,255,255,0.08);
+border-radius:30px;
+overflow:hidden;
+}
+
+.progress div{
 height:100%;
-background:
-radial-gradient(circle at top left,rgba(59,130,246,0.15),transparent 25%),
-radial-gradient(circle at bottom right,rgba(168,85,247,0.15),transparent 25%);
-z-index:-4;
+width:0%;
+background:linear-gradient(to right,#3b82f6,#8b5cf6);
+animation:load 3s linear forwards;
+}
+
+@keyframes load{
+100%{width:100%;}
 }
 
 .grid{
@@ -75,34 +95,34 @@ height:100%;
 background-image:
 linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
 linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-background-size:60px 60px;
-z-index:-3;
+background-size:50px 50px;
 mask-image:linear-gradient(to bottom,transparent,black);
+z-index:-5;
 }
 
 nav{
 position:fixed;
 top:0;
 width:100%;
-padding:18px 8%;
+padding:18px 7%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-z-index:999;
-backdrop-filter:blur(20px);
-background:rgba(2,6,23,0.45);
+backdrop-filter:blur(18px);
+background:rgba(2,6,23,0.4);
 border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:999;
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:14px;
+gap:15px;
 }
 
 .logo img{
-width:60px;
-height:60px;
+width:58px;
+height:58px;
 border-radius:50%;
 object-fit:cover;
 box-shadow:0 0 40px rgba(59,130,246,0.5);
@@ -111,8 +131,8 @@ box-shadow:0 0 40px rgba(59,130,246,0.5);
 .logo h2{
 font-family:'Orbitron',sans-serif;
 font-size:24px;
-letter-spacing:2px;
 font-weight:800;
+letter-spacing:2px;
 }
 
 nav ul{
@@ -122,10 +142,9 @@ list-style:none;
 }
 
 nav ul li a{
-color:white;
 text-decoration:none;
+color:white;
 font-weight:500;
-transition:0.3s;
 position:relative;
 }
 
@@ -145,18 +164,13 @@ width:100%;
 }
 
 .erp-btn{
-padding:12px 22px;
+padding:12px 24px;
 background:linear-gradient(to right,#2563eb,#8b5cf6);
-border-radius:14px;
-color:white;
 text-decoration:none;
+color:white;
+border-radius:16px;
 font-weight:600;
-box-shadow:0 0 25px rgba(59,130,246,0.4);
-transition:0.4s;
-}
-
-.erp-btn:hover{
-transform:translateY(-4px);
+box-shadow:0 0 40px rgba(59,130,246,0.35);
 }
 
 .hero{
@@ -164,7 +178,7 @@ min-height:100vh;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:150px 8% 100px;
+padding:150px 7% 100px;
 gap:80px;
 flex-wrap:wrap;
 }
@@ -172,34 +186,24 @@ flex-wrap:wrap;
 .hero-left{
 flex:1;
 min-width:320px;
-z-index:2;
 }
 
 .badge{
 display:inline-block;
-padding:12px 22px;
+padding:12px 20px;
 border-radius:40px;
 background:rgba(59,130,246,0.12);
 border:1px solid rgba(96,165,250,0.2);
 color:#93c5fd;
 margin-bottom:30px;
-backdrop-filter:blur(10px);
-font-size:14px;
 }
 
 .hero-left h1{
-font-size:92px;
-line-height:1.02;
-margin-bottom:30px;
+font-size:96px;
+line-height:1;
 font-family:'Orbitron',sans-serif;
-
-background:linear-gradient(
-to right,
-#ffffff,
-#60a5fa,
-#c084fc
-);
-
+margin-bottom:30px;
+background:linear-gradient(to right,#ffffff,#60a5fa,#c084fc);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -212,33 +216,31 @@ color:#cbd5e1;
 margin-bottom:40px;
 }
 
-.hero-buttons{
+.buttons{
 display:flex;
 gap:20px;
 flex-wrap:wrap;
 }
 
 .btn{
-padding:17px 34px;
+padding:18px 34px;
 border-radius:18px;
 text-decoration:none;
 font-weight:600;
 transition:0.4s;
-position:relative;
-overflow:hidden;
 }
 
 .primary{
 background:linear-gradient(to right,#2563eb,#8b5cf6);
 color:white;
-box-shadow:0 0 45px rgba(59,130,246,0.35);
+box-shadow:0 0 40px rgba(59,130,246,0.35);
 }
 
 .secondary{
-background:rgba(255,255,255,0.04);
+background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(15px);
 color:white;
+backdrop-filter:blur(10px);
 }
 
 .btn:hover{
@@ -250,24 +252,19 @@ flex:1;
 display:flex;
 justify-content:center;
 min-width:320px;
-z-index:2;
 }
 
 .founder-card{
 width:420px;
 padding:40px;
-border-radius:34px;
+border-radius:36px;
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(22px);
+backdrop-filter:blur(20px);
 text-align:center;
 position:relative;
 overflow:hidden;
-
-box-shadow:
-0 0 80px rgba(59,130,246,0.12),
-inset 0 0 20px rgba(255,255,255,0.02);
-
+box-shadow:0 0 80px rgba(59,130,246,0.12);
 animation:float 5s ease-in-out infinite;
 }
 
@@ -294,7 +291,7 @@ height:190px;
 border-radius:50%;
 overflow:hidden;
 margin:auto;
-margin-bottom:28px;
+margin-bottom:25px;
 border:4px solid rgba(96,165,250,0.4);
 box-shadow:0 0 50px rgba(59,130,246,0.5);
 }
@@ -324,8 +321,8 @@ color:#cbd5e1;
 .tech-stack{
 display:flex;
 justify-content:center;
-gap:12px;
 flex-wrap:wrap;
+gap:12px;
 margin-top:25px;
 }
 
@@ -334,20 +331,18 @@ padding:8px 14px;
 border-radius:30px;
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.06);
-font-size:13px;
 color:#93c5fd;
+font-size:13px;
 }
 
 section{
-padding:120px 8%;
-position:relative;
-z-index:2;
+padding:120px 7%;
 }
 
 .section-title{
-text-align:center;
-font-size:56px;
+font-size:58px;
 font-family:'Orbitron',sans-serif;
+text-align:center;
 margin-bottom:70px;
 }
 
@@ -364,7 +359,7 @@ color:#cbd5e1;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:32px;
-margin-top:60px;
+margin-top:70px;
 }
 
 .service{
@@ -373,9 +368,15 @@ border-radius:30px;
 background:rgba(255,255,255,0.04);
 border:1px solid rgba(255,255,255,0.08);
 backdrop-filter:blur(18px);
+transition:0.45s;
 position:relative;
 overflow:hidden;
-transition:0.45s;
+}
+
+.service:hover{
+transform:translateY(-14px) rotateX(4deg);
+border-color:#60a5fa;
+box-shadow:0 0 50px rgba(59,130,246,0.15);
 }
 
 .service::before{
@@ -387,17 +388,6 @@ background:rgba(59,130,246,0.08);
 border-radius:50%;
 top:-120px;
 right:-120px;
-}
-
-.service:hover{
-transform:
-translateY(-14px)
-rotateX(4deg)
-rotateY(-4deg);
-
-border-color:#60a5fa;
-
-box-shadow:0 0 50px rgba(59,130,246,0.15);
 }
 
 .service-icon{
@@ -416,96 +406,17 @@ line-height:1.8;
 color:#cbd5e1;
 }
 
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:70px;
-}
-
-.feature{
+.terminal{
+max-width:950px;
+margin:80px auto 0;
 padding:30px;
-text-align:center;
-border-radius:24px;
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(14px);
-}
-
-.feature h2{
-font-size:42px;
-margin-bottom:10px;
-color:#60a5fa;
-}
-
-.erp-panel{
-margin-top:80px;
-padding:60px;
-border-radius:36px;
-background:
-linear-gradient(
-145deg,
-rgba(59,130,246,0.08),
-rgba(139,92,246,0.08)
-);
-
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(20px);
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:40px;
-flex-wrap:wrap;
-}
-
-.erp-left{
-flex:1;
-min-width:300px;
-}
-
-.erp-left h2{
-font-size:48px;
-font-family:'Orbitron',sans-serif;
-margin-bottom:20px;
-}
-
-.erp-left p{
-line-height:1.9;
-color:#cbd5e1;
-margin-bottom:30px;
-}
-
-.erp-stats{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.erp-stat{
-padding:18px 24px;
-border-radius:18px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-}
-
-.erp-right{
-flex:1;
-display:flex;
-justify-content:center;
-min-width:300px;
-}
-
-.erp-screen{
-width:100%;
-max-width:450px;
-padding:30px;
-border-radius:28px;
+border-radius:26px;
 background:#050816;
 border:1px solid rgba(255,255,255,0.08);
-box-shadow:0 0 50px rgba(59,130,246,0.15);
+box-shadow:0 0 50px rgba(59,130,246,0.1);
 }
 
-.screen-top{
+.terminal-top{
 display:flex;
 gap:8px;
 margin-bottom:20px;
@@ -521,28 +432,96 @@ border-radius:50%;
 .yellow{background:#facc15;}
 .green{background:#22c55e;}
 
-.screen-box{
+.terminal pre{
+color:#60a5fa;
+line-height:2;
+font-size:15px;
+overflow:auto;
+}
+
+.erp-panel{
+margin-top:80px;
+padding:60px;
+border-radius:36px;
+background:linear-gradient(145deg,rgba(59,130,246,0.08),rgba(139,92,246,0.08));
+border:1px solid rgba(255,255,255,0.08);
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.erp-left{
+flex:1;
+min-width:300px;
+}
+
+.erp-left h2{
+font-size:50px;
+font-family:'Orbitron',sans-serif;
+margin-bottom:20px;
+}
+
+.erp-left p{
+line-height:1.9;
+color:#cbd5e1;
+margin-bottom:30px;
+}
+
+.erp-screen{
+flex:1;
+min-width:320px;
+padding:30px;
+border-radius:30px;
+background:#050816;
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 0 60px rgba(59,130,246,0.12);
+}
+
+.dashboard-box{
 padding:20px;
-border-radius:20px;
-background:rgba(255,255,255,0.04);
+border-radius:18px;
+background:rgba(255,255,255,0.05);
 margin-bottom:18px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:70px;
+}
+
+.stat{
+padding:35px;
+border-radius:24px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+text-align:center;
+}
+
+.stat h2{
+font-size:46px;
+color:#60a5fa;
+margin-bottom:10px;
 }
 
 .contact-card{
 max-width:850px;
 margin:auto;
 padding:60px;
+text-align:center;
 border-radius:36px;
 background:rgba(255,255,255,0.04);
 border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(20px);
-text-align:center;
+backdrop-filter:blur(18px);
 }
 
 .contact-card h2{
-font-size:46px;
-margin-bottom:20px;
+font-size:48px;
 font-family:'Orbitron',sans-serif;
+margin-bottom:20px;
 }
 
 .contact-card p{
@@ -551,13 +530,35 @@ color:#cbd5e1;
 margin:15px 0;
 }
 
+.chatbot{
+position:fixed;
+right:25px;
+bottom:25px;
+width:70px;
+height:70px;
+border-radius:50%;
+background:linear-gradient(to right,#2563eb,#8b5cf6);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+box-shadow:0 0 50px rgba(59,130,246,0.4);
+z-index:999;
+cursor:pointer;
+animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
 footer{
 padding:40px;
 text-align:center;
 border-top:1px solid rgba(255,255,255,0.08);
 color:#94a3b8;
-position:relative;
-z-index:2;
 }
 
 @media(max-width:950px){
@@ -568,10 +569,10 @@ text-align:center;
 }
 
 .hero-left h1{
-font-size:56px;
+font-size:58px;
 }
 
-.hero-buttons{
+.buttons{
 justify-content:center;
 }
 
@@ -592,31 +593,33 @@ padding:35px;
 </style>
 
 </head>
-
 <body>
+
+<div class="loader" id="loader">
+<h1>BHISHMAA SYSTEMS</h1>
+<p>Initializing AI Infrastructure...</p>
+<div class="progress">
+<div></div>
+</div>
+</div>
 
 <div class="grid"></div>
 
 <nav>
 
 <div class="logo">
-
 <img src="logo.png" alt="Logo">
-
 <h2>BHISHMAA GROUP</h2>
-
 </div>
 
 <ul>
 <li><a href="#about">About</a></li>
-<li><a href="#services">Services</a></li>
+<li><a href="#services">Technology</a></li>
 <li><a href="#erp">ERP</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
-<a href="https://app.bhishmaagroup.in" class="erp-btn">
-ERP LOGIN
-</a>
+<a href="https://app.bhishmaagroup.in" class="erp-btn">ERP LOGIN</a>
 
 </nav>
 
@@ -625,32 +628,22 @@ ERP LOGIN
 <div class="hero-left">
 
 <div class="badge">
-⚡ NEXT GENERATION AI & ERP COMPANY
+⚡ FUTURE AI & ENTERPRISE ECOSYSTEM
 </div>
 
 <h1>
-FUTURE<br>
-TECHNOLOGY<br>
-ECOSYSTEM
+BUILDING<br>
+DIGITAL<br>
+FUTURES
 </h1>
 
 <p>
-Bhishmaa Group builds futuristic AI systems,
-ERP platforms, cloud infrastructure,
-automation tools and enterprise-grade digital solutions
-for modern businesses, startups and institutions.
+Bhishmaa Group develops next-generation AI systems, ERP platforms, automation infrastructure and futuristic enterprise software ecosystems for modern organizations.
 </p>
 
-<div class="hero-buttons">
-
-<a href="#services" class="btn primary">
-Explore Technology
-</a>
-
-<a href="#erp" class="btn secondary">
-View ERP System
-</a>
-
+<div class="buttons">
+<a href="#services" class="btn primary">Explore Technology</a>
+<a href="https://app.bhishmaagroup.in" class="btn secondary">Launch ERP</a>
 </div>
 
 </div>
@@ -670,21 +663,16 @@ AI Engineer • Software Architect • Founder
 </div>
 
 <p>
-Focused on building intelligent ERP ecosystems,
-AI-driven software infrastructure,
-automation platforms and futuristic digital systems
-using modern cloud technologies.
+Focused on creating futuristic digital ecosystems powered by AI, cloud infrastructure, ERP architecture and intelligent automation.
 </p>
 
 <div class="tech-stack">
-
 <span>Python</span>
 <span>Flask</span>
 <span>PostgreSQL</span>
 <span>AI/ML</span>
 <span>Cloud</span>
 <span>Automation</span>
-
 </div>
 
 </div>
@@ -700,25 +688,11 @@ ABOUT US
 </h2>
 
 <div class="about">
-
-Bhishmaa Group is a future-focused software and AI startup
-creating next-generation enterprise technology systems.
+Bhishmaa Group is a future-focused technology startup building AI-powered systems, enterprise ERP infrastructure, automation ecosystems and scalable cloud platforms.
 
 <br><br>
 
-We specialize in Artificial Intelligence,
-Enterprise ERP Systems,
-Cloud Infrastructure,
-Automation Platforms,
-Digital Ecosystems
-and scalable business software.
-
-<br><br>
-
-Our vision is to build intelligent digital infrastructure
-that transforms businesses through innovation,
-automation and modern engineering.
-
+We combine engineering, innovation and futuristic UI/UX experiences to create intelligent software solutions for businesses, schools and institutions.
 </div>
 
 </section>
@@ -732,113 +706,79 @@ OUR TECHNOLOGY
 <div class="services">
 
 <div class="service">
-
 <div class="service-icon">🤖</div>
-
 <h3>Artificial Intelligence</h3>
-
-<p>
-Advanced AI systems,
-machine learning applications,
-smart automation
-and intelligent analytics platforms.
-</p>
-
+<p>Machine learning systems, smart automation, analytics engines and intelligent AI infrastructure.</p>
 </div>
 
 <div class="service">
-
 <div class="service-icon">🏢</div>
-
 <h3>Enterprise ERP</h3>
-
-<p>
-Powerful ERP platforms
-for schools,
-institutions and businesses
-with modern dashboards and analytics.
-</p>
-
+<p>Modern ERP platforms for schools, institutions and businesses with cloud dashboards and analytics.</p>
 </div>
 
 <div class="service">
-
 <div class="service-icon">☁️</div>
-
 <h3>Cloud Infrastructure</h3>
-
-<p>
-Secure cloud deployment,
-PostgreSQL databases,
-high scalability
-and enterprise architecture systems.
-</p>
-
+<p>Secure scalable hosting, PostgreSQL architecture and enterprise cloud deployment systems.</p>
 </div>
 
 <div class="service">
-
 <div class="service-icon">🌐</div>
-
 <h3>Modern Web Systems</h3>
-
-<p>
-Premium modern websites
-with futuristic UI,
-3D experiences
-and high-performance architecture.
-</p>
-
+<p>High-performance futuristic websites with 3D interfaces and immersive user experiences.</p>
 </div>
 
 <div class="service">
-
 <div class="service-icon">⚡</div>
-
 <h3>Automation Platforms</h3>
-
-<p>
-Business automation systems,
-workflow optimization
-and intelligent management platforms.
-</p>
-
+<p>Workflow automation systems and intelligent digital management infrastructure.</p>
 </div>
 
 <div class="service">
-
 <div class="service-icon">🧠</div>
-
 <h3>Custom Software</h3>
-
-<p>
-Tailor-made enterprise applications
-engineered for scalability,
-performance and innovation.
-</p>
-
+<p>Tailor-made enterprise applications engineered for innovation and future scalability.</p>
 </div>
 
 </div>
 
-<div class="features">
+<div class="terminal">
 
-<div class="feature">
+<div class="terminal-top">
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+</div>
+
+<pre>
+> Initializing Bhishmaa AI Infrastructure...
+> Connecting Enterprise Cloud Systems...
+> Deploying ERP Ecosystem...
+> Launching Neural Automation Engine...
+> Bhishmaa Group Online
+</pre>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
 <h2>AI</h2>
 <p>Powered Systems</p>
 </div>
 
-<div class="feature">
+<div class="stat">
 <h2>ERP</h2>
-<p>Enterprise Platforms</p>
+<p>Enterprise Ecosystems</p>
 </div>
 
-<div class="feature">
+<div class="stat">
 <h2>24/7</h2>
 <p>Innovation Mindset</p>
 </div>
 
-<div class="feature">
+<div class="stat">
 <h2>∞</h2>
 <p>Future Possibilities</p>
 </div>
@@ -862,74 +802,25 @@ SMART ERP PLATFORM
 </h2>
 
 <p>
-Bhishmaa ERP is a futuristic management ecosystem
-designed for schools,
-businesses and institutions.
+Bhishmaa ERP is an advanced cloud-based management ecosystem designed for schools, startups and enterprise operations.
 
-It provides automation,
-analytics,
-real-time dashboards,
-cloud management
-and intelligent digital operations.
+It includes analytics dashboards, attendance systems, finance modules, automation infrastructure and AI-driven insights.
 </p>
 
-<div class="erp-stats">
-
-<div class="erp-stat">
-📊 Real-Time Analytics
-</div>
-
-<div class="erp-stat">
-☁️ Cloud Infrastructure
-</div>
-
-<div class="erp-stat">
-🔐 Secure Authentication
+<div class="buttons">
+<a href="/erp-login" class="btn primary">ERP LOGIN</a>
+<a href="#contact" class="btn secondary">Request Demo</a>
 </div>
 
 </div>
-
-<br>
-
-<a href="https://app.bhishmaagroup.in" class="btn primary">
-Launch ERP Login
-</a>
-
-</div>
-
-<div class="erp-right">
 
 <div class="erp-screen">
 
-<div class="screen-top">
-
-<div class="dot red"></div>
-<div class="dot yellow"></div>
-<div class="dot green"></div>
-
-</div>
-
-<div class="screen-box">
-📈 Analytics Dashboard
-</div>
-
-<div class="screen-box">
-👨‍🎓 Student Management
-</div>
-
-<div class="screen-box">
-💳 Finance & Billing
-</div>
-
-<div class="screen-box">
-📅 Attendance System
-</div>
-
-<div class="screen-box">
-🤖 AI Automation
-</div>
-
-</div>
+<div class="dashboard-box">📈 Real-Time Analytics Dashboard</div>
+<div class="dashboard-box">👨‍🎓 Student Management System</div>
+<div class="dashboard-box">💳 Finance & Billing Infrastructure</div>
+<div class="dashboard-box">📅 Attendance & Reporting</div>
+<div class="dashboard-box">🤖 AI Automation Engine</div>
 
 </div>
 
@@ -949,33 +840,34 @@ CONTACT
 BUILD THE FUTURE WITH US
 </h2>
 
-<p>
-📧 contact@bhishmaagroup.in
-</p>
-
-<p>
-🌐 bhishmaagroup.in
-</p>
-
-<p>
-🇮🇳 India Based Future Technology Startup
-</p>
+<p>📧 contact@bhishmaagroup.in</p>
+<p>🌐 bhishmaagroup.in</p>
+<p>🇮🇳 India Based Future Technology Startup</p>
 
 <br>
 
-<a href="/erp-login" class="btn primary">
-ERP LOGIN PORTAL
+<a href="https://app.bhishmaagroup.in" class="btn primary">
+ACCESS ERP PORTAL
 </a>
 
 </div>
 
 </section>
 
+<div class="chatbot">
+🤖
+</div>
+
 <footer>
 © 2026 Bhishmaa Group • Future AI & Enterprise Technology
 </footer>
 
 <script>
+
+setTimeout(()=>{
+document.getElementById('loader').style.opacity='0';
+document.getElementById('loader').style.pointerEvents='none';
+},3200);
 
 const scene = new THREE.Scene();
 
