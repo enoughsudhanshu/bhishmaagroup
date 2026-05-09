@@ -1,307 +1,1056 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Bhishmaa Group | ERP Software, AI Automation & Cloud Solutions India</title>
-  <meta name="title" content="Bhishmaa Group | ERP Software, AI Automation & Cloud Solutions India"/>
-  <meta name="description" content="Bhishmaa Group develops intelligent ERP software, AI automation systems, school ERP, healthcare ERP, cloud infrastructure, and enterprise SaaS solutions in India."/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="keywords" content="Bhishmaa Group, Bhishma Group, Bheeshma Group, Bheeshmaa Group, Bhismaa Group, Bhishma ERP, Bhishmaa ERP, Bheeshma ERP, Bhishmaa Software, Bhishmaa AI, Bhishmaa Automation, ERP company India, School ERP India, AI company India, Automation company India, Cloud infrastructure India, Enough Sudhanshu, Sudhanshu Pandey, Bhishmaa Technologies, Bhishmaa Solutions, Bhishmaa Cloud, Bhishmaa SaaS, Bhishmaa Enterprise, app bhishmaagroup, Bhishmaa Education ERP, Hospital ERP India, Startup software company, Python ERP company, AI startup India, enterprise ERP India, best ERP software India, business automation India, custom ERP development, Bhishmaa AI platform, Bhishmaa automation system, ERP for schools, ERP for colleges, ERP for hospitals, ERP for startups, SaaS company India, software architect India, Enoughsudhanshu, enough sudhanshu github, enough sudhanshu portfolio">
+<title>Bhishmaa Group | Future AI & ERP Systems</title>
 
-  <meta name="author" content="Enough Sudhanshu">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="canonical" href="https://bhishmaagroup.in">
+<meta name="description" content="Bhishmaa Group develops futuristic AI systems, ERP software, automation infrastructure, cloud applications and enterprise digital platforms.">
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bhishmaagroup.in">
-  <meta property="og:title" content="Bhishmaa Group | ERP, AI & Automation">
-  <meta property="og:description" content="Enterprise ERP systems, AI automation, cloud infrastructure and SaaS solutions built by Bhishmaa Group.">
-  <meta property="og:image" content="https://bhishmaagroup.in/logo.png">
+<meta name="keywords" content="
+Bhishmaa Group,
+Bhishma Group,
+Bheeshma Group,
+Bhismaa Group,
+Bheeshmaa Group,
+AI Company India,
+ERP Software,
+Enough Sudhanshu,
+AI Engineer,
+Automation Company,
+Future Technology
+">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bhishmaa Group">
-  <meta name="twitter:description" content="ERP systems, AI platforms and cloud infrastructure solutions.">
-  <meta name="twitter:image" content="https://bhishmaagroup.in/logo.png">
+<meta name="author" content="Enough Sudhanshu">
 
-  <link rel="icon" type="image/png" href="logo.png">
-  <meta name="theme-color" content="#050c1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Bhishmaa Group",
-    "url":"https://bhishmaagroup.in",
-    "logo":"https://bhishmaagroup.in/logo.png",
-    "description":"Bhishmaa Group builds ERP software, AI automation systems and enterprise cloud infrastructure.",
-    "founder":{
-      "@type":"Person",
-      "name":"Enough Sudhanshu",
-      "alternateName":["Sudhanshu Pandey", "Enoughsudhanshu"],
-      "jobTitle":"Founder & Software Architect",
-      "url":"https://enoughsudhanshu.github.io"
-    },
-    "sameAs":[
-      "https://github.com/enoughsudhanshu",
-      "https://enoughsudhanshu.github.io"
-    ]
-  }
-  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<style>
 
-  <style>
-    :root {
-      --navy: #050c1a;
-      --navy2: #0a1628;
-      --blue: #38bdf8;
-      --gold: #f4a200;
-      --gold2: #fbbf24;
-      --slate: #8899aa;
-      --white: #f0f6ff;
-      --card: rgba(255,255,255,0.03);
-      --border: rgba(255,255,255,0.07);
-    }
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--navy);
-      color: var(--white);
-      overflow-x: hidden;
-      cursor: none;
-    }
-    #cursor {
-      position: fixed; top:0; left:0; width:12px; height:12px;
-      background: var(--gold); border-radius:50%; pointer-events:none; z-index:9999;
-      transform: translate(-50%,-50%); transition: transform 0.1s;
-    }
-    #cursor-ring {
-      position:fixed; top:0; left:0; width:36px; height:36px;
-      border:1px solid rgba(244,162,0,0.4); border-radius:50%; pointer-events:none; z-index:9998;
-      transform:translate(-50%,-50%); transition: transform 0.18s ease;
-    }
-    ::-webkit-scrollbar { width:4px; }
-    ::-webkit-scrollbar-track { background: var(--navy); }
-    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius:2px; }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    nav {
-      position:fixed; top:0; left:0; width:100%; z-index:100;
-      padding:0 5vw; border-bottom: 1px solid var(--border);
-      background: rgba(5,12,26,0.7); backdrop-filter: blur(24px);
-    }
-    .nav-inner { max-width:1400px; margin:0 auto; display:flex; align-items:stretch; justify-content:space-between; height:72px; }
-    .nav-logo { display:flex; align-items:center; gap:14px; text-decoration:none; }
-    .nav-logo img { width:44px; height:44px; border-radius:50%; border:2px solid rgba(244,162,0,0.3); object-fit:cover; }
-    .logo-name { font-family:'Syne',sans-serif; font-weight:800; font-size:1.1rem; letter-spacing:0.05em; color:var(--white); }
-    .logo-sub { font-size:0.65rem; color:var(--slate); letter-spacing:0.15em; text-transform:uppercase; }
+html{
+scroll-behavior:smooth;
+}
 
-    .nav-menu { display:flex; align-items:center; list-style:none; }
-    .nav-item > a { display:flex; align-items:center; gap:5px; height:72px; padding:0 18px; font-size:0.82rem; font-weight:500; color:rgba(240,246,255,0.7); text-decoration:none; transition: color 0.2s; }
-    .nav-item > a:hover { color:var(--gold); }
+body{
+background:#020617;
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+color:white;
+}
 
-    .btn-primary { padding:10px 22px; border-radius:12px; background:linear-gradient(135deg, var(--gold), #e08800); font-size:0.8rem; font-weight:700; color:#050c1a; text-decoration:none; transition:0.2s; }
-    .btn-outline { padding:9px 20px; border-radius:12px; border:1px solid var(--border); font-size:0.8rem; font-weight:500; color:var(--white); text-decoration:none; transition:0.2s; }
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-5;
+}
 
-    #hero { position:relative; min-height:100vh; display:flex; align-items:center; padding:120px 5vw 80px; }
-    .hero-inner { max-width:1400px; margin:0 auto; width:100%; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; z-index:1; }
-    .hero-h1 { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2.8rem,5.5vw,5.2rem); line-height:1.02; margin-bottom:28px; }
-    .line-gold { background:linear-gradient(90deg,var(--gold),var(--blue)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-    .hero-desc { font-size:1.05rem; line-height:1.8; color:var(--slate); max-width:520px; margin-bottom:40px; }
-    .hero-stats { display:flex; gap:36px; margin-top:56px; padding-top:40px; border-top:1px solid var(--border); }
-    .stat-val { font-family:'Syne',sans-serif; font-weight:800; font-size:2rem; color:var(--white); }
-    .stat-val span { color:var(--gold); }
+body::before{
+content:'';
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top left,rgba(59,130,246,0.15),transparent 25%),
+radial-gradient(circle at bottom right,rgba(168,85,247,0.15),transparent 25%);
+z-index:-4;
+}
 
-    #globe-canvas { width:100%; max-width:560px; height:560px; border-radius:50%; display:block; }
-    .section { padding:120px 5vw; }
-    .section-inner { max-width:1400px; margin:0 auto; }
-    .section-title { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2rem,4vw,3.4rem); line-height:1.1; }
+.grid{
+position:fixed;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size:60px 60px;
+z-index:-3;
+mask-image:linear-gradient(to bottom,transparent,black);
+}
 
-    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; margin-top:64px; }
-    .card { padding:40px; border-radius:24px; border:1px solid var(--border); background:var(--card); transition:0.3s; position:relative; }
-    .card:hover { border-color:rgba(244,162,0,0.2); transform:translateY(-5px); }
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+backdrop-filter:blur(20px);
+background:rgba(2,6,23,0.45);
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
 
-    .founder-inner { display:grid; grid-template-columns:400px 1fr; gap:80px; align-items:start; }
-    .founder-photo { width:100%; border-radius:32px; border:1px solid var(--border); filter: saturate(0.8); }
+.logo{
+display:flex;
+align-items:center;
+gap:14px;
+}
 
-    .contact-form { display:flex; flex-direction:column; gap:16px; max-width:600px; }
-    input, select, textarea { width:100%; padding:14px 18px; border-radius:14px; border:1px solid var(--border); background:rgba(255,255,255,0.02); color:white; outline:none; }
-    
-    footer { padding:64px 5vw 32px; border-top:1px solid var(--border); text-align:center; color:var(--slate); font-size:0.9rem; }
-    .reveal { opacity:0; transform:translateY(30px); }
+.logo img{
+width:60px;
+height:60px;
+border-radius:50%;
+object-fit:cover;
+box-shadow:0 0 40px rgba(59,130,246,0.5);
+}
 
-    @media (max-width:1100px) { .hero-inner, .founder-inner { grid-template-columns:1fr; } #globe-canvas { display:none; } }
-  </style>
+.logo h2{
+font-family:'Orbitron',sans-serif;
+font-size:24px;
+letter-spacing:2px;
+font-weight:800;
+}
+
+nav ul{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+position:relative;
+}
+
+nav ul li a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:2px;
+background:#60a5fa;
+transition:0.3s;
+}
+
+nav ul li a:hover::after{
+width:100%;
+}
+
+.erp-btn{
+padding:12px 22px;
+background:linear-gradient(to right,#2563eb,#8b5cf6);
+border-radius:14px;
+color:white;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 0 25px rgba(59,130,246,0.4);
+transition:0.4s;
+}
+
+.erp-btn:hover{
+transform:translateY(-4px);
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:150px 8% 100px;
+gap:80px;
+flex-wrap:wrap;
+}
+
+.hero-left{
+flex:1;
+min-width:320px;
+z-index:2;
+}
+
+.badge{
+display:inline-block;
+padding:12px 22px;
+border-radius:40px;
+background:rgba(59,130,246,0.12);
+border:1px solid rgba(96,165,250,0.2);
+color:#93c5fd;
+margin-bottom:30px;
+backdrop-filter:blur(10px);
+font-size:14px;
+}
+
+.hero-left h1{
+font-size:92px;
+line-height:1.02;
+margin-bottom:30px;
+font-family:'Orbitron',sans-serif;
+
+background:linear-gradient(
+to right,
+#ffffff,
+#60a5fa,
+#c084fc
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-left p{
+font-size:19px;
+line-height:1.9;
+max-width:720px;
+color:#cbd5e1;
+margin-bottom:40px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:17px 34px;
+border-radius:18px;
+text-decoration:none;
+font-weight:600;
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.primary{
+background:linear-gradient(to right,#2563eb,#8b5cf6);
+color:white;
+box-shadow:0 0 45px rgba(59,130,246,0.35);
+}
+
+.secondary{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-6px);
+}
+
+.hero-right{
+flex:1;
+display:flex;
+justify-content:center;
+min-width:320px;
+z-index:2;
+}
+
+.founder-card{
+width:420px;
+padding:40px;
+border-radius:34px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(22px);
+text-align:center;
+position:relative;
+overflow:hidden;
+
+box-shadow:
+0 0 80px rgba(59,130,246,0.12),
+inset 0 0 20px rgba(255,255,255,0.02);
+
+animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-18px);}
+100%{transform:translateY(0px);}
+}
+
+.founder-card::before{
+content:'';
+position:absolute;
+width:240px;
+height:240px;
+background:rgba(59,130,246,0.12);
+border-radius:50%;
+top:-100px;
+right:-100px;
+}
+
+.founder-img{
+width:190px;
+height:190px;
+border-radius:50%;
+overflow:hidden;
+margin:auto;
+margin-bottom:28px;
+border:4px solid rgba(96,165,250,0.4);
+box-shadow:0 0 50px rgba(59,130,246,0.5);
+}
+
+.founder-img img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.founder-card h2{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.role{
+color:#60a5fa;
+font-weight:600;
+margin-bottom:18px;
+}
+
+.founder-card p{
+line-height:1.9;
+color:#cbd5e1;
+}
+
+.tech-stack{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.tech-stack span{
+padding:8px 14px;
+border-radius:30px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.06);
+font-size:13px;
+color:#93c5fd;
+}
+
+section{
+padding:120px 8%;
+position:relative;
+z-index:2;
+}
+
+.section-title{
+text-align:center;
+font-size:56px;
+font-family:'Orbitron',sans-serif;
+margin-bottom:70px;
+}
+
+.about{
+max-width:1000px;
+margin:auto;
+text-align:center;
+font-size:20px;
+line-height:2;
+color:#cbd5e1;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:32px;
+margin-top:60px;
+}
+
+.service{
+padding:40px;
+border-radius:30px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(18px);
+position:relative;
+overflow:hidden;
+transition:0.45s;
+}
+
+.service::before{
+content:'';
+position:absolute;
+width:250px;
+height:250px;
+background:rgba(59,130,246,0.08);
+border-radius:50%;
+top:-120px;
+right:-120px;
+}
+
+.service:hover{
+transform:
+translateY(-14px)
+rotateX(4deg)
+rotateY(-4deg);
+
+border-color:#60a5fa;
+
+box-shadow:0 0 50px rgba(59,130,246,0.15);
+}
+
+.service-icon{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.service h3{
+font-size:26px;
+margin-bottom:18px;
+color:#60a5fa;
+}
+
+.service p{
+line-height:1.8;
+color:#cbd5e1;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:70px;
+}
+
+.feature{
+padding:30px;
+text-align:center;
+border-radius:24px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(14px);
+}
+
+.feature h2{
+font-size:42px;
+margin-bottom:10px;
+color:#60a5fa;
+}
+
+.erp-panel{
+margin-top:80px;
+padding:60px;
+border-radius:36px;
+background:
+linear-gradient(
+145deg,
+rgba(59,130,246,0.08),
+rgba(139,92,246,0.08)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.erp-left{
+flex:1;
+min-width:300px;
+}
+
+.erp-left h2{
+font-size:48px;
+font-family:'Orbitron',sans-serif;
+margin-bottom:20px;
+}
+
+.erp-left p{
+line-height:1.9;
+color:#cbd5e1;
+margin-bottom:30px;
+}
+
+.erp-stats{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.erp-stat{
+padding:18px 24px;
+border-radius:18px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.erp-right{
+flex:1;
+display:flex;
+justify-content:center;
+min-width:300px;
+}
+
+.erp-screen{
+width:100%;
+max-width:450px;
+padding:30px;
+border-radius:28px;
+background:#050816;
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 0 50px rgba(59,130,246,0.15);
+}
+
+.screen-top{
+display:flex;
+gap:8px;
+margin-bottom:20px;
+}
+
+.dot{
+width:12px;
+height:12px;
+border-radius:50%;
+}
+
+.red{background:#ef4444;}
+.yellow{background:#facc15;}
+.green{background:#22c55e;}
+
+.screen-box{
+padding:20px;
+border-radius:20px;
+background:rgba(255,255,255,0.04);
+margin-bottom:18px;
+}
+
+.contact-card{
+max-width:850px;
+margin:auto;
+padding:60px;
+border-radius:36px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+text-align:center;
+}
+
+.contact-card h2{
+font-size:46px;
+margin-bottom:20px;
+font-family:'Orbitron',sans-serif;
+}
+
+.contact-card p{
+font-size:19px;
+color:#cbd5e1;
+margin:15px 0;
+}
+
+footer{
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.08);
+color:#94a3b8;
+position:relative;
+z-index:2;
+}
+
+@media(max-width:950px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-left h1{
+font-size:56px;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+nav ul{
+display:none;
+}
+
+.section-title{
+font-size:40px;
+}
+
+.erp-panel{
+padding:35px;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
+<div class="grid"></div>
 
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="#hero" class="nav-logo">
-      <img src="logo.png" alt="Bhishmaa Group Logo"/>
-      <div class="logo-text">
-        <span class="logo-name">BHISHMAA GROUP</span>
-        <span class="logo-sub">ERP · AI · Automation</span>
-      </div>
-    </a>
-    <ul class="nav-menu">
-      <li class="nav-item"><a href="#industries">Industries</a></li>
-      <li class="nav-item"><a href="#services">Services</a></li>
-      <li class="nav-item"><a href="#founder">Leadership</a></li>
-      <li class="nav-item"><a href="#contact">Contact</a></li>
-    </ul>
-    <div style="display:flex; align-items:center; gap:12px;">
-      <a href="https://app.bhishmaagroup.in" target="_blank" class="btn-primary">ERP Login →</a>
-    </div>
-  </div>
+<nav>
+
+<div class="logo">
+
+<img src="logo.png" alt="Logo">
+
+<h2>BHISHMAA GROUP</h2>
+
+</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#erp">ERP</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<a href="/erp-login" class="erp-btn">
+ERP LOGIN
+</a>
+
 </nav>
 
-<section id="hero">
-  <div class="hero-inner">
-    <div>
-      <div style="color:var(--gold); font-size:0.75rem; letter-spacing:0.2em; margin-bottom:20px; text-transform:uppercase;">Enterprise Software Reimagined</div>
-      <h1 class="hero-h1 reveal">
-        <span style="color:rgba(255,255,255,0.4)">Intelligent</span><br>
-        <span class="line-gold">ERP & AI</span> Infrastructure
-      </h1>
-      <p class="hero-desc reveal">
-        Bhishmaa Group architects next-generation enterprise systems—from intelligent school and hospital ERPs to AI automation and scalable cloud platforms.
-      </p>
-      <div style="display:flex; gap:14px;" class="reveal">
-        <a href="#contact" class="btn-primary">Request a Demo →</a>
-        <a href="#services" class="btn-outline">Our Solutions</a>
-      </div>
-      <div class="hero-stats reveal">
-        <div><div class="stat-val">12<span>K+</span></div><div style="color:var(--slate); font-size:0.8rem;">Active Users</div></div>
-        <div><div class="stat-val">99.9<span>%</span></div><div style="color:var(--slate); font-size:0.8rem;">Uptime SLA</div></div>
-        <div><div class="stat-val">6<span>+</span></div><div style="color:var(--slate); font-size:0.8rem;">Industries Served</div></div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <canvas id="globe-canvas"></canvas>
-    </div>
-  </div>
+<section class="hero">
+
+<div class="hero-left">
+
+<div class="badge">
+⚡ NEXT GENERATION AI & ERP COMPANY
+</div>
+
+<h1>
+FUTURE<br>
+TECHNOLOGY<br>
+ECOSYSTEM
+</h1>
+
+<p>
+Bhishmaa Group builds futuristic AI systems,
+ERP platforms, cloud infrastructure,
+automation tools and enterprise-grade digital solutions
+for modern businesses, startups and institutions.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#services" class="btn primary">
+Explore Technology
+</a>
+
+<a href="#erp" class="btn secondary">
+View ERP System
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="founder-card">
+
+<div class="founder-img">
+<img src="download.jpg" alt="Founder">
+</div>
+
+<h2>Enough Sudhanshu</h2>
+
+<div class="role">
+AI Engineer • Software Architect • Founder
+</div>
+
+<p>
+Focused on building intelligent ERP ecosystems,
+AI-driven software infrastructure,
+automation platforms and futuristic digital systems
+using modern cloud technologies.
+</p>
+
+<div class="tech-stack">
+
+<span>Python</span>
+<span>Flask</span>
+<span>PostgreSQL</span>
+<span>AI/ML</span>
+<span>Cloud</span>
+<span>Automation</span>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section id="industries" class="section">
-  <div class="section-inner">
-    <span style="color:var(--gold); font-weight:700; font-size:0.7rem; letter-spacing:0.2em;">INDUSTRIES</span>
-    <h2 class="section-title reveal">Sectors We Transform</h2>
-    <div class="grid">
-      <div class="card reveal">
-        <h3>EduTech</h3>
-        <p>Unified school management platforms for attendance, fees, results, and digital classrooms.</p>
-      </div>
-      <div class="card reveal">
-        <h3>Healthcare</h3>
-        <p>Patient management, EHR systems, and pharmacy automation for modern hospitals.</p>
-      </div>
-      <div class="card reveal">
-        <h3>Startups & SaaS</h3>
-        <p>Scalable backend infrastructure and AI-first architecture for growing products.</p>
-      </div>
-    </div>
-  </div>
+<section id="about">
+
+<h2 class="section-title">
+ABOUT US
+</h2>
+
+<div class="about">
+
+Bhishmaa Group is a future-focused software and AI startup
+creating next-generation enterprise technology systems.
+
+<br><br>
+
+We specialize in Artificial Intelligence,
+Enterprise ERP Systems,
+Cloud Infrastructure,
+Automation Platforms,
+Digital Ecosystems
+and scalable business software.
+
+<br><br>
+
+Our vision is to build intelligent digital infrastructure
+that transforms businesses through innovation,
+automation and modern engineering.
+
+</div>
+
 </section>
 
-<section id="founder" class="section">
-  <div class="section-inner">
-    <div class="founder-inner">
-      <div class="reveal">
-        <img src="download.jpg" alt="Enough Sudhanshu" class="founder-photo">
-        <div style="display:flex; gap:10px; margin-top:20px;">
-          <a href="https://github.com/enoughsudhanshu" target="_blank" class="btn-outline" style="flex:1; text-align:center;">GitHub</a>
-          <a href="https://enoughsudhanshu.github.io" target="_blank" class="btn-primary" style="flex:1; text-align:center;">Portfolio</a>
-        </div>
-      </div>
-      <div class="reveal">
-        <span style="color:var(--gold); font-weight:700; font-size:0.7rem; letter-spacing:0.2em;">LEADERSHIP</span>
-        <h2 class="section-title" style="margin-bottom:20px;">Enough Sudhanshu</h2>
-        <p style="color:var(--slate); line-height:1.8; margin-bottom:20px; font-size:1.1rem;">
-          Enough Sudhanshu (Sudhanshu Pandey) is a software architect and founder of Bhishmaa Group. He specializes in building high-performance ERP systems and AI solutions.
-        </p>
-        <div style="display:flex; flex-wrap:wrap; gap:10px;">
-          <span style="padding:6px 14px; border:1px solid var(--border); border-radius:50px; font-size:0.8rem;">Python / Flask</span>
-          <span style="padding:6px 14px; border:1px solid var(--border); border-radius:50px; font-size:0.8rem;">AI & Machine Learning</span>
-          <span style="padding:6px 14px; border:1px solid var(--border); border-radius:50px; font-size:0.8rem;">PostgreSQL</span>
-          <span style="padding:6px 14px; border:1px solid var(--border); border-radius:50px; font-size:0.8rem;">ERP Architecture</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="services">
+
+<h2 class="section-title">
+OUR TECHNOLOGY
+</h2>
+
+<div class="services">
+
+<div class="service">
+
+<div class="service-icon">🤖</div>
+
+<h3>Artificial Intelligence</h3>
+
+<p>
+Advanced AI systems,
+machine learning applications,
+smart automation
+and intelligent analytics platforms.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">🏢</div>
+
+<h3>Enterprise ERP</h3>
+
+<p>
+Powerful ERP platforms
+for schools,
+institutions and businesses
+with modern dashboards and analytics.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">☁️</div>
+
+<h3>Cloud Infrastructure</h3>
+
+<p>
+Secure cloud deployment,
+PostgreSQL databases,
+high scalability
+and enterprise architecture systems.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">🌐</div>
+
+<h3>Modern Web Systems</h3>
+
+<p>
+Premium modern websites
+with futuristic UI,
+3D experiences
+and high-performance architecture.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">⚡</div>
+
+<h3>Automation Platforms</h3>
+
+<p>
+Business automation systems,
+workflow optimization
+and intelligent management platforms.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">🧠</div>
+
+<h3>Custom Software</h3>
+
+<p>
+Tailor-made enterprise applications
+engineered for scalability,
+performance and innovation.
+</p>
+
+</div>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+<h2>AI</h2>
+<p>Powered Systems</p>
+</div>
+
+<div class="feature">
+<h2>ERP</h2>
+<p>Enterprise Platforms</p>
+</div>
+
+<div class="feature">
+<h2>24/7</h2>
+<p>Innovation Mindset</p>
+</div>
+
+<div class="feature">
+<h2>∞</h2>
+<p>Future Possibilities</p>
+</div>
+
+</div>
+
 </section>
 
-<section id="contact" class="section" style="background:var(--navy2)">
-  <div class="section-inner">
-    <h2 class="section-title reveal">Let's Build Together</h2>
-    <form class="contact-form reveal">
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Work Email" required>
-      <select>
-        <option>EduTech / School</option>
-        <option>Healthcare</option>
-        <option>Enterprise</option>
-        <option>Startup</option>
-      </select>
-      <textarea placeholder="Tell us about your project..." rows="5"></textarea>
-      <button type="submit" class="btn-primary" style="border:none; cursor:none; padding:18px;">Send Request →</button>
-    </form>
-  </div>
+<section id="erp">
+
+<h2 class="section-title">
+ERP ECOSYSTEM
+</h2>
+
+<div class="erp-panel">
+
+<div class="erp-left">
+
+<h2>
+SMART ERP PLATFORM
+</h2>
+
+<p>
+Bhishmaa ERP is a futuristic management ecosystem
+designed for schools,
+businesses and institutions.
+
+It provides automation,
+analytics,
+real-time dashboards,
+cloud management
+and intelligent digital operations.
+</p>
+
+<div class="erp-stats">
+
+<div class="erp-stat">
+📊 Real-Time Analytics
+</div>
+
+<div class="erp-stat">
+☁️ Cloud Infrastructure
+</div>
+
+<div class="erp-stat">
+🔐 Secure Authentication
+</div>
+
+</div>
+
+<br>
+
+<a href="/erp-login" class="btn primary">
+Launch ERP Login
+</a>
+
+</div>
+
+<div class="erp-right">
+
+<div class="erp-screen">
+
+<div class="screen-top">
+
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+
+</div>
+
+<div class="screen-box">
+📈 Analytics Dashboard
+</div>
+
+<div class="screen-box">
+👨‍🎓 Student Management
+</div>
+
+<div class="screen-box">
+💳 Finance & Billing
+</div>
+
+<div class="screen-box">
+📅 Attendance System
+</div>
+
+<div class="screen-box">
+🤖 AI Automation
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">
+CONTACT
+</h2>
+
+<div class="contact-card">
+
+<h2>
+BUILD THE FUTURE WITH US
+</h2>
+
+<p>
+📧 contact@bhishmaagroup.in
+</p>
+
+<p>
+🌐 bhishmaagroup.in
+</p>
+
+<p>
+🇮🇳 India Based Future Technology Startup
+</p>
+
+<br>
+
+<a href="/erp-login" class="btn primary">
+ERP LOGIN PORTAL
+</a>
+
+</div>
+
 </section>
 
 <footer>
-  <div class="section-inner">
-    <p>© 2026 Bhishmaa Group. All rights reserved.</p>
-    <p style="margin-top:10px;">Built by <a href="https://enoughsudhanshu.github.io" target="_blank" style="color:var(--gold); text-decoration:none;">Enough Sudhanshu</a></p>
-  </div>
+© 2026 Bhishmaa Group • Future AI & Enterprise Technology
 </footer>
 
-<div style="display:none; visibility:hidden;">
-  Bhishmaa Group Bhishma Group Bheeshma Group Bheeshmaa Group Bhismaa Group 
-  Bhishmaa ERP Bhishmaa Software Bhishmaa AI Bhishmaa Automation 
-  ERP company India School ERP India Enough Sudhanshu Sudhanshu Pandey
-</div>
-
 <script>
-  /* CURSOR LOGIC */
-  const cur = document.getElementById('cursor');
-  const ring = document.getElementById('cursor-ring');
-  let mx=0, my=0, rx=0, ry=0;
-  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
-  (function anim(){ rx+=(mx-rx)*0.15; ry+=(my-ry)*0.15; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(anim); })();
 
-  /* GSAP ANIMATIONS */
-  gsap.registerPlugin(ScrollTrigger);
-  document.querySelectorAll('.reveal').forEach(el => {
-    gsap.from(el, { opacity:0, y:40, duration:1, scrollTrigger: { trigger:el, start:"top 90%" } });
-  });
+const scene = new THREE.Scene();
 
-  /* THREE.JS GLOBE */
-  (function(){
-    const canvas = document.getElementById('globe-canvas');
-    if(!canvas) return;
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha:true, antialias:true });
-    renderer.setSize(560, 560);
-    const globe = new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshPhongMaterial({ color:0x0a1628, wireframe:true, transparent:true, opacity:0.3 }));
-    scene.add(globe);
-    const light = new THREE.PointLight(0x38bdf8, 2); light.position.set(5,3,5); scene.add(light);
-    camera.position.z = 3;
-    function animate(){ requestAnimationFrame(animate); globe.rotation.y += 0.002; renderer.render(scene, camera); }
-    animate();
-  })();
+const camera = new THREE.PerspectiveCamera(
+75,
+window.innerWidth/window.innerHeight,
+0.1,
+1000
+);
+
+const renderer = new THREE.WebGLRenderer({
+alpha:true,
+antialias:true
+});
+
+renderer.setSize(window.innerWidth,window.innerHeight);
+
+document.body.appendChild(renderer.domElement);
+
+const geometry = new THREE.IcosahedronGeometry(12,1);
+
+const material = new THREE.MeshStandardMaterial({
+color:0x3b82f6,
+wireframe:true
+});
+
+const sphere = new THREE.Mesh(geometry,material);
+
+scene.add(sphere);
+
+const geometry2 = new THREE.TorusGeometry(20,0.25,16,100);
+
+const material2 = new THREE.MeshBasicMaterial({
+color:0x8b5cf6,
+wireframe:true
+});
+
+const torus = new THREE.Mesh(geometry2,material2);
+
+scene.add(torus);
+
+const light = new THREE.PointLight(0xffffff,1);
+
+light.position.set(20,20,20);
+
+scene.add(light);
+
+camera.position.z = 35;
+
+function animate(){
+
+requestAnimationFrame(animate);
+
+sphere.rotation.x += 0.002;
+sphere.rotation.y += 0.003;
+
+torus.rotation.x += 0.001;
+torus.rotation.y += 0.002;
+
+renderer.render(scene,camera);
+
+}
+
+animate();
+
+window.addEventListener('resize',()=>{
+
+camera.aspect = window.innerWidth/window.innerHeight;
+
+camera.updateProjectionMatrix();
+
+renderer.setSize(window.innerWidth,window.innerHeight);
+
+});
+
 </script>
 
 </body>
