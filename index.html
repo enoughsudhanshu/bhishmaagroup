@@ -1,91 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhishmaa Group | ERP & AI Solutions</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bhishmaa Group develops ERP systems, AI software, automation tools, billing systems, and enterprise-grade digital solutions for modern businesses.">
+  <meta property="og:title" content="Bhishmaa Group | ERP & AI Solutions">
+  <meta property="og:description" content="Building future software for modern businesses.">
+  <meta name="theme-color" content="#050810">
+  <title>Bhishmaa Group | ERP & AI Solutions</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<nav>
-<div class="nav-container">
-<div class="logo">
-<img src="assets/logo.png">
-<span>Bhishmaa Group</span>
-</div>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Bhishmaa Group Logo" onerror="this.style.display='none'">
+        <span>Bhishmaa Group</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="products.html">Products</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-</nav>
+  <!-- HERO -->
+  <section style="padding: 0 2rem; max-width: 1280px; margin: 0 auto;">
+    <div class="hero" style="max-width: 100%; padding-left: 0; padding-right: 0;">
+      <div class="hero-content">
+        <div class="hero-badge">🚀 Enterprise Software Solutions</div>
+        <h1>
+          Building <span class="gradient">Future Software</span><br>
+          For Modern Businesses
+        </h1>
+        <p>
+          Bhishmaa Group engineers ERP systems, AI-powered tools, automation platforms,
+          and enterprise-grade digital solutions that scale with your ambitions.
+        </p>
+        <div class="btns">
+          <a href="products.html" class="btn primary">Explore Products →</a>
+          <a href="contact.html" class="btn secondary">Request Demo</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-value" data-target="4" data-suffix="+">0+</span>
+            <span class="stat-label">Products</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" data-target="100" data-suffix="%">0%</span>
+            <span class="stat-label">Custom Built</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" data-target="2026" data-suffix="">2026</span>
+            <span class="stat-label">Est. Year</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="hero">
-<div>
-<h1>
-Building <span class="gradient">Future Software</span><br>
-For Modern Businesses
-</h1>
+  <div class="section-divider"></div>
 
-<p>
-Bhishmaa Group develops ERP systems, AI software, automation tools,
-billing systems, and enterprise-grade digital solutions.
-</p>
+  <!-- SOLUTIONS -->
+  <div class="section">
+    <div class="section-header reveal">
+      <div class="section-label">What We Build</div>
+      <h2 class="section-title">Our Core Solutions</h2>
+      <p class="section-desc">
+        From school management to AI-driven automation — every product is engineered for performance and scale.
+      </p>
+    </div>
 
-<div class="btns">
-<a href="products.html" class="btn primary">Explore Products</a>
-<a href="contact.html" class="btn secondary">Request Demo</a>
-</div>
-</div>
-</section>
+    <div class="grid">
+      <a href="school-erp/index.html" class="card-link">
+        <div class="card reveal" data-delay="0">
+          <span class="card-icon">🎓</span>
+          <h3>School ERP</h3>
+          <p>Complete digital school management ecosystem — attendance, fee processing, exam management, student portals, and real-time analytics.</p>
+          <div class="features">
+            <span>Attendance</span>
+            <span>Fees</span>
+            <span>Exams</span>
+            <span>Analytics</span>
+          </div>
+          <span class="card-arrow">Explore →</span>
+        </div>
+      </a>
 
-<section>
-<div class="section-title">
-<h2>Our Solutions</h2>
-</div>
+      <a href="billing-system/index.html" class="card-link">
+        <div class="card reveal" data-delay="80">
+          <span class="card-icon">🧾</span>
+          <h3>Billing System</h3>
+          <p>Smart GST-compliant billing, inventory tracking, and an intelligent analytics dashboard built for Indian businesses.</p>
+          <div class="features">
+            <span>GST</span>
+            <span>Inventory</span>
+            <span>Reports</span>
+          </div>
+          <span class="card-arrow">Explore →</span>
+        </div>
+      </a>
 
-<div class="grid">
-<div class="card">
-<h3>🎓 School ERP</h3>
-<p>Attendance, fee management, exams, student portal and analytics.</p>
-<div class="features">
-<span>Attendance</span>
-<span>Fees</span>
-<span>Results</span>
-</div>
-</div>
+      <a href="resume-builder/index.html" class="card-link">
+        <div class="card reveal" data-delay="160">
+          <span class="card-icon">📄</span>
+          <h3>Resume Builder</h3>
+          <p>ATS-optimized resume generation with modern, recruiter-ready templates. Export to PDF in one click.</p>
+          <div class="features">
+            <span>ATS</span>
+            <span>PDF Export</span>
+            <span>Templates</span>
+          </div>
+          <span class="card-arrow">Explore →</span>
+        </div>
+      </a>
 
-<div class="card">
-<h3>🧾 Billing System</h3>
-<p>GST billing, inventory management and analytics dashboard.</p>
-<div class="features">
-<span>GST</span>
-<span>Inventory</span>
-<span>Reports</span>
-</div>
-</div>
+      <a href="ai-tools/index.html" class="card-link">
+        <div class="card reveal" data-delay="240">
+          <span class="card-icon">🤖</span>
+          <h3>AI Tools Suite</h3>
+          <p>Intelligent automation and AI-powered business tools that eliminate manual workflows and accelerate decision-making.</p>
+          <div class="features">
+            <span>Automation</span>
+            <span>AI/ML</span>
+            <span>APIs</span>
+          </div>
+          <span class="card-arrow">Explore →</span>
+        </div>
+      </a>
+    </div>
+  </div>
 
-<div class="card">
-<h3>📄 Resume Builder</h3>
-<p>ATS-friendly resume generation with modern templates.</p>
-<div class="features">
-<span>ATS</span>
-<span>PDF</span>
-<span>Templates</span>
-</div>
-</div>
-</div>
-</section>
+  <div class="section-divider"></div>
 
-<footer>
-© 2026 Bhishmaa Group
-</footer>
+  <!-- WHY US -->
+  <div class="section">
+    <div class="section-header reveal">
+      <div class="section-label">Why Bhishmaa</div>
+      <h2 class="section-title">Built Different</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal" data-delay="0">
+        <span class="card-icon">⚡</span>
+        <h3>Performance First</h3>
+        <p>Every system is optimized for speed and reliability. No bloat, no compromise.</p>
+      </div>
+      <div class="card reveal" data-delay="80">
+        <span class="card-icon">🔒</span>
+        <h3>Secure by Design</h3>
+        <p>Security is embedded from day one — not bolted on. Your data is always protected.</p>
+      </div>
+      <div class="card reveal" data-delay="160">
+        <span class="card-icon">🛠️</span>
+        <h3>Fully Customizable</h3>
+        <p>No rigid templates. Every product adapts to your exact business workflows.</p>
+      </div>
+    </div>
+  </div>
 
-<script src="script.js"></script>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Bhishmaa Group</div>
+      <div class="footer-copy">© 2026 Bhishmaa Group. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
