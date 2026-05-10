@@ -275,7 +275,7 @@ section {
   letter-spacing:-0.02em;
 }
  
-.hero h1 .line1{display:block;color:#e0f4ff;}
+
 .hero h1 .grad{
   display:block;
   background:linear-gradient(135deg,var(--neon) 0%,var(--neon2) 50%,var(--neon3) 100%);
