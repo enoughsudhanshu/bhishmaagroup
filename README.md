@@ -4,7 +4,7 @@
 
 ### ERP • AI • Automation • Software Solutions
 
-<img src="https://bhishmaagroup.in/logo.png" width="140" alt="Bhishmaa Group Logo">
+<img src="assets/logo.png" width="140" alt="Bhishmaa Group Logo">
 
 <br><br>
 
@@ -95,6 +95,7 @@ https://bhishmaagroup.in
 ---
 
 # 👨‍💻 Founder
+<img src="assets/founder.jpg" width="140" alt="Bhishmaa Group Founder">
 
 ## Enough Sudhanshu
 
@@ -104,28 +105,6 @@ Focused on developing scalable ERP systems, automation platforms, and intelligen
 
 ---
 
-# 🖼️ Product Screenshots
-
-## Add screenshots inside this folder:
-
-```txt
-/assets/images/
-```
-
-Example:
-
-```txt
-/assets/images/erp-dashboard.png
-/assets/images/billing-system.png
-/assets/images/ai-tools.png
-/assets/images/resume-builder.png
-```
-
-Then display images like this:
-
-```html
-<img src="assets/images/erp-dashboard.png" width="100%">
-```
 
 ---
 
