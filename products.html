@@ -1,60 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products | Bhishmaa Group</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore enterprise software products by Bhishmaa Group — School ERP, Billing System, Resume Builder, and AI Tools.">
+  <title>Products | Bhishmaa Group</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<nav>
-<div class="nav-container">
-<div class="logo">
-<img src="assets/logo.png">
-<span>Bhishmaa Group</span>
-</div>
-</div>
-</nav>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Bhishmaa Group" onerror="this.style.display='none'">
+        <span>Bhishmaa Group</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-<section class="hero">
-<div>
-<h1>Our Software Products</h1>
-<p>Explore enterprise software solutions developed by Bhishmaa Group.</p>
-</div>
-</section>
+  <!-- PAGE HERO -->
+  <div style="padding: calc(var(--nav-height) + 4rem) 2rem 2rem; max-width: 1280px; margin: 0 auto;">
+    <div class="section-label reveal">Our Portfolio</div>
+    <h1 class="section-title reveal" style="font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -0.04em; margin-top: 0.5rem; line-height: 1.05;">
+      Software <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Products</span>
+    </h1>
+    <p class="reveal" style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin-top: 1rem; font-weight: 300; line-height: 1.8;">
+      Each product is purpose-built, fully customizable, and engineered to grow with your business.
+    </p>
+  </div>
 
-<section>
-<div class="grid">
-<a href="school-erp/index.html" style="text-decoration:none;color:white">
-<div class="card">
-<h3>🎓 School ERP</h3>
-<p>Complete digital school management ecosystem.</p>
-</div>
-</a>
+  <div class="section-divider"></div>
 
-<a href="billing-system/index.html" style="text-decoration:none;color:white">
-<div class="card">
-<h3>🧾 Billing System</h3>
-<p>Smart GST billing & inventory management platform.</p>
-</div>
-</a>
+  <!-- PRODUCTS GRID -->
+  <div class="section">
+    <div class="grid">
 
-<a href="resume-builder/index.html" style="text-decoration:none;color:white">
-<div class="card">
-<h3>📄 Resume Builder</h3>
-<p>Modern AI resume generation platform.</p>
-</div>
-</a>
+      <!-- School ERP -->
+      <a href="school-erp/index.html" class="product-card card-link">
+        <div class="card reveal" data-delay="0">
+          <span class="card-icon">🎓</span>
+          <h3>School ERP</h3>
+          <p>A complete digital school management ecosystem. Manage attendance, fee collection, exam schedules, student performance, and staff payroll from a single intelligent dashboard.</p>
+          <div class="features">
+            <span>Attendance</span>
+            <span>Fee Management</span>
+            <span>Exams</span>
+            <span>Student Portal</span>
+            <span>Analytics</span>
+          </div>
+          <span class="card-arrow">Open Product →</span>
+        </div>
+      </a>
 
-<a href="ai-tools/index.html" style="text-decoration:none;color:white">
-<div class="card">
-<h3>🤖 AI Tools</h3>
-<p>Automation and AI-powered business solutions.</p>
-</div>
-</a>
-</div>
-</section>
+      <!-- Billing System -->
+      <a href="billing-system/index.html" class="product-card card-link">
+        <div class="card reveal" data-delay="80">
+          <span class="card-icon">🧾</span>
+          <h3>Billing System</h3>
+          <p>Smart GST-compliant billing and inventory management platform designed for Indian retailers, wholesalers, and service businesses. Generate invoices, track stock, and view reports instantly.</p>
+          <div class="features">
+            <span>GST Billing</span>
+            <span>Inventory</span>
+            <span>Reports</span>
+            <span>Multi-user</span>
+          </div>
+          <span class="card-arrow">Open Product →</span>
+        </div>
+      </a>
 
+      <!-- Resume Builder -->
+      <a href="resume-builder/index.html" class="product-card card-link">
+        <div class="card reveal" data-delay="160">
+          <span class="card-icon">📄</span>
+          <h3>Resume Builder</h3>
+          <p>Modern ATS-friendly resume generation with professionally designed templates. Built for freshers and professionals — export to PDF, share via link, or print directly.</p>
+          <div class="features">
+            <span>ATS-Optimized</span>
+            <span>PDF Export</span>
+            <span>Templates</span>
+            <span>Live Preview</span>
+          </div>
+          <span class="card-arrow">Open Product →</span>
+        </div>
+      </a>
+
+      <!-- AI Tools -->
+      <a href="ai-tools/index.html" class="product-card card-link">
+        <div class="card reveal" data-delay="240">
+          <span class="card-icon">🤖</span>
+          <h3>AI Tools Suite</h3>
+          <p>A growing collection of automation and AI-powered business tools. Eliminate repetitive tasks, automate workflows, and get intelligent insights — without a data science team.</p>
+          <div class="features">
+            <span>Automation</span>
+            <span>AI / ML</span>
+            <span>APIs</span>
+            <span>Integrations</span>
+          </div>
+          <span class="card-arrow">Open Product →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- CUSTOM DEVELOPMENT -->
+  <div class="section">
+    <div class="card reveal" style="padding: 3rem; background: linear-gradient(135deg, rgba(99,179,237,0.06), rgba(79,209,199,0.06)); display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start;">
+      <span class="card-icon" style="font-size: 2.5rem;">⚙️</span>
+      <div>
+        <h3 style="font-family: 'Syne', sans-serif; font-size: 1.6rem; letter-spacing: -0.03em; margin-bottom: 0.75rem;">Need Something Custom?</h3>
+        <p style="color: var(--text-secondary); font-weight: 300; max-width: 540px; line-height: 1.8;">
+          If your business needs a bespoke solution — a unique ERP, a specialized automation pipeline, or a custom web application — our team builds it from scratch to your exact specifications.
+        </p>
+      </div>
+      <div class="btns">
+        <a href="contact.html" class="btn primary">Discuss Your Project →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Bhishmaa Group</div>
+      <div class="footer-copy">© 2026 Bhishmaa Group. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
