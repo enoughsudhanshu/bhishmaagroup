@@ -1,46 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | Bhishmaa Group</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Bhishmaa Group — founded by Enough Sudhanshu, combining AI, software engineering, cloud systems, and automation.">
+  <title>About | Bhishmaa Group</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<section class="hero">
-<div>
-<h1>About Bhishmaa Group</h1>
-<p>
-Bhishmaa Group is a modern software company focused on ERP systems,
-AI tools, automation, and scalable digital solutions.
-</p>
-</div>
-</section>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Bhishmaa Group" onerror="this.style.display='none'">
+        <span>Bhishmaa Group</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-<section>
-<div class="about">
-<div>
-<img src="assets/founder.jpg">
-</div>
+  <!-- PAGE HERO -->
+  <div style="padding: calc(var(--nav-height) + 4rem) 2rem 2rem; max-width: 1280px; margin: 0 auto;">
+    <div class="section-label reveal">Our Story</div>
+    <h1 class="section-title reveal" style="font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -0.04em; margin-top: 0.5rem; line-height: 1.05;">
+      About <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Bhishmaa Group</span>
+    </h1>
+    <p class="reveal" style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin-top: 1rem; font-weight: 300; line-height: 1.8;">
+      A modern software company on a mission to build intelligent, scalable digital systems for the businesses of tomorrow.
+    </p>
+  </div>
 
-<div>
-<h2>Founder</h2>
-<p>
-Founded by Enough Sudhanshu, Bhishmaa Group combines AI,
-software engineering, cloud systems, and automation technologies.
-</p>
+  <div class="section-divider"></div>
 
-<div class="features">
-<span>Python</span>
-<span>Flask</span>
-<span>AI/ML</span>
-<span>PostgreSQL</span>
-<span>Automation</span>
-</div>
-</div>
-</div>
-</section>
+  <!-- FOUNDER -->
+  <div class="section">
+    <div class="about-grid">
+      <div class="about-image-wrap reveal">
+        <img src="assets/founder.jpg" alt="Enough Sudhanshu — Founder" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%230a0f1e%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2280%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>👤</text></svg>'">
+      </div>
+      <div class="about-content">
+        <div class="section-label reveal">Founder</div>
+        <h2 class="reveal">Enough Sudhanshu</h2>
+        <p class="reveal">
+          Bhishmaa Group was founded by Enough Sudhanshu with a singular vision — to bridge the gap between complex enterprise software and the businesses that need it most, without the enterprise price tag or complexity.
+        </p>
+        <p class="reveal">
+          Combining deep expertise in AI/ML, Python, Flask, cloud architecture, and automation engineering, every product at Bhishmaa Group is crafted from first principles — purpose-built, not patched together.
+        </p>
+        <p class="reveal">
+          Based in India, serving businesses across sectors — from schools to retail to enterprise — with software that is fast, reliable, and genuinely useful.
+        </p>
 
+        <div class="tech-grid reveal">
+          <div class="tech-tag">🐍 Python</div>
+          <div class="tech-tag">🌶️ Flask</div>
+          <div class="tech-tag">🤖 AI / ML</div>
+          <div class="tech-tag">🐘 PostgreSQL</div>
+          <div class="tech-tag">⚙️ Automation</div>
+          <div class="tech-tag">☁️ Cloud Systems</div>
+          <div class="tech-tag">🔌 REST APIs</div>
+          <div class="tech-tag">🌐 Web Dev</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- VALUES -->
+  <div class="section">
+    <div class="section-header reveal">
+      <div class="section-label">What Drives Us</div>
+      <h2 class="section-title">Our Core Values</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal" data-delay="0">
+        <span class="card-icon">🎯</span>
+        <h3>Purposeful Engineering</h3>
+        <p>We build software that solves real problems — not feature-bloated tools that impress in demos but frustrate in daily use.</p>
+      </div>
+      <div class="card reveal" data-delay="80">
+        <span class="card-icon">🌱</span>
+        <h3>Built to Scale</h3>
+        <p>From day one, our architecture is designed to grow with your organization — without rewrites or migrations.</p>
+      </div>
+      <div class="card reveal" data-delay="160">
+        <span class="card-icon">🤝</span>
+        <h3>Client Partnership</h3>
+        <p>We treat every engagement as a long-term relationship. Your success is our success, full stop.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="section" style="padding-top: 0;">
+    <div class="card reveal" style="text-align: center; padding: 3.5rem 2rem; background: linear-gradient(135deg, rgba(99,179,237,0.07), rgba(159,122,234,0.07));">
+      <h2 style="font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 1rem;">Ready to build something great?</h2>
+      <p style="color: var(--text-secondary); font-weight: 300; margin-bottom: 2rem; max-width: 460px; margin-left: auto; margin-right: auto; margin-bottom: 2rem;">
+        Let's talk about how Bhishmaa Group can help you build smarter systems.
+      </p>
+      <div class="btns" style="justify-content: center;">
+        <a href="contact.html" class="btn primary">Get in Touch →</a>
+        <a href="products.html" class="btn secondary">See Products</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Bhishmaa Group</div>
+      <div class="footer-copy">© 2026 Bhishmaa Group. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
