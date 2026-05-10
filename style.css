@@ -359,23 +359,8 @@ section {
 /* ===== HERO TITLE ===== */
 
 .hero h1{
-  font-family:'Orbitron',sans-serif;
-
-  font-size: clamp(3rem, 7vw, 6rem);
-
-  font-weight: 900;
-
-  line-height: 1.15;
-
-  letter-spacing: -0.04em;
-
-  margin-bottom: 1.5rem;
-
-  overflow: visible;
-
-  position: relative;
-
-  animation: fade-up 0.8s ease 0.1s both;
+  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+  line-height: 1.02;
 }
 
 /* FIRST LINE */
