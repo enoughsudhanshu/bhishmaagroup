@@ -1,250 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Basic -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO -->
-  <title>Products | Bhishmaa Group</title>
-
-  <meta name="description"
-    content="Bhishmaa Group develops ERP systems, AI-powered software, automation tools, billing systems, SaaS platforms, and enterprise-grade digital solutions for modern businesses.">
-
-  <meta name="keywords"
-    content="Bhishmaa Group, ERP Software, AI Tools, Automation, Billing System, School ERP, SaaS, Software Company, Business Solutions">
-
-  <meta name="author" content="Bhishmaa Group">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://bhishmaagroup.in/">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/logo.png">
-
-  <!-- Theme -->
-  <meta name="theme-color" content="#050810">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Bhishmaa Group | ERP & AI Solutions">
-  <meta property="og:description"
-    content="Building future-ready ERP systems, AI-powered software, and scalable business solutions.">
-
-  <meta property="og:url" content="https://bhishmaagroup.in">
-  <meta property="og:image" content="https://bhishmaagroup.in/assets/logo.png">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bhishmaa Group">
-  <meta name="twitter:description"
-    content="ERP, AI, Automation & Enterprise Software Solutions">
-  <meta name="twitter:image"
-    content="https://bhishmaagroup.in/assets/logo.png">
-
-  <!-- Organization Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Bhishmaa Group",
-    "url": "https://bhishmaagroup.in",
-    "logo": "https://bhishmaagroup.in/assets/logo.png",
-    "description": "ERP, AI, automation and enterprise software solutions.",
-    "founder": {
-      "@type": "Person",
-      "name": "Enough Sudhanshu"
-    },
-    "sameAs": [
-      "https://github.com/enoughsudhanshu/bhishmaagroup"
-    ]
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products | Bhishmaa Group</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  .page-hero {
+    padding: 160px 24px 80px;
+    text-align: center;
+    position: relative; z-index: 1;
   }
-  </script>
-
-  <!-- Website Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Bhishmaa Group",
-    "url": "https://bhishmaagroup.in"
+  .page-hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 800; color: var(--white);
+    margin-bottom: 20px;
   }
-  </script>
+  .page-hero p {
+    font-size: 18px; color: var(--muted);
+    max-width: 600px; margin: 0 auto;
+  }
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  .products-page {
+    padding: 60px 0 120px;
+    position: relative; z-index: 1;
+  }
+  .products-page .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  .product-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .product-card:last-child { border-bottom: none; }
+  .product-card.reverse { direction: rtl; }
+  .product-card.reverse > * { direction: ltr; }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  .product-visual {
+    position: relative;
+  }
+  .product-screen {
+    background: rgba(13,13,43,0.9);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+    transition: transform 0.5s ease;
+  }
+  .product-screen:hover { transform: translateY(-8px) rotateX(3deg); }
 
+  .screen-header {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 20px;
+  }
+  .screen-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .screen-dot:nth-child(1) { background: #ff5f57; }
+  .screen-dot:nth-child(2) { background: #ffbd2e; }
+  .screen-dot:nth-child(3) { background: #28c840; }
+  .screen-title {
+    font-size: 12px; color: var(--muted);
+    margin-left: 8px; font-weight: 500;
+  }
+
+  .screen-stat-row {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    margin-bottom: 16px;
+  }
+  .screen-stat {
+    background: rgba(99,102,241,0.08);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px;
+    text-align: center;
+  }
+  .screen-stat .num {
+    font-family: var(--font-head);
+    font-size: 22px; font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .screen-stat .lbl { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+  .screen-bar-section { margin-top: 8px; }
+  .screen-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .screen-bar-label { font-size: 11px; color: var(--muted); width: 60px; flex-shrink: 0; }
+  .screen-bar-track {
+    flex: 1; height: 6px;
+    background: rgba(99,102,241,0.1);
+    border-radius: 3px; overflow: hidden;
+  }
+  .screen-bar-fill {
+    height: 100%; border-radius: 3px;
+    background: var(--gradient);
+  }
+  .screen-bar-val { font-size: 11px; color: var(--white); font-weight: 600; width: 30px; text-align: right; }
+
+  .product-info h2 {
+    font-family: var(--font-head);
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 800; color: var(--white);
+    margin-bottom: 16px; line-height: 1.2;
+  }
+  .product-info > p {
+    font-size: 16px; color: var(--muted);
+    line-height: 1.8; margin-bottom: 32px;
+  }
+  .product-features-list {
+    display: flex; flex-direction: column; gap: 12px;
+    margin-bottom: 32px;
+  }
+  .pf-item {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 14px; color: var(--text);
+  }
+  .pf-check {
+    width: 22px; height: 22px; flex-shrink: 0;
+    background: rgba(99,102,241,0.15);
+    border: 1px solid rgba(99,102,241,0.3);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+  }
+  .product-price {
+    display: flex; align-items: baseline; gap: 8px;
+    margin-bottom: 24px;
+  }
+  .price-from { font-size: 13px; color: var(--muted); }
+  .price-val {
+    font-family: var(--font-head);
+    font-size: 32px; font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .price-period { font-size: 13px; color: var(--muted); }
+
+  @media (max-width: 900px) {
+    .product-card { grid-template-columns: 1fr; gap: 40px; }
+    .product-card.reverse { direction: ltr; }
+  }
+</style>
 </head>
 <body>
+<canvas id="bg-canvas"></canvas>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursor-trail"></div>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="assets/logo.png" alt="Bhishmaa Group" onerror="this.style.display='none'">
-        <span>Bhishmaa Group</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="dropdown">
-  <a href="#" class="dropbtn">Client Login ▾</a>
-
-  <div class="dropdown-content">
-    <a href="https://app.bhishmaagroup.in">
-      🎓 School ERP
-    </a>
-
-    <a href="https://billing.bhishmaagroup.in">
-      🧾 Billing System
-    </a>
-
-    <a href="https://crm.bhishmaagroup.in">
-      📊 CRM ERP
-    </a>
-
-    <a href="https://hrm.bhishmaagroup.in">
-      👨‍💼 HRM ERP
-    </a>
-
-    <a href="https://ai.bhishmaagroup.in">
-      🤖 AI Tools
-    </a>
-  </div>
-</li>
-      </ul>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- PAGE HERO -->
-  <div style="padding: calc(var(--nav-height) + 4rem) 2rem 2rem; max-width: 1280px; margin: 0 auto;">
-    <div class="section-label reveal">Our Portfolio</div>
-    <h1 class="section-title reveal" style="font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -0.04em; margin-top: 0.5rem; line-height: 1.05;">
-      Software <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Products</span>
-    </h1>
-    <p class="reveal" style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin-top: 1rem; font-weight: 300; line-height: 1.8;">
-      Each product is purpose-built, fully customizable, and engineered to grow with your business.
-    </p>
-  </div>
-
-  <div class="section-divider"></div>
-
-  <!-- PRODUCTS GRID -->
-  <div class="section">
-    <div class="grid">
-
-      <!-- School ERP -->
-      <a href="school-erp/index.html" class="product-card card-link">
-        <div class="card reveal" data-delay="0">
-          <span class="card-icon">🎓</span>
-          <h3>School ERP</h3>
-          <p>A complete digital school management ecosystem. Manage attendance, fee collection, exam schedules, student performance, and staff payroll from a single intelligent dashboard.</p>
-          <div class="features">
-            <span>Attendance</span>
-            <span>Fee Management</span>
-            <span>Exams</span>
-            <span>Student Portal</span>
-            <span>Analytics</span>
-          </div>
-          <span class="card-arrow">Open Product →</span>
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <div class="logo-cube">
+          <div class="face front">B</div>
+          <div class="face back">G</div>
+          <div class="face left">B</div>
+          <div class="face right">G</div>
+          <div class="face top">B</div>
+          <div class="face bottom">G</div>
         </div>
-      </a>
-
-      <!-- Billing System -->
-      <a href="billing-system/index.html" class="product-card card-link">
-        <div class="card reveal" data-delay="80">
-          <span class="card-icon">🧾</span>
-          <h3>Billing System</h3>
-          <p>Smart GST-compliant billing and inventory management platform designed for Indian retailers, wholesalers, and service businesses. Generate invoices, track stock, and view reports instantly.</p>
-          <div class="features">
-            <span>GST Billing</span>
-            <span>Inventory</span>
-            <span>Reports</span>
-            <span>Multi-user</span>
-          </div>
-          <span class="card-arrow">Open Product →</span>
-        </div>
-      </a>
-
-      <!-- Resume Builder -->
-      <a href="resume-builder/index.html" class="product-card card-link">
-        <div class="card reveal" data-delay="160">
-          <span class="card-icon">📄</span>
-          <h3>Resume Builder</h3>
-          <p>Modern ATS-friendly resume generation with professionally designed templates. Built for freshers and professionals — export to PDF, share via link, or print directly.</p>
-          <div class="features">
-            <span>ATS-Optimized</span>
-            <span>PDF Export</span>
-            <span>Templates</span>
-            <span>Live Preview</span>
-          </div>
-          <span class="card-arrow">Open Product →</span>
-        </div>
-      </a>
-
-      <!-- AI Tools -->
-      <a href="ai-tools/index.html" class="product-card card-link">
-        <div class="card reveal" data-delay="240">
-          <span class="card-icon">🤖</span>
-          <h3>AI Tools Suite</h3>
-          <p>A growing collection of automation and AI-powered business tools. Eliminate repetitive tasks, automate workflows, and get intelligent insights — without a data science team.</p>
-          <div class="features">
-            <span>Automation</span>
-            <span>AI / ML</span>
-            <span>APIs</span>
-            <span>Integrations</span>
-          </div>
-          <span class="card-arrow">Open Product →</span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-
-  <div class="section-divider"></div>
-
-  <!-- CUSTOM DEVELOPMENT -->
-  <div class="section">
-    <div class="card reveal" style="padding: 3rem; background: linear-gradient(135deg, rgba(99,179,237,0.06), rgba(79,209,199,0.06)); display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start;">
-      <span class="card-icon" style="font-size: 2.5rem;">⚙️</span>
-      <div>
-        <h3 style="font-family: 'Syne', sans-serif; font-size: 1.6rem; letter-spacing: -0.03em; margin-bottom: 0.75rem;">Need Something Custom?</h3>
-        <p style="color: var(--text-secondary); font-weight: 300; max-width: 540px; line-height: 1.8;">
-          If your business needs a bespoke solution — a unique ERP, a specialized automation pipeline, or a custom web application — our team builds it from scratch to your exact specifications.
-        </p>
       </div>
-      <div class="btns">
-        <a href="contact.html" class="btn primary">Discuss Your Project →</a>
+      <span class="logo-text">Bhishmaa<span>Group</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="products.html" class="nav-link active">Products</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get Demo</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<div class="page-hero">
+  <div class="section-tag" data-aos="fade-down">All Products</div>
+  <h1 data-aos="fade-up"><span class="gradient-text">Powerful Software</span><br>For Every Business</h1>
+  <p data-aos="fade-up" data-aos-delay="100">From schools to enterprises — every product is designed for Indian businesses with love and precision.</p>
+</div>
+
+<div class="products-page">
+  <div class="container">
+
+    <!-- School ERP -->
+    <div class="product-card" data-aos="fade-up">
+      <div class="product-visual">
+        <div class="product-screen">
+          <div class="screen-header">
+            <div class="screen-dot"></div>
+            <div class="screen-dot"></div>
+            <div class="screen-dot"></div>
+            <span class="screen-title">School ERP Dashboard</span>
+          </div>
+          <div class="screen-stat-row">
+            <div class="screen-stat"><div class="num">1,240</div><div class="lbl">Students</div></div>
+            <div class="screen-stat"><div class="num">94%</div><div class="lbl">Attendance</div></div>
+            <div class="screen-stat"><div class="num">₹2.4L</div><div class="lbl">Fees Collected</div></div>
+          </div>
+          <div class="screen-bar-section">
+            <div class="screen-bar-row">
+              <div class="screen-bar-label">Class 10</div>
+              <div class="screen-bar-track"><div class="screen-bar-fill" style="width:92%"></div></div>
+              <div class="screen-bar-val">92%</div>
+            </div>
+            <div class="screen-bar-row">
+              <div class="screen-bar-label">Class 11</div>
+              <div class="screen-bar-track"><div class="screen-bar-fill" style="width:87%"></div></div>
+              <div class="screen-bar-val">87%</div>
+            </div>
+            <div class="screen-bar-row">
+              <div class="screen-bar-label">Class 12</div>
+              <div class="screen-bar-track"><div class="screen-bar-fill" style="width:95%"></div></div>
+              <div class="screen-bar-val">95%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-info" data-aos="fade-left" data-aos-delay="100">
+        <div class="section-tag">🎓 School ERP</div>
+        <h2>Complete School Management System</h2>
+        <p>A comprehensive ERP solution designed specifically for schools. Manage students, staff, fees, exams, and communication — all in one powerful platform.</p>
+        <div class="product-features-list">
+          <div class="pf-item"><div class="pf-check">✓</div> Automated Attendance with Biometric Integration</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Online Fee Collection with Payment Gateway</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Exam Management & Result Portal</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Parent-Teacher Communication App</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Real-time Analytics Dashboard</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Library & Transport Management</div>
+        </div>
+        <div class="product-price">
+          <span class="price-from">Starting from</span>
+          <span class="price-val">₹4,999</span>
+          <span class="price-period">/month</span>
+        </div>
+        <a href="contact.html" class="btn-primary">
+          <span>Request Demo</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
-  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">Bhishmaa Group</div>
-      <div class="footer-copy">© 2026 Bhishmaa Group. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="products.html">Products</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+    <!-- Billing System -->
+    <div class="product-card reverse" data-aos="fade-up">
+      <div class="product-info" data-aos="fade-right" data-aos-delay="100">
+        <div class="section-tag">🧾 Billing System</div>
+        <h2>GST-Compliant Billing & Inventory</h2>
+        <p>A robust billing solution for retail, wholesale, and service businesses. Generate GST invoices, manage inventory, and track business performance in real time.</p>
+        <div class="product-features-list">
+          <div class="pf-item"><div class="pf-check">✓</div> One-click GST Invoice Generation</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Multi-location Inventory Management</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Barcode & QR Code Support</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Profit & Loss Reports</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Supplier & Customer Ledger</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Offline Mode with Sync</div>
+        </div>
+        <div class="product-price">
+          <span class="price-from">Starting from</span>
+          <span class="price-val">₹1,999</span>
+          <span class="price-period">/month</span>
+        </div>
+        <a href="contact.html" class="btn-primary">
+          <span>Request Demo</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="product-visual">
+        <div class="product-screen">
+          <div class="screen-header">
+            <div class="screen-dot"></div>
+            <div class="screen-dot"></div>
+            <div class="screen-dot"></div>
+            <span class="screen-title">Billing Dashboard</span>
+          </div>
+          <div class="screen-stat-row">
+            <div class="screen-stat"><div class="num">₹84K</div><div class="lbl">Today's Sales</div></div>
+            <div class="screen-stat"><div class="num">127</div><div class="lbl">Invoices</div></div>
+            <div class="screen-stat"><div class="num">18%</div><div class="lbl">GST Saved</div></div>
+          </div>
+          <div class="screen-bar-section">
+            <div class="screen-bar-row">
+              <div class="screen-bar-label">Electronics</div>
+              <div class="screen-bar-track"><div class="screen-bar-fill" style="width:78%"></div></div>
+              <div class="screen-bar-val">₹42K</div>
+            </div>
+            <div class="screen-bar-row">
+              <div class="screen-bar-label">Clothing</div>
+              <div class="screen-bar-track"><div class="screen-bar-fill" style="width:55%"></div></div>
+              <div class="screen-bar-val">₹28K</div>
+            </div>
+            <div class="screen-bar-row">
+              <div class="screen-bar-label">Food</div>
+              <div class="screen-bar-track"><div class="screen-bar-fill" style="width:30%"></div></div>
+              <div class="screen-bar-val">₹14K</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <!-- Resume Builder -->
+    <div class="product-card" data-aos="fade-up">
+      <div class="product-visual">
+        <div class="product-screen">
+          <div class="screen-header">
+            <div class="screen-dot"></div>
+            <div class="screen-dot"></div>
+            <div class="screen-dot"></div>
+            <span class="screen-title">Resume Builder</span>
+          </div>
+          <div class="screen-stat-row">
+            <div class="screen-stat"><div class="num">50+</div><div class="lbl">Templates</div></div>
+            <div class="screen-stat"><div class="num">ATS</div><div class="lbl">Optimized</div></div>
+            <div class="screen-stat"><div class="num">PDF</div><div class="lbl">Export</div></div>
+          </div>
+          <div class="screen-bar-section">
+            <div class="screen-bar-row">
+              <div class="screen-bar-label">ATS Score</div>
+              <div class="screen-bar-track"><div class="screen-bar-fill" style="width:95%"></div></div>
+              <div class="screen-bar-val">95%</div>
+            </div>
+            <div class="screen-bar-row">
+              <div class="screen-bar-label">Keywords</div>
+              <div class="screen-bar-track"><div class="screen-bar-fill" style="width:88%"></div></div>
+              <div class="screen-bar-val">88%</div>
+            </div>
+            <div class="screen-bar-row">
+              <div class="screen-bar-label">Format</div>
+              <div class="screen-bar-track"><div class="screen-bar-fill" style="width:100%"></div></div>
+              <div class="screen-bar-val">✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-info" data-aos="fade-left" data-aos-delay="100">
+        <div class="section-tag">📄 Resume Builder</div>
+        <h2>ATS-Friendly Resume Builder</h2>
+        <p>Create professional, ATS-optimized resumes in minutes. Choose from 50+ beautiful templates designed to get you noticed by top recruiters and hiring managers.</p>
+        <div class="product-features-list">
+          <div class="pf-item"><div class="pf-check">✓</div> 50+ Professional Templates</div>
+          <div class="pf-item"><div class="pf-check">✓</div> ATS Score Analyzer</div>
+          <div class="pf-item"><div class="pf-check">✓</div> One-click PDF Export</div>
+          <div class="pf-item"><div class="pf-check">✓</div> AI-powered Content Suggestions</div>
+          <div class="pf-item"><div class="pf-check">✓</div> LinkedIn Profile Sync</div>
+        </div>
+        <div class="product-price">
+          <span class="price-from">Starting from</span>
+          <span class="price-val">₹299</span>
+          <span class="price-period">/month</span>
+        </div>
+        <a href="contact.html" class="btn-primary">
+          <span>Get Started</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- AI Tools -->
+    <div class="product-card reverse" data-aos="fade-up">
+      <div class="product-info" data-aos="fade-right" data-aos-delay="100">
+        <div class="section-tag">🤖 AI Tools</div>
+        <h2>AI-Powered Business Automation</h2>
+        <p>Next-generation AI tools to automate your business processes. From intelligent chatbots to predictive analytics — harness the power of AI for your enterprise.</p>
+        <div class="product-features-list">
+          <div class="pf-item"><div class="pf-check">✓</div> Custom AI Chatbots</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Predictive Analytics Engine</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Document Processing AI</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Smart Workflow Automation</div>
+          <div class="pf-item"><div class="pf-check">✓</div> Natural Language Reports</div>
+        </div>
+        <div class="product-price">
+          <span class="price-from">Starting from</span>
+          <span class="price-val">₹9,999</span>
+          <span class="price-period">/month</span>
+        </div>
+        <a href="contact.html" class="btn-primary">
+          <span>Request Demo</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="product-visual">
+        <div class="product-screen">
+          <div class="screen-header">
+            <div class="screen-dot"></div>
+            <div class="screen-dot"></div>
+            <div class="screen-dot"></div>
+            <span class="screen-title">AI Analytics</span>
+          </div>
+          <div class="screen-stat-row">
+            <div class="screen-stat"><div class="num">98%</div><div class="lbl">Accuracy</div></div>
+            <div class="screen-stat"><div class="num">3.2x</div><div class="lbl">Efficiency</div></div>
+            <div class="screen-stat"><div class="num">24/7</div><div class="lbl">Active</div></div>
+          </div>
+          <div class="screen-bar-section">
+            <div class="screen-bar-row">
+              <div class="screen-bar-label">Automation</div>
+              <div class="screen-bar-track"><div class="screen-bar-fill" style="width:98%"></div></div>
+              <div class="screen-bar-val">98%</div>
+            </div>
+            <div class="screen-bar-row">
+              <div class="screen-bar-label">Accuracy</div>
+              <div class="screen-bar-track"><div class="screen-bar-fill" style="width:96%"></div></div>
+              <div class="screen-bar-val">96%</div>
+            </div>
+            <div class="screen-bar-row">
+              <div class="screen-bar-label">Speed</div>
+              <div class="screen-bar-track"><div class="screen-bar-fill" style="width:100%"></div></div>
+              <div class="screen-bar-val">3.2x</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<section class="cta-section" data-aos="fade-up">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-glow"></div>
+      <div class="cta-content">
+        <h2>Not Sure Which Product to Choose?</h2>
+        <p>Our experts will help you pick the right solution for your business needs.</p>
+        <div class="cta-btns">
+          <a href="contact.html" class="btn-primary">
+            <span>Talk to an Expert</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-flex;">
+          <div class="logo-icon small"><div class="logo-cube"><div class="face front">B</div><div class="face back">G</div><div class="face left">B</div><div class="face right">G</div><div class="face top">B</div><div class="face bottom">G</div></div></div>
+          <span class="logo-text">Bhishmaa<span>Group</span></span>
+        </a>
+        <p>Building enterprise-grade software solutions for modern Indian businesses.</p>
+      </div>
+      <div class="footer-links"><h4>Products</h4><ul><li><a href="products.html">School ERP</a></li><li><a href="products.html">Billing System</a></li><li><a href="products.html">Resume Builder</a></li><li><a href="products.html">AI Tools</a></li></ul></div>
+      <div class="footer-links"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li></ul></div>
+      <div class="footer-links"><h4>Contact</h4><ul><li><a href="mailto:info@bhishmaagroup.com">info@bhishmaagroup.com</a></li><li><a href="#">+91 XXXXX XXXXX</a></li><li><a href="#">India</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Bhishmaa Group. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="GitHub">gh</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
