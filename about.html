@@ -1,233 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Basic -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO -->
-  <title>About | Bhishmaa Group</title>
-
-  <meta name="description"
-    content="Bhishmaa Group develops ERP systems, AI-powered software, automation tools, billing systems, SaaS platforms, and enterprise-grade digital solutions for modern businesses.">
-
-  <meta name="keywords"
-    content="Bhishmaa Group, ERP Software, AI Tools, Automation, Billing System, School ERP, SaaS, Software Company, Business Solutions">
-
-  <meta name="author" content="Bhishmaa Group">
-  <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://bhishmaagroup.in/">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/logo.png">
-
-  <!-- Theme -->
-  <meta name="theme-color" content="#050810">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Bhishmaa Group | ERP & AI Solutions">
-  <meta property="og:description"
-    content="Building future-ready ERP systems, AI-powered software, and scalable business solutions.">
-
-  <meta property="og:url" content="https://bhishmaagroup.in">
-  <meta property="og:image" content="https://bhishmaagroup.in/assets/logo.png">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bhishmaa Group">
-  <meta name="twitter:description"
-    content="ERP, AI, Automation & Enterprise Software Solutions">
-  <meta name="twitter:image"
-    content="https://bhishmaagroup.in/assets/logo.png">
-
-  <!-- Organization Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Bhishmaa Group",
-    "url": "https://bhishmaagroup.in",
-    "logo": "https://bhishmaagroup.in/assets/logo.png",
-    "description": "ERP, AI, automation and enterprise software solutions.",
-    "founder": {
-      "@type": "Person",
-      "name": "Enough Sudhanshu"
-    },
-    "sameAs": [
-      "https://github.com/enoughsudhanshu/bhishmaagroup"
-    ]
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Bhishmaa Group</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  .page-hero {
+    padding: 160px 24px 80px;
+    text-align: center;
+    position: relative; z-index: 1;
   }
-  </script>
-
-  <!-- Website Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Bhishmaa Group",
-    "url": "https://bhishmaagroup.in"
+  .page-hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 800; color: var(--white); margin-bottom: 20px;
   }
-  </script>
+  .page-hero p { font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto; }
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  .about-content {
+    position: relative; z-index: 1;
+    padding: 40px 0 120px;
+  }
+  .about-content .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  .mission-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+    align-items: center; padding: 60px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .mission-text h2 {
+    font-family: var(--font-head);
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 800; color: var(--white); margin-bottom: 20px;
+  }
+  .mission-text p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  .mission-visual {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .mission-stat-card {
+    background: rgba(13,13,43,0.9);
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .mission-stat-card:hover { transform: translateY(-6px); border-color: rgba(99,102,241,0.4); }
+  .mscard-icon { font-size: 32px; margin-bottom: 12px; }
+  .mscard-num {
+    font-family: var(--font-head);
+    font-size: 36px; font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 4px;
+  }
+  .mscard-label { font-size: 13px; color: var(--muted); }
 
-</head><body>
+  .values-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+  .values-section h2 {
+    font-family: var(--font-head);
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 800; color: var(--white);
+    margin-bottom: 48px; text-align: center;
+  }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .value-card {
+    background: rgba(13,13,43,0.8);
+    border: 1px solid var(--border);
+    border-radius: 20px; padding: 36px 28px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    position: relative; overflow: hidden;
+  }
+  .value-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--gradient); opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .value-card:hover { transform: translateY(-8px); border-color: rgba(99,102,241,0.3); }
+  .value-card:hover::before { opacity: 1; }
+  .value-icon { font-size: 36px; margin-bottom: 16px; }
+  .value-card h3 {
+    font-family: var(--font-head);
+    font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px;
+  }
+  .value-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="assets/logo.png" alt="Bhishmaa Group" onerror="this.style.display='none'">
-        <span>Bhishmaa Group</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="dropdown">
-  <a href="#" class="dropbtn">Client Login ▾</a>
+  .team-section { padding: 80px 0; }
+  .team-section h2 {
+    font-family: var(--font-head);
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 800; color: var(--white);
+    margin-bottom: 16px; text-align: center;
+  }
+  .team-section > .container > p {
+    text-align: center; font-size: 16px; color: var(--muted); margin-bottom: 48px;
+  }
+  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+  .team-card {
+    background: rgba(13,13,43,0.8);
+    border: 1px solid var(--border);
+    border-radius: 20px; padding: 32px 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .team-card:hover { transform: translateY(-6px); }
+  .team-avatar {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-head); font-size: 24px; font-weight: 800;
+    color: white; margin: 0 auto 16px;
+  }
+  .team-card h4 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .team-card p { font-size: 13px; color: var(--muted); }
 
-  <div class="dropdown-content">
-    <a href="https://app.bhishmaagroup.in">
-      🎓 School ERP
+  @media (max-width: 900px) {
+    .mission-grid { grid-template-columns: 1fr; gap: 40px; }
+    .values-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .values-grid { grid-template-columns: 1fr; }
+    .mission-visual { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursor-trail"></div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><div class="logo-cube"><div class="face front">B</div><div class="face back">G</div><div class="face left">B</div><div class="face right">G</div><div class="face top">B</div><div class="face bottom">G</div></div></div>
+      <span class="logo-text">Bhishmaa<span>Group</span></span>
     </a>
-
-    <a href="https://billing.bhishmaagroup.in">
-      🧾 Billing System
-    </a>
-
-    <a href="https://crm.bhishmaagroup.in">
-      📊 CRM ERP
-    </a>
-
-    <a href="https://hrm.bhishmaagroup.in">
-      👨‍💼 HRM ERP
-    </a>
-
-    <a href="https://ai.bhishmaagroup.in">
-      🤖 AI Tools
-    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="products.html" class="nav-link">Products</a></li>
+      <li><a href="about.html" class="nav-link active">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get Demo</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </div>
-</li>
-      </ul>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
 
-  <!-- PAGE HERO -->
-  <div style="padding: calc(var(--nav-height) + 4rem) 2rem 2rem; max-width: 1280px; margin: 0 auto;">
-    <div class="section-label reveal">Our Story</div>
-    <h1 class="section-title reveal" style="font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -0.04em; margin-top: 0.5rem; line-height: 1.05;">
-      About <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Bhishmaa Group</span>
-    </h1>
-    <p class="reveal" style="color: var(--text-secondary); font-size: 0.8rem; max-width: 400px; margin-top: 1rem; font-weight: 200; line-height: 1.4;">
-      A modern software company on a mission to build intelligent, scalable digital systems for the businesses of tomorrow.
-    </p>
-  </div>
+<div class="page-hero">
+  <div class="section-tag" data-aos="fade-down">About Us</div>
+  <h1 data-aos="fade-up">We Build Software That <span class="gradient-text">Transforms</span> Businesses</h1>
+  <p data-aos="fade-up" data-aos-delay="100">A passionate team of engineers and designers dedicated to creating enterprise software for Indian businesses.</p>
+</div>
 
-  <div class="section-divider"></div>
+<div class="about-content">
+  <div class="container">
 
-  <!-- FOUNDER -->
-  <div class="section">
-    <div class="about-grid">
-      <div class="about-image-wrap reveal">
-        <img src="assets/founder.jpg" alt="Enough Sudhanshu — Founder" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%230a0f1e%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2280%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>👤</text></svg>'">
+    <div class="mission-grid" data-aos="fade-up">
+      <div class="mission-text">
+        <div class="section-tag">Our Mission</div>
+        <h2>Empowering Indian <span class="gradient-text">Businesses</span> with World-Class Software</h2>
+        <p>Bhishmaa Group was founded with one goal: to build software that solves real problems faced by Indian businesses — from small schools to large enterprises.</p>
+        <p>We believe that every business, regardless of size, deserves access to powerful, affordable, and easy-to-use software that helps them grow and compete in the digital age.</p>
+        <p>Our team brings together the best of engineering talent and deep domain expertise to create solutions that are not just technologically advanced but truly useful in the Indian context.</p>
       </div>
-      <div class="about-content">
-        <div class="section-label reveal">Founder</div>
-        <h2 class="reveal">Enough Sudhanshu</h2>
-        <p class="reveal">
-          Bhishmaa Group was founded by Enough Sudhanshu with a singular vision — to bridge the gap between complex enterprise software and the businesses that need it most, without the enterprise price tag or complexity.
-        </p>
-        <p class="reveal">
-          Combining deep expertise in AI/ML, Python, Flask, cloud architecture, and automation engineering, every product at Bhishmaa Group is crafted from first principles — purpose-built, not patched together.
-        </p>
-        <p class="reveal">
-          Based in India, serving businesses across sectors — from schools to retail to enterprise — with software that is fast, reliable, and genuinely useful.
-        </p>
+      <div class="mission-visual">
+        <div class="mission-stat-card">
+          <div class="mscard-icon">🏢</div>
+          <div class="mscard-num">500+</div>
+          <div class="mscard-label">Businesses Served</div>
+        </div>
+        <div class="mission-stat-card">
+          <div class="mscard-icon">🎓</div>
+          <div class="mscard-num">200+</div>
+          <div class="mscard-label">Schools Using ERP</div>
+        </div>
+        <div class="mission-stat-card">
+          <div class="mscard-icon">👥</div>
+          <div class="mscard-num">50K+</div>
+          <div class="mscard-label">Active Users</div>
+        </div>
+        <div class="mission-stat-card">
+          <div class="mscard-icon">⭐</div>
+          <div class="mscard-num">4.9</div>
+          <div class="mscard-label">Average Rating</div>
+        </div>
+      </div>
+    </div>
 
-        <div class="tech-grid reveal">
-          <div class="tech-tag">🐍 Python</div>
-          <div class="tech-tag">🌶️ Flask</div>
-          <div class="tech-tag">🤖 AI / ML</div>
-          <div class="tech-tag">🐘 PostgreSQL</div>
-          <div class="tech-tag">⚙️ Automation</div>
-          <div class="tech-tag">☁️ Cloud Systems</div>
-          <div class="tech-tag">🔌 REST APIs</div>
-          <div class="tech-tag">🌐 Web Dev</div>
+    <div class="values-section">
+      <h2 data-aos="fade-up">Our <span class="gradient-text">Core Values</span></h2>
+      <div class="values-grid">
+        <div class="value-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="value-icon">💡</div>
+          <h3>Innovation First</h3>
+          <p>We constantly push the boundaries of what's possible, integrating the latest technologies to deliver cutting-edge solutions that stay ahead of the curve.</p>
+        </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="value-icon">🤝</div>
+          <h3>Customer Success</h3>
+          <p>Your success is our success. We go beyond just delivering software — we partner with you to ensure your business achieves its full potential.</p>
+        </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="value-icon">🔒</div>
+          <h3>Trust & Security</h3>
+          <p>We handle your data with the highest standards of security and privacy. Our systems are built with enterprise-grade protection from the ground up.</p>
+        </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="value-icon">⚡</div>
+          <h3>Speed & Reliability</h3>
+          <p>We build for performance. Our software is optimized to run fast even on low-bandwidth connections — because we know Indian business realities.</p>
+        </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="value-icon">🌍</div>
+          <h3>Accessibility</h3>
+          <p>Great software should be affordable. We offer flexible pricing that makes powerful enterprise tools accessible to businesses of every size.</p>
+        </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="value-icon">🔄</div>
+          <h3>Continuous Improvement</h3>
+          <p>We listen to our users and continuously improve our products. Every update is driven by real feedback from real businesses using our software daily.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-section">
+      <h2 data-aos="fade-up">Meet the <span class="gradient-text">Team</span></h2>
+      <p data-aos="fade-up" data-aos-delay="100">A talented group of engineers, designers, and domain experts passionate about building great software.</p>
+      <div class="team-grid">
+        <div class="team-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="team-avatar">S</div>
+          <h4>Sudhanshu</h4>
+          <p>Founder & CEO</p>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="team-avatar">A</div>
+          <h4>Anjali</h4>
+          <p>CTO & Lead Engineer</p>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-avatar">R</div>
+          <h4>Rahul</h4>
+          <p>Head of Design</p>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="team-avatar">P</div>
+          <h4>Priya</h4>
+          <p>Product Manager</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<section class="cta-section" data-aos="fade-up">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-glow"></div>
+      <div class="cta-content">
+        <h2>Want to Work With Us?</h2>
+        <p>Join the Bhishmaa Group team and help build the future of Indian enterprise software.</p>
+        <div class="cta-btns">
+          <a href="contact.html" class="btn-primary">
+            <span>Get in Touch</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="products.html" class="btn-ghost">View Products</a>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="section-divider"></div>
-
-  <!-- VALUES -->
-  <div class="section">
-    <div class="section-header reveal">
-      <div class="section-label">What Drives Us</div>
-      <h2 class="section-title">Our Core Values</h2>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-flex;">
+          <div class="logo-icon small"><div class="logo-cube"><div class="face front">B</div><div class="face back">G</div><div class="face left">B</div><div class="face right">G</div><div class="face top">B</div><div class="face bottom">G</div></div></div>
+          <span class="logo-text">Bhishmaa<span>Group</span></span>
+        </a>
+        <p>Building enterprise-grade software solutions for modern Indian businesses.</p>
+      </div>
+      <div class="footer-links"><h4>Products</h4><ul><li><a href="products.html">School ERP</a></li><li><a href="products.html">Billing System</a></li><li><a href="products.html">Resume Builder</a></li><li><a href="products.html">AI Tools</a></li></ul></div>
+      <div class="footer-links"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li></ul></div>
+      <div class="footer-links"><h4>Contact</h4><ul><li><a href="mailto:info@bhishmaagroup.com">info@bhishmaagroup.com</a></li><li><a href="#">+91 XXXXX XXXXX</a></li><li><a href="#">India</a></li></ul></div>
     </div>
-    <div class="grid grid-3">
-      <div class="card reveal" data-delay="0">
-        <span class="card-icon">🎯</span>
-        <h3>Purposeful Engineering</h3>
-        <p>We build software that solves real problems — not feature-bloated tools that impress in demos but frustrate in daily use.</p>
-      </div>
-      <div class="card reveal" data-delay="80">
-        <span class="card-icon">🌱</span>
-        <h3>Built to Scale</h3>
-        <p>From day one, our architecture is designed to grow with your organization — without rewrites or migrations.</p>
-      </div>
-      <div class="card reveal" data-delay="160">
-        <span class="card-icon">🤝</span>
-        <h3>Client Partnership</h3>
-        <p>We treat every engagement as a long-term relationship. Your success is our success, full stop.</p>
+    <div class="footer-bottom">
+      <p>© 2026 Bhishmaa Group. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="GitHub">gh</a>
       </div>
     </div>
   </div>
+</footer>
 
-  <!-- CTA -->
-  <div class="section" style="padding-top: 0;">
-    <div class="card reveal" style="text-align: center; padding: 3.5rem 2rem; background: linear-gradient(135deg, rgba(99,179,237,0.07), rgba(159,122,234,0.07));">
-      <h2 style="font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 1rem;">Ready to build something great?</h2>
-      <p style="color: var(--text-secondary); font-weight: 300; margin-bottom: 2rem; max-width: 460px; margin-left: auto; margin-right: auto; margin-bottom: 2rem;">
-        Let's talk about how Bhishmaa Group can help you build smarter systems.
-      </p>
-      <div class="btns" style="justify-content: center;">
-        <a href="contact.html" class="btn primary">Get in Touch →</a>
-        <a href="products.html" class="btn secondary">See Products</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">Bhishmaa Group</div>
-      <div class="footer-copy">© 2026 Bhishmaa Group. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="products.html">Products</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
