@@ -1,691 +1,532 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bhishmaa Group - Enterprise-grade software solutions for schools, hospitals, businesses and modern organizations. Building the future of digital infrastructure in India." />
-  <meta name="keywords" content="Bhishmaa Group, School ERP, Hospital Management, HRMS, CRM, Billing Software, Indian Software Company, ERP Solutions" />
-  <meta name="author" content="Bhishmaa Group" />
-  <meta property="og:title" content="Bhishmaa Group — Building the Future of Digital Infrastructure" />
-  <meta property="og:description" content="Enterprise-grade software solutions for schools, hospitals, businesses and modern organizations." />
-  <meta property="og:url" content="https://bhishmaagroup.in" />
-  <title>Bhishmaa Group — Building the Future of Digital Infrastructure</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <title>Bhishmaa Group</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="loader-inner">
-      <div class="loader-cube">
-        <div class="cube-face front"></div>
-        <div class="cube-face back"></div>
-        <div class="cube-face left"></div>
-        <div class="cube-face right"></div>
-        <div class="cube-face top"></div>
-        <div class="cube-face bottom"></div>
-      </div>
-      <div class="loader-text">BHISHMAA GROUP</div>
-      <div class="loader-bar"><div class="loader-fill"></div></div>
-    </div>
-  </div>
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
 
   <!-- NAVBAR -->
-  <nav id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">
-        <div class="logo-cube-wrap">
-          <div class="logo-cube">
-            <div class="lc-face lc-front"></div>
-            <div class="lc-face lc-back"></div>
-            <div class="lc-face lc-left"></div>
-            <div class="lc-face lc-right"></div>
-            <div class="lc-face lc-top"></div>
-            <div class="lc-face lc-bottom"></div>
-          </div>
-        </div>
-        <span class="logo-text">Bhishmaa<span class="logo-accent">Group</span></span>
-      </a>
+  <header class="navbar">
 
-      <ul class="nav-links">
-        <li><a href="#hero" class="nav-link">Home</a></li>
-        <li><a href="#products" class="nav-link">Products</a></li>
-        <li><a href="#solutions" class="nav-link">Solutions</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
+    <div class="logo-wrap">
+      <img src="logo.png" alt="Bhishmaa Group" class="logo-img">
 
-      <div class="nav-right">
-        <div class="client-login-wrap" id="clientLoginWrap">
-          <button class="client-login-btn" id="clientLoginBtn">
-            <span class="btn-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </span>
-            Client Login
-            <span class="chevron">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </span>
-          </button>
-
-          <div class="login-dropdown" id="loginDropdown">
-            <div class="dropdown-header">
-              <span>Select Your Portal</span>
-              <p>Choose the platform to access</p>
-            </div>
-            <div class="dropdown-grid">
-              <a href="erp.bhishmaagroup.in" class="dropdown-item">
-                <div class="di-icon" style="--c:#6366f1">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                </div>
-                <div class="di-content">
-                  <strong>School ERP</strong>
-                  <span>Manage academics, attendance &amp; fees</span>
-                </div>
-                <span class="di-arrow">→</span>
-              </a>
-              <a href="#" class="dropdown-item">
-                <div class="di-icon" style="--c:#10b981">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                </div>
-                <div class="di-content">
-                  <strong>Billing Software</strong>
-                  <span>GST invoicing &amp; payment tracking</span>
-                </div>
-                <span class="di-arrow">→</span>
-              </a>
-              <a href="#" class="dropdown-item">
-                <div class="di-icon" style="--c:#ef4444">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.27 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
-                </div>
-                <div class="di-content">
-                  <strong>Hospital ERP</strong>
-                  <span>Patient records &amp; ward management</span>
-                </div>
-                <span class="di-arrow">→</span>
-              </a>
-              <a href="#" class="dropdown-item">
-                <div class="di-icon" style="--c:#f59e0b">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <div class="di-content">
-                  <strong>HRMS</strong>
-                  <span>Payroll, leaves &amp; employee lifecycle</span>
-                </div>
-                <span class="di-arrow">→</span>
-              </a>
-              <a href="#" class="dropdown-item">
-                <div class="di-icon" style="--c:#8b5cf6">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-                </div>
-                <div class="di-content">
-                  <strong>CRM Platform</strong>
-                  <span>Leads, pipeline &amp; customer insights</span>
-                </div>
-                <span class="di-arrow">→</span>
-              </a>
-              <a href="#" class="dropdown-item">
-                <div class="di-icon" style="--c:#06b6d4">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-                </div>
-                <div class="di-content">
-                  <strong>Inventory System</strong>
-                  <span>Stock, warehousing &amp; supply chain</span>
-                </div>
-                <span class="di-arrow">→</span>
-              </a>
-            </div>
-            <div class="dropdown-footer">
-              <span>Need help? <a href="#contact">Contact Support →</a></span>
-            </div>
-          </div>
-        </div>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
+      <div>
+        <h2>BHISHMAA</h2>
+        <p>GROUP / IN</p>
       </div>
     </div>
 
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#hero">Home</a>
+    <nav>
+      <a href="#home">Home</a>
       <a href="#products">Products</a>
       <a href="#solutions">Solutions</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <div class="mobile-portals">
-        <p>Client Portals</p>
-        <a href="#">School ERP</a>
-        <a href="#">Billing Software</a>
-        <a href="#">Hospital ERP</a>
-        <a href="#">HRMS</a>
-        <a href="#">CRM</a>
-        <a href="#">Inventory</a>
+    </nav>
+
+    <div class="dropdown-wrap">
+
+      <button class="login-btn" id="loginBtn">
+        Client Login
+      </button>
+
+      <div class="mega-menu" id="megaMenu">
+
+        <div class="menu-head">
+          <div>
+            <span>SIGN IN TO YOUR PORTAL</span>
+            <h3>Choose your platform</h3>
+          </div>
+
+          <p>06 PRODUCTS</p>
+        </div>
+
+        <div class="portal-grid">
+
+          <div class="portal-card">
+            <div class="portal-icon">◈</div>
+
+            <div>
+              <h4>School ERP</h4>
+              <p>Admissions, attendance & fees</p>
+              <a href="https://erp.bhishmaagroup.in/">LOGIN NOW ↗</a>
+            </div>
+          </div>
+
+          <div class="portal-card">
+            <div class="portal-icon">◈</div>
+
+            <div>
+              <h4>Billing Software</h4>
+              <p>GST invoices & POS</p>
+              <a href="#">LOGIN NOW ↗</a>
+            </div>
+          </div>
+
+          <div class="portal-card">
+            <div class="portal-icon">◈</div>
+
+            <div>
+              <h4>Hospital ERP</h4>
+              <p>OPD, IPD & pharmacy</p>
+              <a href="#">LOGIN NOW ↗</a>
+            </div>
+          </div>
+
+          <div class="portal-card">
+            <div class="portal-icon">◈</div>
+
+            <div>
+              <h4>CRM Platform</h4>
+              <p>Leads & customer 360</p>
+              <a href="#">LOGIN NOW ↗</a>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-    </div>
-  </nav>
 
-  <!-- HERO SECTION -->
-  <section id="hero">
-    <div class="hero-bg">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-      <div class="grid-overlay"></div>
     </div>
 
-    <div class="hero-container">
-      <div class="hero-left reveal">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          Now serving 500+ organizations across India
-        </div>
-        <h1 class="hero-headline">
-          Building the <span class="gradient-text">Future</span> of Digital Infrastructure
-        </h1>
-        <p class="hero-sub">Enterprise-grade software solutions for schools, hospitals, businesses and modern organizations. Engineered in India. Built for scale.</p>
-        <div class="hero-actions">
-          <a href="#products" class="btn-primary">
-            <span>Explore Products</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <button class="btn-secondary" onclick="document.getElementById('clientLoginBtn').click()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Client Login
-          </button>
-        </div>
-        <div class="hero-stats">
-          <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Organizations</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat"><span class="stat-num">6</span><span class="stat-label">Products</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat"><span class="stat-num">99.9%</span><span class="stat-label">Uptime</span></div>
-        </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+
+    <div class="hero-left">
+
+      <div class="hero-tag">
+        <span></span>
+        V1 / MADE IN INDIA
       </div>
 
-      <div class="hero-right reveal-right">
-        <div class="dashboard-wrap">
-          <div class="floating-card fc-1">
-            <div class="fc-icon" style="background:#6366f1">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            </div>
-            <div><strong>Revenue ↑ 24%</strong><small>vs last month</small></div>
-          </div>
-          <div class="floating-card fc-2">
-            <div class="fc-icon" style="background:#10b981">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-            </div>
-            <div><strong>1,240 Students</strong><small>Active today</small></div>
-          </div>
-          <div class="floating-card fc-3">
-            <div class="fc-icon" style="background:#f59e0b">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div><strong>99.9% Uptime</strong><small>All systems go</small></div>
+      <h1>
+        Building the <span>future</span>
+        of digital infrastructure.
+      </h1>
+
+      <p>
+        Enterprise-grade software for schools, hospitals,
+        businesses and modern organizations — engineered
+        to scale from your first signup to your millionth.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn">
+          Explore Products ↗
+        </button>
+
+        <button class="secondary-btn">
+          Client Login
+        </button>
+      </div>
+
+    </div>
+
+    <div class="hero-right">
+
+      <div class="dashboard-card">
+
+        <div class="stats-row">
+
+          <div class="mini-stat">
+            <small>AI INSIGHT</small>
+            <h3>+23%</h3>
           </div>
 
-          <div class="dashboard-mock">
-            <div class="dm-header">
-              <div class="dm-dots"><span></span><span></span><span></span></div>
-              <span class="dm-title">Bhishmaa Analytics</span>
-              <div class="dm-status"><span class="live-dot"></span>Live</div>
-            </div>
-            <div class="dm-body">
-              <div class="dm-sidebar">
-                <div class="dms-item active">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                  Dashboard
-                </div>
-                <div class="dms-item">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-                  Students
-                </div>
-                <div class="dms-item">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                  Billing
-                </div>
-                <div class="dms-item">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                  Analytics
-                </div>
+          <div class="mini-stat">
+            <small>API CALLS</small>
+            <h3>8.6M</h3>
+          </div>
+
+          <div class="mini-stat">
+            <small>MRR</small>
+            <h3>₹42L</h3>
+          </div>
+
+        </div>
+
+        <div class="graph-box">
+
+          <div class="graph-tag">LIVE UPDATE</div>
+
+          <div class="graph-meta">
+            <div class="graph-legend">
+              <div class="legend-item">
+                <span class="legend-dot trend"></span>
+                <small>Trend</small>
               </div>
-              <div class="dm-main">
-                <div class="dm-chart-area">
-                  <div class="dm-chart-label">Monthly Revenue</div>
-                  <div class="dm-bars">
-                    <div class="dm-bar" style="--h:45%"><span>Apr</span></div>
-                    <div class="dm-bar" style="--h:60%"><span>May</span></div>
-                    <div class="dm-bar" style="--h:40%"><span>Jun</span></div>
-                    <div class="dm-bar" style="--h:75%"><span>Jul</span></div>
-                    <div class="dm-bar" style="--h:55%"><span>Aug</span></div>
-                    <div class="dm-bar active" style="--h:90%"><span>Sep</span></div>
-                  </div>
-                </div>
-                <div class="dm-metrics">
-                  <div class="dm-metric"><span class="dmm-val">₹48L</span><span class="dmm-key">Revenue</span></div>
-                  <div class="dm-metric"><span class="dmm-val">1.2K</span><span class="dmm-key">Users</span></div>
-                  <div class="dm-metric"><span class="dmm-val">98%</span><span class="dmm-key">Satisfaction</span></div>
-                </div>
+              <div class="legend-item">
+                <span class="legend-dot volume"></span>
+                <small>Volume</small>
               </div>
             </div>
           </div>
+
+          <div class="uptime-box">
+            <small>LIVE UPTIME</small>
+            <h4>99.99%</h4>
+          </div>
+
+          <div class="graph-overlay">
+            <svg viewBox="0 0 100 40" preserveAspectRatio="none" class="trend-svg">
+              <path d="M5 30 L15 26 L25 28 L35 22 L45 18 L55 14 L65 18 L75 10 L85 8 L95 5" />
+            </svg>
+            <div class="trend-points">
+              <span style="left:5%; bottom:30%;"></span>
+              <span style="left:15%; bottom:26%;"></span>
+              <span style="left:25%; bottom:28%;"></span>
+              <span style="left:35%; bottom:22%;"></span>
+              <span style="left:45%; bottom:18%;"></span>
+              <span style="left:55%; bottom:14%;"></span>
+              <span style="left:65%; bottom:18%;"></span>
+              <span style="left:75%; bottom:10%;"></span>
+              <span style="left:85%; bottom:8%;"></span>
+              <span style="left:95%; bottom:5%;"></span>
+            </div>
+          </div>
+
+          <div class="graph-axis">
+            <span class="y-axis">Revenue</span>
+            <span class="x-axis">Last 10 days</span>
+          </div>
+
+          <div class="bars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
         </div>
+
       </div>
+
     </div>
 
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
   </section>
 
-  <!-- PRODUCTS SECTION -->
-  <section id="products">
-    <div class="section-container">
-      <div class="section-header reveal">
-        <div class="section-tag">Our Products</div>
-        <h2>Powerful Software for <span class="gradient-text">Every Industry</span></h2>
-        <p>Six enterprise platforms. One unified ecosystem. Built to scale with your organization.</p>
-      </div>
+  <!-- PRODUCTS -->
+  <section id="products" class="products-section">
 
-      <div class="products-grid">
-
-        <div class="product-card reveal" style="--card-color: #6366f1">
-          <div class="pc-glow"></div>
-          <div class="pc-header">
-            <div class="pc-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <div class="pc-badge">Most Popular</div>
-          </div>
-          <h3>School ERP</h3>
-          <p>Complete academic management system for K-12 and higher education institutions.</p>
-          <ul class="pc-features">
-            <li>Student Admission &amp; Records</li>
-            <li>Attendance &amp; Timetable</li>
-            <li>Fee Collection &amp; Receipts</li>
-            <li>Parent Communication Portal</li>
-            <li>Exam &amp; Result Management</li>
-          </ul>
-          <div class="pc-actions">
-            <a href="#" class="pc-btn-primary">Try Now</a>
-            <a href="#" class="pc-btn-ghost">Login →</a>
-          </div>
-        </div>
-
-        <div class="product-card reveal" style="--card-color: #10b981">
-          <div class="pc-glow"></div>
-          <div class="pc-header">
-            <div class="pc-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-          </div>
-          <h3>Billing System</h3>
-          <p>GST-compliant invoicing and financial management for businesses of all sizes.</p>
-          <ul class="pc-features">
-            <li>GST Invoice Generation</li>
-            <li>Multi-party Ledger</li>
-            <li>UPI &amp; Payment Gateway</li>
-            <li>Stock &amp; Purchase Orders</li>
-            <li>Financial Reports &amp; P&amp;L</li>
-          </ul>
-          <div class="pc-actions">
-            <a href="#" class="pc-btn-primary">Try Now</a>
-            <a href="#" class="pc-btn-ghost">Login →</a>
-          </div>
-        </div>
-
-        <div class="product-card reveal" style="--card-color: #ef4444">
-          <div class="pc-glow"></div>
-          <div class="pc-header">
-            <div class="pc-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.27 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
-            </div>
-          </div>
-          <h3>Hospital Management</h3>
-          <p>End-to-end hospital operations — from OPD registration to discharge and billing.</p>
-          <ul class="pc-features">
-            <li>Patient Registration &amp; OPD</li>
-            <li>IPD Ward Management</li>
-            <li>Lab &amp; Pharmacy Integration</li>
-            <li>Doctor Schedule &amp; Appointments</li>
-            <li>Insurance &amp; Billing</li>
-          </ul>
-          <div class="pc-actions">
-            <a href="#" class="pc-btn-primary">Try Now</a>
-            <a href="#" class="pc-btn-ghost">Login →</a>
-          </div>
-        </div>
-
-        <div class="product-card reveal" style="--card-color: #f59e0b">
-          <div class="pc-glow"></div>
-          <div class="pc-header">
-            <div class="pc-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-          </div>
-          <h3>HRMS</h3>
-          <p>Human resource management for payroll, compliance, and employee lifecycle management.</p>
-          <ul class="pc-features">
-            <li>Employee Onboarding</li>
-            <li>Payroll &amp; Salary Slips</li>
-            <li>Leave &amp; Attendance</li>
-            <li>PF, ESI &amp; TDS Compliance</li>
-            <li>Performance Appraisal</li>
-          </ul>
-          <div class="pc-actions">
-            <a href="#" class="pc-btn-primary">Try Now</a>
-            <a href="#" class="pc-btn-ghost">Login →</a>
-          </div>
-        </div>
-
-        <div class="product-card reveal" style="--card-color: #8b5cf6">
-          <div class="pc-glow"></div>
-          <div class="pc-header">
-            <div class="pc-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-            </div>
-          </div>
-          <h3>CRM Platform</h3>
-          <p>Intelligent sales and customer relationship management to accelerate your pipeline.</p>
-          <ul class="pc-features">
-            <li>Lead Capture &amp; Scoring</li>
-            <li>Sales Pipeline Visualization</li>
-            <li>Email &amp; WhatsApp Integration</li>
-            <li>Customer 360° View</li>
-            <li>Reports &amp; Forecasting</li>
-          </ul>
-          <div class="pc-actions">
-            <a href="#" class="pc-btn-primary">Try Now</a>
-            <a href="#" class="pc-btn-ghost">Login →</a>
-          </div>
-        </div>
-
-        <div class="product-card reveal" style="--card-color: #06b6d4">
-          <div class="pc-glow"></div>
-          <div class="pc-header">
-            <div class="pc-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-            </div>
-          </div>
-          <h3>Inventory Management</h3>
-          <p>Real-time stock control, procurement, and supply chain visibility across locations.</p>
-          <ul class="pc-features">
-            <li>Multi-warehouse Management</li>
-            <li>Barcode &amp; QR Scanning</li>
-            <li>Purchase &amp; Vendor Orders</li>
-            <li>Low Stock Alerts</li>
-            <li>Stock Transfer &amp; Audits</li>
-          </ul>
-          <div class="pc-actions">
-            <a href="#" class="pc-btn-primary">Try Now</a>
-            <a href="#" class="pc-btn-ghost">Login →</a>
-          </div>
-        </div>
-
-      </div>
+    <div class="section-tag">
+      <span></span>
+      01 / PRODUCT SUITE
     </div>
+
+    <div class="section-head">
+
+      <h2>
+        One platform.
+        <span>Six</span>
+        mission-critical products.
+      </h2>
+
+      <p>
+        Each Bhishmaa product is engineered as a stand-alone SaaS.
+      </p>
+
+    </div>
+
+    <div class="product-grid">
+
+      <div class="product-card active">
+
+        <div class="product-icon">◈</div>
+
+        <small>EDUCATION</small>
+
+        <h3>School ERP</h3>
+
+        <p>
+          End-to-end campus management for institutions.
+        </p>
+
+        <ul>
+          <li>Admissions & enquiry</li>
+          <li>Attendance & timetable</li>
+          <li>Fees & online payments</li>
+          <li>Parent / student app</li>
+        </ul>
+
+        <div class="product-buttons">
+          <button class="secondary-btn small-btn">Login</button>
+          <button class="primary-btn small-btn">Try Now ↗</button>
+        </div>
+
+      </div>
+
+      <div class="product-card">
+
+        <div class="product-icon">◈</div>
+
+        <small>FINANCE</small>
+
+        <h3>Billing System</h3>
+
+        <p>
+          GST-ready invoicing, POS and recurring billing.
+        </p>
+
+        <ul>
+          <li>GST e-invoicing</li>
+          <li>POS terminals</li>
+          <li>Subscription billing</li>
+          <li>Multi-branch ledgers</li>
+        </ul>
+
+        <div class="product-buttons">
+          <button class="secondary-btn small-btn">Login</button>
+          <button class="primary-btn small-btn">Try Now ↗</button>
+        </div>
+
+      </div>
+
+      <div class="product-card">
+
+        <div class="product-icon">◈</div>
+
+        <small>HEALTHCARE</small>
+
+        <h3>Hospital ERP</h3>
+
+        <p>
+          Unified clinical & operational platform.
+        </p>
+
+        <ul>
+          <li>OPD / IPD workflows</li>
+          <li>Pharmacy & lab</li>
+          <li>EMR & e-prescriptions</li>
+          <li>Insurance & TPA</li>
+        </ul>
+
+        <div class="product-buttons">
+          <button class="secondary-btn small-btn">Login</button>
+          <button class="primary-btn small-btn">Try Now ↗</button>
+        </div>
+
+      </div>
+
+    </div>
+
   </section>
 
-  <!-- SOLUTIONS / FEATURES SECTION -->
-  <section id="solutions">
-    <div class="section-container">
-      <div class="section-header reveal">
-        <div class="section-tag">Why Bhishmaa</div>
-        <h2>Infrastructure Built for <span class="gradient-text">Scale</span></h2>
-        <p>Every product is built on a foundation of modern cloud architecture, security, and intelligence.</p>
-      </div>
+  <!-- SOLUTIONS -->
+  <section id="solutions" class="solutions-section">
 
-      <div class="features-grid">
-        <div class="feature-card reveal">
-          <div class="feat-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-          </div>
-          <h4>Cloud Infrastructure</h4>
-          <p>Hosted on enterprise-grade cloud with 99.9% uptime SLA, automatic failover, and data replication across zones.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feat-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
-          </div>
-          <h4>AI Automation</h4>
-          <p>Intelligent workflows powered by machine learning — automate repetitive tasks and surface actionable insights.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feat-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <h4>Enterprise Security</h4>
-          <p>AES-256 encryption at rest and in transit. Role-based access, 2FA, audit trails and VAPT-tested systems.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feat-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          </div>
-          <h4>Real-time Analytics</h4>
-          <p>Live dashboards, custom reports and deep drill-down analytics to make faster, data-driven decisions.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feat-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </div>
-          <h4>API Integration</h4>
-          <p>REST APIs and webhooks for seamless integration with payment gateways, SMS, email, Tally, and third-party services.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feat-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <h4>Scalable Architecture</h4>
-          <p>Microservices-based architecture that scales horizontally — from 50 users to 50,000 without configuration changes.</p>
-        </div>
-      </div>
-
-      <!-- Marquee trust bar -->
-      <div class="trust-bar reveal">
-        <div class="trust-label">Trusted By</div>
-        <div class="marquee-wrap">
-          <div class="marquee-track">
-            <span>St. Mary's School</span><span>City Hospital</span><span>RetailPro Pvt Ltd</span>
-            <span>Apex Medicals</span><span>BrightMinds Academy</span><span>Lucknow Trade Co.</span>
-            <span>Agra Public School</span><span>MedCare Clinic</span><span>QuickStock Industries</span>
-            <span>St. Mary's School</span><span>City Hospital</span><span>RetailPro Pvt Ltd</span>
-            <span>Apex Medicals</span><span>BrightMinds Academy</span><span>Lucknow Trade Co.</span>
-          </div>
-        </div>
-      </div>
+    <div class="section-tag">
+      <span></span>
+      02 / SOLUTIONS
     </div>
+
+    <div class="section-head">
+      <h2>
+        Intelligent workflows for every business team.
+      </h2>
+      <p>
+        Automate operations, unify analytics, and deliver connected experiences across education,
+        healthcare and finance.
+      </p>
+    </div>
+
+    <div class="solutions-grid">
+
+      <div class="solution-card">
+        <h4>Automation & Workflows</h4>
+        <p>Reduce manual effort with approval flows, alerts, and intelligent process automation.</p>
+        <ul>
+          <li>Attendance & scheduling automation</li>
+          <li>Billing reconciliation</li>
+          <li>Patient and student lifecycle workflows</li>
+        </ul>
+      </div>
+
+      <div class="solution-card">
+        <h4>Data & Analytics</h4>
+        <p>Visualize performance and trends in real time to drive faster decisions.</p>
+        <ul>
+          <li>Executive dashboards</li>
+          <li>Revenue and retention insights</li>
+          <li>Operational performance reports</li>
+        </ul>
+      </div>
+
+      <div class="solution-card">
+        <h4>Security & Integration</h4>
+        <p>Connect systems securely with API access, role controls, and compliance-ready controls.</p>
+        <ul>
+          <li>API-first integration</li>
+          <li>Role-based access</li>
+          <li>Data protection and audit logs</li>
+        </ul>
+      </div>
+
+    </div>
+
   </section>
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <div class="section-container">
-      <div class="about-grid">
-        <div class="about-left reveal">
-          <div class="section-tag">About Us</div>
-          <h2>An Indian Company <span class="gradient-text">Built Different</span></h2>
-          <p class="about-lead">Bhishmaa Group is a modern Indian technology company building enterprise ERP and automation systems for institutions that want to thrive in the digital era.</p>
-          <p class="about-body">Founded with a singular vision — to make enterprise-grade software accessible to every school, hospital, and business in India — we combine cutting-edge technology with deep domain expertise. Soon to be incorporated as <strong>Bhishmaa Group Pvt Ltd</strong>, we are building the infrastructure for India's next digital decade.</p>
-          <div class="about-values">
-            <div class="av-item">
-              <div class="av-dot" style="background:#6366f1"></div>
-              <span>Innovation First</span>
-            </div>
-            <div class="av-item">
-              <div class="av-dot" style="background:#10b981"></div>
-              <span>Made in India</span>
-            </div>
-            <div class="av-item">
-              <div class="av-dot" style="background:#f59e0b"></div>
-              <span>Customer Obsessed</span>
-            </div>
-            <div class="av-item">
-              <div class="av-dot" style="background:#ef4444"></div>
-              <span>Scalable by Design</span>
-            </div>
-          </div>
-          <a href="#contact" class="btn-primary" style="display:inline-flex;margin-top:2rem">Get in Touch →</a>
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+
+    <div class="section-tag">
+      <span></span>
+      03 / ABOUT
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-copy">
+        <div class="section-head">
+          <h2>
+            Built by a team focused on India’s digital transformation.
+          </h2>
+          <p>
+            Bhishmaa Group delivers enterprise SaaS that helps institutions and organizations scale sustainably with local support and global standards.
+          </p>
         </div>
-        <div class="about-right reveal-right">
-          <div class="about-visual">
-            <div class="av-card av-card-1">
-              <div class="avc-num gradient-text">2024</div>
-              <div class="avc-label">Founded</div>
-            </div>
-            <div class="av-card av-card-2">
-              <div class="avc-num gradient-text">6</div>
-              <div class="avc-label">Products Launched</div>
-            </div>
-            <div class="av-card av-card-3">
-              <div class="avc-num gradient-text">500+</div>
-              <div class="avc-label">Organizations Served</div>
-            </div>
-            <div class="av-card av-card-4">
-              <div class="avc-num gradient-text">India</div>
-              <div class="avc-label">Headquarters</div>
-            </div>
-            <div class="about-globe">
-              <div class="globe-ring"></div>
-              <div class="globe-ring r2"></div>
-              <div class="globe-ring r3"></div>
-              <div class="globe-dot"></div>
-            </div>
-          </div>
+
+        <ul>
+          <li>Trusted by schools, hospitals, and financial businesses.</li>
+          <li>Designed for high availability and secure growth.</li>
+          <li>Made in India, built for worldwide expansion.</li>
+        </ul>
+      </div>
+
+      <div class="about-stats">
+        <div class="about-stat">
+          <h3>500+</h3>
+          <p>Active customers</p>
+        </div>
+        <div class="about-stat">
+          <h3>99.99%</h3>
+          <p>Platform uptime</p>
+        </div>
+        <div class="about-stat">
+          <h3>6</h3>
+          <p>Mission-critical products</p>
         </div>
       </div>
+
     </div>
+
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact">
-    <div class="section-container">
-      <div class="contact-wrap reveal">
-        <div class="contact-left">
-          <div class="section-tag">Contact Us</div>
-          <h2>Let's Build <span class="gradient-text">Together</span></h2>
-          <p>Have questions about our products? Ready to get started? Reach out and our team will get back to you within 24 hours.</p>
-          <div class="contact-info">
-            <div class="ci-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:hello@bhishmaagroup.in">hello@bhishmaagroup.in</a>
-            </div>
-            <div class="ci-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Lucknow, Uttar Pradesh, India</span>
-            </div>
-            <div class="ci-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.27 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
-              <a href="tel:+919876543210">+91 98765 43210</a>
-            </div>
-          </div>
-        </div>
-        <div class="contact-right">
-          <div class="contact-form-wrap">
-            <div class="cf-field">
-              <label>Full Name</label>
-              <input type="text" placeholder="Your name" />
-            </div>
-            <div class="cf-field">
-              <label>Email Address</label>
-              <input type="email" placeholder="you@company.com" />
-            </div>
-            <div class="cf-field">
-              <label>Product Interest</label>
-              <select>
-                <option value="">Select a product…</option>
-                <option>School ERP</option>
-                <option>Billing Software</option>
-                <option>Hospital ERP</option>
-                <option>HRMS</option>
-                <option>CRM Platform</option>
-                <option>Inventory System</option>
-              </select>
-            </div>
-            <div class="cf-field">
-              <label>Message</label>
-              <textarea placeholder="Tell us about your requirements…" rows="4"></textarea>
-            </div>
-            <button class="btn-primary" style="width:100%;justify-content:center">
-              Send Message
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
-          </div>
-        </div>
-      </div>
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+
+    <div class="section-tag">
+      <span></span>
+      04 / CONTACT
     </div>
+
+    <div class="section-head">
+      <h2>
+        Let’s partner on your next digital transformation.
+      </h2>
+      <p>
+        Speak with a specialist, request a demo, or get fast support for your current implementation.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h4>Reach us</h4>
+        <p>Email: hello@bhishmaa.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Address: 14 Digital Avenue, Bengaluru, India</p>
+      </div>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Your name" />
+        <input type="email" placeholder="Email address" />
+        <input type="tel" placeholder="Phone number" />
+        <textarea rows="5" placeholder="Tell us about your project"></textarea>
+        <button type="submit" class="primary-btn">Send Message</button>
+      </form>
+
+    </div>
+
   </section>
 
   <!-- FOOTER -->
-  <footer id="footer">
-    <div class="footer-container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#" class="nav-logo" style="margin-bottom:1rem">
-            <div class="logo-cube-wrap small">
-              <div class="logo-cube">
-                <div class="lc-face lc-front"></div>
-                <div class="lc-face lc-back"></div>
-                <div class="lc-face lc-left"></div>
-                <div class="lc-face lc-right"></div>
-                <div class="lc-face lc-top"></div>
-                <div class="lc-face lc-bottom"></div>
-              </div>
-            </div>
-            <span class="logo-text">Bhishmaa<span class="logo-accent">Group</span></span>
-          </a>
-          <p>Building enterprise-grade software for India's institutions. Innovation, scale, and reliability — all in one.</p>
-          <div class="social-links">
-            <a href="#" aria-label="Twitter">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-            </a>
-            <a href="#" aria-label="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="#" aria-label="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-            <a href="#" aria-label="YouTube">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
-            </a>
+  <footer class="footer">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <div class="logo-wrap footer-logo">
+          <img src="logo.png" alt="Bhishmaa Group" class="logo-img">
+
+          <div>
+            <h2>BHISHMAA</h2>
+            <p>GROUP / IN</p>
           </div>
         </div>
 
-        <div class="footer-links-group">
-          <h5>Products</h5>
-          <a href="erp.bhishmaagroup.in">School ERP</a>
-          <a href="#">Billing System</a>
+        <p class="footer-desc">
+          Building the digital infrastructure layer for India's next generation of businesses.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <div>
+          <h4>PRODUCTS</h4>
+          <a href="#">School ERP</a>
+          <a href="#">Billing Software</a>
           <a href="#">Hospital ERP</a>
-          <a href="#">HRMS</a>
           <a href="#">CRM Platform</a>
-          <a href="#">Inventory System</a>
         </div>
 
-        <div class="footer-links-group">
-          <h5>Company</h5>
-          <a href="#about">About Us</a>
+        <div>
+          <h4>COMPANY</h4>
+          <a href="#">About</a>
+          <a href="#">Solutions</a>
           <a href="#">Careers</a>
-          <a href="#">Blog</a>
-          <a href="#">Press Kit</a>
-          <a href="#contact">Contact</a>
+          <a href="#">Contact</a>
         </div>
 
-        <div class="footer-links-group">
-          <h5>Legal</h5>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-          <a href="#">Refund Policy</a>
+        <div>
+          <h4>RESOURCES</h4>
+          <a href="#">Documentation</a>
+          <a href="#">API</a>
+          <a href="#">Privacy</a>
+          <a href="#">Security</a>
         </div>
+
       </div>
 
-      <div class="footer-bottom">
-        <span>© 2024–2025 Bhishmaa Group. All rights reserved.</span>
-        <span class="footer-domain">bhishmaagroup.in</span>
-        <span class="footer-powered">Powered by Bhishmaa Group</span>
-      </div>
     </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Bhishmaa Group. All rights reserved.</p>
+      <p>Powered by Bhishmaa Group.</p>
+    </div>
+
   </footer>
 
   <script src="script.js"></script>
