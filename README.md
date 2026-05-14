@@ -4,7 +4,7 @@
 
 ### ERP • AI • Automation • Software Solutions
 
-<img src="assets/logo.png" width="140" alt="Bhishmaa Group Logo">
+<img src="logo.png" width="140" alt="Bhishmaa Group Logo">
 
 <br><br>
 
