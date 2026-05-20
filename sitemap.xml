@@ -29,19 +29,6 @@
     <priority>0.95</priority>
   </url>
 
-  <url>
-    <loc>https://bhishmaagroup.in/features.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://bhishmaagroup.in/pricing.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
   <url>
     <loc>https://bhishmaagroup.in/demo.html</loc>
@@ -57,53 +44,12 @@
     <priority>0.7</priority>
   </url>
 
-  <url>
-    <loc>https://bhishmaagroup.in/blog.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
 
   <url>
     <loc>https://bhishmaagroup.in/login.html</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://bhishmaagroup.in/docs.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://bhishmaagroup.in/api.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://bhishmaagroup.in/case-studies.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://bhishmaagroup.in/careers.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
-  <url>
-    <loc>https://bhishmaagroup.in/status.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
   </url>
 
   <url>
