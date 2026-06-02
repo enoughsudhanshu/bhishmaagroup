@@ -1,130 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Founder - Bhishmaa Group</title>
-  <meta name="description" content="Enough Sudhanshu is the founder of Bhishmaa Group, building practical ERP and automation software products for modern organizations." />
-  <link rel="canonical" href="https://bhishmaagroup.in/founder.html" />
-  <meta property="og:title" content="Founder - Bhishmaa Group" />
-  <meta property="og:description" content="Meet the founder of Bhishmaa Group." />
-  <meta property="og:image" content="https://bhishmaagroup.in/assets/founder.png" />
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  "url": "https://bhishmaagroup.in/founder.html",
-  "name": "Founder - Bhishmaa Group",
-  "description": "Enough Sudhanshu is the founder of Bhishmaa Group, building practical ERP and automation software products for modern organizations.",
-  "mainEntity": {
-    "@type": "Person",
-    "name": "Enough Sudhanshu",
-    "jobTitle": "Founder",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Bhishmaa Group",
-      "url": "https://bhishmaagroup.in"
-    },
-    "url": "https://bhishmaagroup.in/founder.html",
-    "image": "https://bhishmaagroup.in/assets/founder.png",
-    "sameAs": [
-      "https://linkedin.com/in/enoughsudhanshu",
-      "https://github.com/enoughsudhanshu",
-      "https://enoughsudhanshu.github.io"
-    ]
-  }
-}
-</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Founder Profile | Bhishmaa Group</title>
+  <meta name="description" content="Meet enoughsudhanshu, Founder of Bhishmaa Group. Learn about his work in software development, ERP engineering, business applications, and artificial intelligence interests.">
+  <meta name="keywords" content="enoughsudhanshu, Founder Bhishmaa Group, ERP developer, software engineer, product builder, business software engineering, AI researcher">
+  <meta name="author" content="Bhishmaa Group">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bhishmaagroup.in/founder.html">
+  <meta property="og:title" content="Founder Profile | Bhishmaa Group">
+  <meta property="og:description" content="Meet enoughsudhanshu, Founder of Bhishmaa Group. Learn about his work in software development, ERP engineering, business applications, and artificial intelligence interests.">
+  <meta property="og:image" content="https://bhishmaagroup.in/assets/images/founder.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://bhishmaagroup.in/founder.html">
+  <meta property="twitter:title" content="Founder Profile | Bhishmaa Group">
+  <meta property="twitter:description" content="Meet enoughsudhanshu, Founder of Bhishmaa Group. Learn about his work in software development, ERP engineering, business applications, and artificial intelligence interests.">
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-  <div class="bg-grid"></div>
 
-  <header class="navbar">
-    <a href="index.html" class="logo-wrap">
-      <img src="assets/logo.jpeg" alt="Bhishmaa Group" class="logo-img">
-      <div><h2>BHISHMAA</h2><p>GROUP / IN</p></div>
-    </a>
-    <nav class="nav-menu">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="bhishmaa-erp.html">Bhishmaa ERP</a>
-      <a href="about.html">About</a>
-      <a href="founder.html">Founder</a>
-      <a href="contact.html">Contact</a>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main Navigation">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/images/logo.png" alt="Bhishmaa Group Logo" width="36" height="36" class="d-inline-block align-text-top me-2 rounded-circle"> Bhishmaa Group
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Products
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                <li><a class="dropdown-item" href="./products/erp.html"><i class="bi bi-mortarboard-fill"></i> Bhishmaa ERP</a></li>
+                <li><a class="dropdown-item" href="./products/one.html"><i class="bi bi-receipt-cutoff"></i> Bhishmaa One</a></li>
+                <li><a class="dropdown-item" href="./products/diagnosis.html"><i class="bi bi-activity"></i> Bhishmaa Diagnosis</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./founder.html">Founder</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+              <button id="themeToggle" class="btn" aria-label="Toggle Dark Mode">
+                <i class="bi bi-moon-fill"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-    <a href="demo.html" class="primary-btn">Get Demo</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu"><span></span></button>
   </header>
 
-  <div class="page-hero">
-    <div class="section-tag"><span></span>FOUNDER</div>
-    <h1>Founder &amp; Product Developer</h1>
-  </div>
-
-  <div class="products-section" style="padding-top:0;">
-    <div class="founder-page-grid">
-      <div>
-        <div class="founder-avatar">👤</div>
+  <main style="padding-top: 6.5rem;">
+    <!-- Founder Profile Section -->
+    <section class="py-5 animate-fade-in">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="founder-card text-center text-md-start">
+              <div class="row align-items-center g-5">
+                <div class="col-md-4 text-center">
+                  <img src="./assets/images/founder.jpg" alt="enoughsudhanshu" class="img-fluid rounded-circle mb-3 border border-color shadow" style="width: 180px; height: 180px; object-fit: cover; object-position: center top;">
+                  <h1 class="h3 mb-1">enoughsudhanshu</h1>
+                  <p class="founder-title">Founder, Bhishmaa Group</p>
+                </div>
+                <div class="col-md-8">
+                  <h2 class="h4 mb-3">Professional Profile</h2>
+                  <p class="text-muted">enoughsudhanshu is the founder of Bhishmaa Group, steering its technology agenda and product initiatives. With a strong interest in software engineering and cloud systems, he designs platforms intended to streamline operations for businesses and academic institutions.</p>
+                  <p class="text-muted">His development methodology centers on building clean, performance-optimized, and data-insulated systems. By emphasizing database design integrity and robust security policies, his products aim to deliver stable performance under heavy concurrent usage.</p>
+                  
+                  <div class="mt-3 mb-4 d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
+                    <a href="https://enoughsudhanshu.github.io" target="_blank" rel="noopener noreferrer" class="btn btn-primary-custom btn-sm"><i class="bi bi-globe me-1"></i> Portfolio</a>
+                    <a href="https://github.com/enoughsudhanshu" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-custom btn-sm"><i class="bi bi-github me-1"></i> GitHub</a>
+                    <a href="https://linkedin.com/in/enoughsudhanshu" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-custom btn-sm"><i class="bi bi-linkedin me-1"></i> LinkedIn</a>
+                    <a href="https://instagram.com/enoughsudhanshu" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-custom btn-sm"><i class="bi bi-instagram me-1"></i> Instagram</a>
+                    <a href="https://x.com/enoughsudhanshu" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-custom btn-sm"><i class="bi bi-twitter-x me-1"></i> Twitter</a>
+                  </div>
+                  
+                  <h3 class="h5 mt-4 mb-3">Core Areas of Focus</h3>
+                  <div class="founder-skills-grid text-start">
+                    <div class="founder-skill-item">
+                      <i class="bi bi-code-square me-2 text-primary"></i> Software Development
+                    </div>
+                    <div class="founder-skill-item">
+                      <i class="bi bi-mortarboard-fill me-2 text-primary"></i> ERP Development
+                    </div>
+                    <div class="founder-skill-item">
+                      <i class="bi bi-receipt-cutoff me-2 text-primary"></i> Business Systems
+                    </div>
+                    <div class="founder-skill-item">
+                      <i class="bi bi-cpu-fill me-2 text-primary"></i> AI Innovation Interest
+                    </div>
+                    <div class="founder-skill-item">
+                      <i class="bi bi-box-fill me-2 text-primary"></i> Product Building
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="founder-bio">
-        <h2>Enough Sudhanshu</h2>
-        <p class="title">Founder, Bhishmaa Group</p>
-        <p>Enough Sudhanshu is the founder of Bhishmaa Group, focused on building practical ERP and automation software products for modern organizations.</p>
-        <p>He leads product direction, development and client relationships at Bhishmaa Group — keeping the company focused on real software that solves real problems for Indian institutions.</p>
-        <div class="product-buttons" style="margin-top:2rem;">
-          <a href="contact.html" class="primary-btn">Get in Touch ↗</a>
-          <a href="about.html" class="secondary-btn">About the Company</a>
+    </section>
+
+    <!-- Professional Values -->
+    <section class="py-5 bg-secondary border-top border-bottom border-color">
+      <div class="container py-4">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <h2 class="h2 mb-4">Founder's Engineering Values</h2>
+            <p class="text-muted mb-5">Structuring digital tools based on clean code standards and strict compliance rules.</p>
+            <div class="row g-4 text-start">
+              <div class="col-md-6">
+                <div class="p-3 bg-primary border border-color rounded-3 h-100">
+                  <h3 class="h6 text-primary"><i class="bi bi-gear-wide-connected me-2"></i> Structural Reliability</h3>
+                  <p class="small text-muted mb-0">Designing software engines from first-principles. Prioritizing performance, simple layouts, and minimal dependencies.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 bg-primary border border-color rounded-3 h-100">
+                  <h3 class="h6 text-primary"><i class="bi bi-eye-slash-fill me-2"></i> Strict Disclaimers</h3>
+                  <p class="small text-muted mb-0">Emphasizing absolute factual accuracy, clear safety warnings, and non-misleading documentation on emerging AI systems.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <a class="footer-logo mb-3 d-inline-flex align-items-center" href="./index.html">
+            <img src="./assets/images/logo.png" alt="Bhishmaa Group Logo" width="30" height="30" class="d-inline-block align-text-top me-2 rounded-circle"> Bhishmaa Group
+          </a>
+          <p class="text-muted pe-lg-4">Building Intelligent Solutions for Education, Business and AI Innovation.</p>
+          <div class="social-links mt-4">
+            <a href="https://linkedin.com/in/enoughsudhanshu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/enoughsudhanshu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://github.com/enoughsudhanshu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://instagram.com/enoughsudhanshu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h4 class="footer-links-title">Products</h4>
+          <ul class="footer-links-list">
+            <li><a href="./products/erp.html">Bhishmaa ERP</a></li>
+            <li><a href="./products/one.html">Bhishmaa One</a></li>
+            <li><a href="./products/diagnosis.html">Bhishmaa Diagnosis</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h4 class="footer-links-title">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./founder.html">Founder</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <h4 class="footer-links-title">Security & Integrity</h4>
+          <p class="text-muted small">We prioritize security, robust design, and factual accuracy. Our software tools are designed for deployment in regulated environments requiring maximum data integrity.</p>
+        </div>
+      </div>
+      <hr class="border-color">
+      <div class="row pt-2 align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="small text-muted mb-0">&copy; 2026 Bhishmaa Group. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+          <ul class="list-inline mb-0 small">
+            <li class="list-inline-item"><a href="#" class="text-muted">Privacy Policy</a></li>
+            <li class="list-inline-item ms-3"><a href="#" class="text-muted">Terms of Service</a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
-
-  <section class="cta-section">
-    <h2>Start Managing Operations Smarter</h2>
-    <p>Get a personalized demo of Bhishmaa Group products.</p>
-    <div class="cta-buttons">
-      <a href="demo.html" class="primary-btn">Get Demo</a>
-      <a href="contact.html" class="secondary-btn">Contact</a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <a href="index.html" class="logo-wrap">
-          <img src="assets/logo.jpeg" alt="Bhishmaa Group" class="logo-img">
-          <div><h2>BHISHMAA</h2><p>GROUP / IN</p></div>
-        </a>
-        <p>Modern ERP and automation software for real-world operations.</p>
-      </div>
-      <div class="footer-column">
-        <h4>PRODUCTS</h4>
-        <a href="bhishmaa-erp.html">Bhishmaa ERP</a>
-        <a href="products.html">All Products</a>
-        <a href="demo.html">Demo</a>
-      </div>
-      <div class="footer-column">
-        <h4>COMPANY</h4>
-        <a href="about.html">About</a>
-        <a href="founder.html">Founder</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-column">
-        <h4>LEGAL</h4>
-        <a href="privacy-policy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Bhishmaa Group. All rights reserved.</p>
-      <p>Developed by Enough Sudhanshu</p>
-    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Bootstrap 5 JS CDN Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Main Script -->
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>
