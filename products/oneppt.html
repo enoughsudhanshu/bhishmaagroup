@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhishmaa One — Investor Presentation 2025</title>
+<title>Bhishmaa One — Investor Presentation 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -58,8 +58,8 @@
     opacity: 0;
     pointer-events: none;
     transform: translateZ(-200px) rotateY(15deg) scale(0.9);
-    transition: transform 0.8s cubic-bezier(.4,0,.2,1),
-                opacity 0.8s cubic-bezier(.4,0,.2,1);
+    transition: transform 0.8s cubic-bezier(.25,.1,.25,1),
+                opacity 0.8s cubic-bezier(.25,.1,.25,1);
     will-change: transform, opacity;
   }
   .slide.active {
@@ -317,37 +317,68 @@
     transform: translateX(-50%);
     display: flex; align-items: center; gap: 16px;
     z-index: 100;
-    background: rgba(10,14,26,0.85);
+    background: rgba(10,14,26,0.8);
     border: 1px solid rgba(0,212,255,0.2);
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 100px;
     backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0,212,255,0.1);
   }
   #nav button {
     background: none; border: none; cursor: pointer;
-    width: 36px; height: 36px; border-radius: 50%;
+    width: 32px; height: 32px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     color: var(--muted);
-    font-size: 18px;
-    transition: color 0.2s, background 0.2s;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    opacity: 0.6;
   }
-  #nav button:hover { color: var(--accent); background: rgba(0,212,255,0.1); }
+  #nav button:hover { 
+    opacity: 1;
+    background: rgba(0,212,255,0.1);
+    transform: scale(1.1);
+  }
   #slide-counter {
     font-family: var(--font-head);
-    font-size: 13px; font-weight: 600;
+    font-size: 12px; font-weight: 600;
     color: var(--accent);
-    min-width: 52px; text-align: center;
+    min-width: 48px; text-align: center;
+    opacity: 0.8;
+    transition: all 0.3s;
+  }
+  #autoplay-btn {
+    background: none; border: none; cursor: pointer;
+    font-size: 16px;
+    color: var(--accent);
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    min-width: 24px;
+    text-align: center;
+  }
+  #autoplay-btn:hover { 
+    background: rgba(0,212,255,0.1);
+    transform: scale(1.1);
   }
 
   /* dots */
   #dots { display: flex; gap: 6px; }
   .dot-nav {
     width: 6px; height: 6px; border-radius: 3px;
-    background: rgba(240,244,255,0.2);
-    transition: width 0.3s, background 0.3s;
+    background: rgba(240,244,255,0.15);
+    transition: all 0.3s cubic-bezier(.4,0,.2,1);
     cursor: pointer;
   }
-  .dot-nav.active { width: 18px; background: var(--accent); }
+  .dot-nav:hover {
+    background: rgba(0,212,255,0.4);
+    transform: scale(1.3);
+  }
+  .dot-nav.active { 
+    width: 18px; 
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(0,212,255,0.5);
+  }
 
   /* ---- PROGRESS BAR ---- */
   #progress {
@@ -505,12 +536,162 @@
   }
   #s15 .cta a { color: var(--accent); text-decoration: none; }
 
+  /* ---- PROGRESS BAR ---- */
+  #progress {
+    position: fixed; top: 0; left: 0; right: 0; height: 3px;
+    background: rgba(0,212,255,0.04);
+    z-index: 100;
+  }
+  #progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    transition: width 0.6s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 0 20px rgba(0,212,255,0.5);
+  }
+
+  /* ---- CIRCULAR PROGRESS ---- */
+  #circular-progress {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 60px;
+    height: 60px;
+    display: none;
+    z-index: 99;
+  }
+  #circular-progress.autoplay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #circular-progress svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+  #progress-circle {
+    transition: stroke-dashoffset 0.05s linear;
+    filter: drop-shadow(0 0 8px rgba(0,212,255,0.3));
+  }
+
   /* ---- KEYBOARD HINT ---- */
   #hint {
     position: fixed; bottom: 88px; right: 32px;
     font-size: 11px; color: rgba(240,244,255,0.2);
     letter-spacing: 1px;
     z-index: 100;
+  }
+
+  /* ---- FULLSCREEN BUTTON ---- */
+  #fullscreen-btn {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    background: rgba(0,212,255,0.1);
+    border: 1px solid rgba(0,212,255,0.2);
+    color: var(--accent);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    z-index: 100;
+  }
+  #fullscreen-btn:hover {
+    background: rgba(0,212,255,0.15);
+    border-color: rgba(0,212,255,0.4);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0,212,255,0.2);
+  }
+
+  /* ---- KEYBOARD SHORTCUTS PANEL ---- */
+  #shortcuts-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background: rgba(10,14,26,0.95);
+    border: 1px solid rgba(0,212,255,0.3);
+    border-radius: 16px;
+    padding: 32px;
+    z-index: 200;
+    backdrop-filter: blur(30px);
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 320px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 20px 60px rgba(0,212,255,0.15), inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  #shortcuts-panel.active {
+    display: flex;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+  }
+  .shortcut-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--muted);
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0,212,255,0.1);
+  }
+  .shortcut-item:last-child {
+    border-bottom: none;
+  }
+  .shortcut-key {
+    background: rgba(0,212,255,0.1);
+    border: 1px solid rgba(0,212,255,0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 11px;
+    color: var(--accent);
+  }
+  .shortcuts-title {
+    font-family: var(--font-head);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  #shortcuts-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.2s;
+  }
+  #shortcuts-close:hover {
+    color: var(--accent);
+  }
+
+  /* ---- TOUCH FEEDBACK ---- */
+  @keyframes touchPulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.2); opacity: 0; }
+  }
+  .touch-feedback {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    pointer-events: none;
+    animation: touchPulse 0.6s ease-out;
+    z-index: 150;
   }
 
   /* ---- SLIDE ANIM ENTER ---- */
@@ -1106,29 +1287,85 @@
 
 <!-- NAV -->
 <div id="nav">
-  <button onclick="go(-1)" title="Previous">&#8592;</button>
+  <button id="autoplay-btn" onclick="toggleAutoplay()">▶</button>
   <div id="dots"></div>
   <div id="slide-counter">1 / 15</div>
-  <button onclick="go(1)" title="Next">&#8594;</button>
 </div>
 
-<div id="hint">← → ARROW KEYS TO NAVIGATE</div>
+<!-- CIRCULAR PROGRESS -->
+<div id="circular-progress">
+  <svg viewBox="0 0 60 60">
+    <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="2"/>
+    <circle id="progress-circle" cx="30" cy="30" r="26" fill="none" stroke="url(#progressGradient)" stroke-width="2" stroke-dasharray="163.36" stroke-dashoffset="163.36"/>
+    <defs>
+      <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#00D4FF;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+
+<!-- FULLSCREEN BUTTON -->
+<button id="fullscreen-btn" onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
+
+<!-- KEYBOARD SHORTCUTS PANEL -->
+<div id="shortcuts-panel">
+  <button id="shortcuts-close" onclick="toggleShortcuts()">✕</button>
+  <div class="shortcuts-title">Keyboard Shortcuts</div>
+  <div class="shortcut-item">
+    <span>Next Slide</span>
+    <span class="shortcut-key">→ / ↓</span>
+  </div>
+  <div class="shortcut-item">
+    <span>Previous Slide</span>
+    <span class="shortcut-key">← / ↑</span>
+  </div>
+  <div class="shortcut-item">
+    <span>Toggle Auto-play</span>
+    <span class="shortcut-key">Space</span>
+  </div>
+  <div class="shortcut-item">
+    <span>Fullscreen</span>
+    <span class="shortcut-key">F</span>
+  </div>
+  <div class="shortcut-item">
+    <span>Show Help</span>
+    <span class="shortcut-key">?</span>
+  </div>
+</div>
+
+<div id="hint"></div>
 
 <script>
   const TOTAL = 15;
+  const AUTO_INTERVAL = 5000; // Auto-advance every 5 seconds
+  const CIRCLE_RADIUS = 26;
+  const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * CIRCLE_RADIUS;
+  
   let current = 0;
   let animating = false;
+  let autoplayActive = true;
+  let autoplayTimer = null;
+  let touchStartX = 0;
+  let touchStartTime = 0;
+  let wheelTimeout = null;
 
   const slides = document.querySelectorAll('.slide');
   const dotsEl = document.getElementById('dots');
   const counter = document.getElementById('slide-counter');
   const progressFill = document.getElementById('progress-fill');
+  const autoplayBtn = document.getElementById('autoplay-btn');
+  const circularProgress = document.getElementById('circular-progress');
+  const progressCircle = document.getElementById('progress-circle');
+  const shortcutsPanel = document.getElementById('shortcuts-panel');
+  const fullscreenBtn = document.getElementById('fullscreen-btn');
 
   // Build dots
   for (let i = 0; i < TOTAL; i++) {
     const d = document.createElement('div');
     d.className = 'dot-nav';
-    d.onclick = () => goTo(i);
+    d.onclick = () => { stopAutoplay(); goTo(i); };
     dotsEl.appendChild(d);
   }
 
@@ -1136,6 +1373,12 @@
     document.querySelectorAll('.dot-nav').forEach((d, i) => {
       d.classList.toggle('active', i === current);
     });
+  }
+
+  function updateCircularProgress() {
+    const progress = (current + 1) / TOTAL;
+    const offset = CIRCLE_CIRCUMFERENCE - (progress * CIRCLE_CIRCUMFERENCE);
+    progressCircle.style.strokeDashoffset = offset;
   }
 
   function goTo(next) {
@@ -1164,29 +1407,179 @@
       counter.textContent = (current + 1) + ' / ' + TOTAL;
       progressFill.style.width = ((current + 1) / TOTAL * 100) + '%';
       updateDots();
+      updateCircularProgress();
       setTimeout(() => { animating = false; }, 800);
     }, 400);
   }
 
   function go(dir) { goTo(current + dir); }
 
+  // Auto-play management
+  function startAutoplay() {
+    if (autoplayActive) return;
+    autoplayActive = true;
+    updateAutoplayBtn();
+    circularProgress.classList.add('autoplay');
+    scheduleAutoplay();
+  }
+
+  function stopAutoplay() {
+    autoplayActive = false;
+    updateAutoplayBtn();
+    circularProgress.classList.remove('autoplay');
+    if (autoplayTimer) clearTimeout(autoplayTimer);
+  }
+
+  function toggleAutoplay() {
+    if (autoplayActive) stopAutoplay();
+    else startAutoplay();
+  }
+
+  function scheduleAutoplay() {
+    if (autoplayTimer) clearTimeout(autoplayTimer);
+    if (!autoplayActive) return;
+    autoplayTimer = setTimeout(() => {
+      if (current + 1 >= TOTAL) goTo(0);
+      else go(1);
+      scheduleAutoplay();
+    }, AUTO_INTERVAL);
+  }
+
+  function updateAutoplayBtn() {
+    if (autoplayActive) {
+      autoplayBtn.textContent = '⏸';
+      autoplayBtn.style.opacity = '1';
+    } else {
+      autoplayBtn.textContent = '▶';
+      autoplayBtn.style.opacity = '0.6';
+    }
+  }
+
+  // Fullscreen toggle
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        alert(`Error attempting to enable fullscreen: ${err.message}`);
+      });
+      fullscreenBtn.textContent = '⛶';
+    } else {
+      document.exitFullscreen();
+      fullscreenBtn.textContent = '⛶';
+    }
+  }
+
+  // Shortcuts panel
+  function toggleShortcuts() {
+    shortcutsPanel.classList.toggle('active');
+  }
+
+  // Keyboard navigation
   document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') go(1);
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') go(-1);
+    // Don't intercept if typing in an input
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      stopAutoplay();
+      go(1);
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      stopAutoplay();
+      go(-1);
+    }
+    if (e.key === ' ') {
+      e.preventDefault();
+      toggleAutoplay();
+    }
+    if (e.key === 'f' || e.key === 'F') {
+      e.preventDefault();
+      toggleFullscreen();
+    }
+    if (e.key === '?' || e.key === 'h' || e.key === 'H') {
+      e.preventDefault();
+      toggleShortcuts();
+    }
+    if (e.key === 'Escape') {
+      if (shortcutsPanel.classList.contains('active')) {
+        toggleShortcuts();
+      }
+    }
   });
 
-  // Touch/swipe
-  let touchX = 0;
-  document.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; });
+  // Mouse wheel navigation
+  document.addEventListener('wheel', e => {
+    if (wheelTimeout) return;
+    wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 500);
+    
+    stopAutoplay();
+    if (e.deltaY > 0) go(1);
+    else if (e.deltaY < 0) go(-1);
+  }, { passive: true });
+
+  // Touch/swipe - gallery style
+  document.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartTime = Date.now();
+  }, { passive: true });
+
   document.addEventListener('touchend', e => {
-    const dx = touchX - e.changedTouches[0].clientX;
-    if (Math.abs(dx) > 60) go(dx > 0 ? 1 : -1);
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchDuration = Date.now() - touchStartTime;
+    const dx = touchStartX - touchEndX;
+    const isQuick = touchDuration < 300;
+    const isLongSwipe = Math.abs(dx) > 50;
+
+    if (isLongSwipe) {
+      stopAutoplay();
+      showTouchFeedback(touchEndX, e.changedTouches[0].clientY);
+      go(dx > 0 ? 1 : -1);
+    }
+  }, { passive: true });
+
+  // Mouse drag fallback
+  let mouseDown = false;
+  let mouseStartX = 0;
+  document.addEventListener('mousedown', e => {
+    mouseDown = true;
+    mouseStartX = e.clientX;
+  });
+  document.addEventListener('mousemove', e => {
+    if (!mouseDown) return;
+    const dx = mouseStartX - e.clientX;
+    if (Math.abs(dx) > 150) {
+      mouseDown = false;
+      stopAutoplay();
+      go(dx > 0 ? 1 : -1);
+    }
+  });
+  document.addEventListener('mouseup', () => { mouseDown = false; });
+
+  // Touch feedback pulse
+  function showTouchFeedback(x, y) {
+    const feedback = document.createElement('div');
+    feedback.className = 'touch-feedback';
+    feedback.style.left = (x - 20) + 'px';
+    feedback.style.top = (y - 20) + 'px';
+    document.body.appendChild(feedback);
+    setTimeout(() => feedback.remove(), 600);
+  }
+
+  // Click on shortcuts to close panel
+  document.addEventListener('click', e => {
+    if (shortcutsPanel.classList.contains('active') && 
+        !shortcutsPanel.contains(e.target) && 
+        e.target !== document.querySelector('.shortcuts-title')) {
+      toggleShortcuts();
+    }
   });
 
-  // Init
+  // Init - start with autoplay enabled
   slides[0].classList.add('active');
   progressFill.style.width = (1 / TOTAL * 100) + '%';
   updateDots();
+  updateCircularProgress();
+  updateAutoplayBtn();
+  circularProgress.classList.add('autoplay');
+  scheduleAutoplay();
 </script>
 </body>
 </html>
