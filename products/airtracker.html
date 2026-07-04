@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ SEO META TAGS ═══ -->
+<title>Air Tracker — Where Is My Flight | flight.bhishmaagroup.in</title>
+<meta name="description" content="Track any Indian flight live — real-time position, altitude, speed, ETA, and airport departure/arrival boards. 106 Indian airports. Developed during internship at Airports Authority of India by Sudhanshu.">
+<meta name="keywords" content="flight tracker india, live flight tracking, where is my flight, indian airlines tracker, DEL BOM BLR flight status, airport dashboard, Air India flight status, IndiGo tracker, real-time aviation">
+<meta name="author" content="Sudhanshu — bhishmaagroup.in">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0A0E1A">
+<link rel="canonical" href="https://flight.bhishmaagroup.in/">
+
+<!-- ═══ OPEN GRAPH ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Air Tracker — Where Is My Flight | Live Indian Flight Tracker">
+<meta property="og:description" content="Track any Indian flight live — real-time position, altitude, speed, ETA. 106 airports. Built for AAI.">
+<meta property="og:url" content="https://flight.bhishmaagroup.in/">
+<meta property="og:image" content="https://flight.bhishmaagroup.in/og-cover.png">
+<meta property="og:site_name" content="Air Tracker — bhishmaagroup.in">
+<meta property="og:locale" content="en_IN">
+
+<!-- ═══ TWITTER CARD ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Air Tracker — Where Is My Flight | flight.bhishmaagroup.in">
+<meta name="twitter:description" content="Live flight tracking for all Indian airports. Real-time position, altitude, speed, ETA.">
+<meta name="twitter:image" content="https://flight.bhishmaagroup.in/og-cover.png">
+
+<!-- ═══ STRUCTURED DATA — JSON-LD ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Air Tracker — Where Is My Flight",
+  "url": "https://flight.bhishmaagroup.in",
+  "description": "Real-time flight tracking platform built during an internship at Airports Authority of India. Track any Indian flight live — position, altitude, speed, ETA, and airport dashboards for 106 airports.",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"},
+  "creator": {"@type": "Person", "name": "Sudhanshu", "url": "https://bhishmaagroup.in"},
+  "featureList": [
+    "Real-time flight position tracking",
+    "Live airport departure and arrival boards",
+    "106 Indian airports supported",
+    "VIP flight monitoring with alerts",
+    "ETA and progress calculation",
+    "PWA — installable on mobile"
+  ]
+}
+</script>
+
+<!-- ═══ FONTS ═══ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════════ */
+:root {
+  --night:    #060A14;
+  --deep:     #0A0E1A;
+  --panel:    #0D1526;
+  --card:     #111827;
+  --border:   rgba(0,255,156,0.12);
+  --radar:    #00FF9C;
+  --sky:      #38BDF8;
+  --amber:    #F59E0B;
+  --white:    #F0F4FF;
+  --muted:    #8899AA;
+  --glow-g:   rgba(0,255,156,0.35);
+  --glow-b:   rgba(56,189,248,0.3);
+  --ff-disp:  'Orbitron', monospace;
+  --ff-mono:  'Share Tech Mono', monospace;
+  --ff-body:  'Inter', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--night);
+  color: var(--white);
+  font-family: var(--ff-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════════════
+   NOISE OVERLAY
+═══════════════════════════════════════════════ */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0; opacity: .4;
+}
+
+/* ═══════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 4rem;
+  background: rgba(6,10,20,0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  display: flex; align-items: center; gap: .7rem;
+  font-family: var(--ff-disp); font-size: 1.1rem; font-weight: 700;
+  color: var(--radar); text-decoration: none; letter-spacing: .05em;
+}
+.logo-icon { font-size: 1.4rem; animation: blip 2s ease-in-out infinite; }
+@keyframes blip { 0%,100%{opacity:1} 50%{opacity:.4} }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  color: var(--muted); text-decoration: none; font-size: .85rem;
+  letter-spacing: .08em; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--radar); }
+.nav-cta {
+  background: var(--radar); color: var(--night);
+  padding: .55rem 1.4rem; border-radius: 2px;
+  font-family: var(--ff-disp); font-size: .75rem; font-weight: 700;
+  letter-spacing: .1em; text-decoration: none; text-transform: uppercase;
+  transition: box-shadow .2s, transform .15s;
+}
+.nav-cta:hover { box-shadow: 0 0 24px var(--glow-g); transform: translateY(-1px); }
+
+/* ═══════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════ */
+#hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; padding-top: 80px;
+}
+
+/* Grid lines background */
+#hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,156,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,156,.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+
+.hero-inner {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 4rem;
+  max-width: 1200px; padding: 0 2rem; width: 100%;
+}
+
+.hero-text { animation: fadeUp .8s ease both; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+
+.eyebrow {
+  font-family: var(--ff-mono); font-size: .8rem;
+  color: var(--radar); letter-spacing: .2em; text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  display: flex; align-items: center; gap: .6rem;
+}
+.eyebrow::before { content:''; width:24px; height:1px; background:var(--radar); }
+
+.hero-title {
+  font-family: var(--ff-disp);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 900; line-height: 1.05;
+  letter-spacing: -.02em;
+  margin-bottom: 1.5rem;
+}
+.hero-title .line2 { color: var(--radar); display: block; }
+
+.hero-desc {
+  font-size: 1.1rem; color: var(--muted); line-height: 1.7;
+  max-width: 480px; margin-bottom: 2.5rem;
+}
+
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--radar); color: var(--night);
+  padding: .85rem 2rem; border-radius: 2px;
+  font-family: var(--ff-disp); font-weight: 700;
+  font-size: .8rem; letter-spacing: .1em; text-transform: uppercase;
+  text-decoration: none; display: inline-flex; align-items: center; gap: .5rem;
+  transition: box-shadow .2s, transform .15s;
+}
+.btn-primary:hover { box-shadow: 0 0 32px var(--glow-g); transform: translateY(-2px); }
+.btn-secondary {
+  border: 1px solid var(--border); color: var(--white);
+  padding: .85rem 2rem; border-radius: 2px;
+  font-family: var(--ff-mono); font-size: .8rem;
+  letter-spacing: .1em; text-transform: uppercase;
+  text-decoration: none; display: inline-flex; align-items: center; gap: .5rem;
+  transition: border-color .2s, color .2s;
+}
+.btn-secondary:hover { border-color: var(--radar); color: var(--radar); }
+
+/* ═══════════════════════════════════════════════
+   RADAR VISUAL
+═══════════════════════════════════════════════ */
+.radar-wrap {
+  position: relative; width: 100%; max-width: 520px;
+  aspect-ratio: 1; margin: auto;
+  animation: fadeUp .8s .2s ease both;
+}
+
+.radar-svg {
+  width: 100%; height: 100%;
+  filter: drop-shadow(0 0 30px rgba(0,255,156,.25));
+}
+
+/* Radar sweep animation */
+.sweep {
+  transform-origin: 50% 50%;
+  animation: sweep 4s linear infinite;
+}
+@keyframes sweep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Flight blips */
+.blip {
+  animation: blip-pulse 2s ease-in-out infinite;
+}
+.blip:nth-child(2) { animation-delay: .4s; }
+.blip:nth-child(3) { animation-delay: .8s; }
+.blip:nth-child(4) { animation-delay: 1.2s; }
+.blip:nth-child(5) { animation-delay: 1.7s; }
+.blip:nth-child(6) { animation-delay: .9s; }
+@keyframes blip-pulse {
+  0%,100%{ opacity:.3; r:3px; }
+  50%{ opacity:1; r:5px; }
+}
+
+/* Halo ring around radar */
+.radar-halo {
+  position: absolute; inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 45%, rgba(0,255,156,.04) 70%, transparent 100%);
+  animation: halo-spin 20s linear infinite;
+}
+@keyframes halo-spin { to { transform: rotate(360deg); } }
+
+/* Flight path trail */
+.flight-trail { stroke-dasharray: 8 4; animation: trail-dash 3s linear infinite; }
+@keyframes trail-dash { to { stroke-dashoffset: -24; } }
+
+/* ═══════════════════════════════════════════════
+   TICKER BAR
+═══════════════════════════════════════════════ */
+.ticker-bar {
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: .7rem 0; overflow: hidden;
+  font-family: var(--ff-mono); font-size: .78rem; color: var(--muted);
+}
+.ticker-inner {
+  display: flex; gap: 0;
+  animation: scroll-left 35s linear infinite;
+  white-space: nowrap;
+}
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-item {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: 0 2.5rem;
+}
+.ticker-item .status-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--radar); box-shadow: 0 0 6px var(--radar);
+  flex-shrink: 0;
+}
+.ticker-item.delayed .status-dot { background: var(--amber); box-shadow: 0 0 6px var(--amber); }
+.ticker-item .fl-num { color: var(--radar); font-weight: 600; }
+.ticker-item.delayed .fl-num { color: var(--amber); }
+
+/* ═══════════════════════════════════════════════
+   STATS STRIP
+═══════════════════════════════════════════════ */
+.stats-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+  max-width: 1100px; margin: 5rem auto;
+  padding: 0 2rem;
+}
+.stat-cell {
+  background: var(--deep); padding: 2.5rem 2rem;
+  text-align: center;
+  transition: background .25s;
+}
+.stat-cell:hover { background: var(--panel); }
+.stat-num {
+  font-family: var(--ff-disp); font-size: 3rem; font-weight: 900;
+  color: var(--radar); line-height: 1;
+  margin-bottom: .4rem;
+}
+.stat-label {
+  font-size: .78rem; color: var(--muted);
+  letter-spacing: .1em; text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION COMMON
+═══════════════════════════════════════════════ */
+section { padding: 7rem 2rem; max-width: 1200px; margin: 0 auto; }
+.section-eye {
+  font-family: var(--ff-mono); font-size: .78rem; color: var(--radar);
+  letter-spacing: .2em; text-transform: uppercase; margin-bottom: 1rem;
+}
+.section-title {
+  font-family: var(--ff-disp); font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 900; letter-spacing: -.02em;
+  margin-bottom: 1.2rem;
+}
+.section-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; line-height: 1.7; }
+
+/* ═══════════════════════════════════════════════
+   FEATURES — 3D TILT CARDS
+═══════════════════════════════════════════════ */
+#features { padding: 5rem 2rem 7rem; max-width: 1200px; margin: 0 auto; }
+.features-header { text-align: center; margin-bottom: 4rem; }
+.features-header .section-sub { margin: 0 auto; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.feat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem;
+  cursor: default;
+  transform-style: preserve-3d;
+  transition: transform .15s ease, border-color .25s, box-shadow .25s;
+  position: relative; overflow: hidden;
+}
+.feat-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--radar), transparent);
+  opacity: 0; transition: opacity .3s;
+}
+.feat-card:hover { border-color: rgba(0,255,156,.3); box-shadow: 0 20px 40px rgba(0,0,0,.4), 0 0 30px rgba(0,255,156,.08); }
+.feat-card:hover::before { opacity: 1; }
+
+.card-icon {
+  font-size: 2.2rem; margin-bottom: 1.3rem;
+  display: block;
+  filter: drop-shadow(0 0 8px var(--glow-g));
+}
+.card-title {
+  font-family: var(--ff-disp); font-size: 1rem; font-weight: 700;
+  margin-bottom: .7rem; color: var(--white); letter-spacing: .03em;
+}
+.card-desc { font-size: .9rem; color: var(--muted); line-height: 1.65; }
+
+.card-tag {
+  display: inline-block; margin-top: 1.2rem;
+  font-family: var(--ff-mono); font-size: .7rem;
+  color: var(--radar); letter-spacing: .1em;
+  border: 1px solid rgba(0,255,156,.2);
+  padding: .2rem .6rem; border-radius: 2px;
+}
+
+/* Wide card for last row */
+.feat-card.wide { grid-column: span 2; }
+
+/* ═══════════════════════════════════════════════
+   HOW IT WORKS
+═══════════════════════════════════════════════ */
+#how { padding: 5rem 2rem 7rem; max-width: 1100px; margin: 0 auto; }
+.how-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: center; margin-top: 4rem;
+}
+
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step {
+  display: flex; gap: 1.5rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--border);
+  cursor: default;
+  transition: padding-left .2s;
+}
+.step:last-child { border-bottom: none; }
+.step:hover { padding-left: .5rem; }
+.step-num {
+  font-family: var(--ff-disp); font-size: 2rem; font-weight: 900;
+  color: rgba(0,255,156,.15); line-height: 1; min-width: 2.5rem;
+  transition: color .2s;
+}
+.step:hover .step-num { color: var(--radar); }
+.step-title { font-family: var(--ff-disp); font-size: .95rem; font-weight: 700; margin-bottom: .4rem; }
+.step-desc { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+
+/* Flight card mockup */
+.mockup {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  font-family: var(--ff-mono);
+  box-shadow: 0 40px 80px rgba(0,0,0,.5), 0 0 40px rgba(0,255,156,.06);
+  transform: perspective(1000px) rotateY(-8deg) rotateX(2deg);
+  transition: transform .3s ease;
+}
+.mockup:hover { transform: perspective(1000px) rotateY(-4deg) rotateX(1deg); }
+.mock-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.2rem; padding-bottom: .8rem;
+  border-bottom: 1px solid var(--border);
+}
+.mock-fl { color: var(--radar); font-size: 1.1rem; font-weight: bold; }
+.mock-status {
+  background: rgba(0,255,156,.1); color: var(--radar);
+  padding: .2rem .7rem; border-radius: 2px; font-size: .75rem;
+  border: 1px solid rgba(0,255,156,.2);
+  animation: blip 2s ease infinite;
+}
+.mock-row {
+  display: flex; justify-content: space-between;
+  padding: .5rem 0; font-size: .8rem;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
+.mock-row:last-child { border: none; }
+.mock-key { color: var(--muted); }
+.mock-val { color: var(--white); }
+.mock-val.green { color: var(--radar); }
+.mock-val.amber { color: var(--amber); }
+
+.progress-bar {
+  margin-top: 1rem;
+  background: rgba(255,255,255,.06);
+  height: 6px; border-radius: 3px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; width: 63%;
+  background: linear-gradient(90deg, var(--radar), var(--sky));
+  border-radius: 3px;
+  animation: fill-pulse 3s ease-in-out infinite;
+}
+@keyframes fill-pulse { 0%,100%{opacity:.8} 50%{opacity:1} }
+.progress-labels {
+  display: flex; justify-content: space-between;
+  font-size: .72rem; color: var(--muted); margin-top: .4rem;
+}
+
+/* ═══════════════════════════════════════════════
+   AIRPORTS SECTION
+═══════════════════════════════════════════════ */
+#airports {
+  padding: 5rem 0 7rem;
+  background: linear-gradient(180deg, transparent, rgba(0,255,156,.02) 50%, transparent);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.airports-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.airports-inner .section-title { text-align: center; }
+.airports-inner .section-eye { text-align: center; }
+
+.airports-scroll {
+  margin-top: 3.5rem;
+  overflow: hidden;
+}
+.airports-row {
+  display: flex; gap: .8rem;
+  animation: slide-airports 30s linear infinite;
+  white-space: nowrap;
+}
+.airports-row.reverse { animation: slide-airports-rev 35s linear infinite; margin-top: .8rem; }
+@keyframes slide-airports { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes slide-airports-rev { from{transform:translateX(-50%)} to{transform:translateX(0)} }
+
+.airport-pill {
+  display: inline-flex; align-items: center; gap: .6rem;
+  background: var(--card); border: 1px solid var(--border);
+  padding: .6rem 1.2rem; border-radius: 2px;
+  font-family: var(--ff-mono); font-size: .78rem;
+  transition: border-color .2s;
+  flex-shrink: 0;
+}
+.airport-pill:hover { border-color: rgba(0,255,156,.3); }
+.airport-pill .iata { color: var(--radar); font-weight: bold; font-size: .9rem; }
+.airport-pill .city { color: var(--muted); }
+
+/* ═══════════════════════════════════════════════
+   TECH STACK
+═══════════════════════════════════════════════ */
+#tech { padding: 5rem 2rem 7rem; max-width: 1100px; margin: 0 auto; }
+.tech-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem; margin-top: 3rem;
+}
+.tech-card {
+  background: var(--card); border: 1px solid var(--border);
+  padding: 1.5rem; border-radius: 3px;
+  transition: transform .2s, border-color .2s;
+}
+.tech-card:hover { transform: translateY(-4px); border-color: rgba(56,189,248,.3); }
+.tech-name {
+  font-family: var(--ff-disp); font-size: .85rem; font-weight: 700;
+  color: var(--sky); margin-bottom: .4rem;
+}
+.tech-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; }
+
+/* ═══════════════════════════════════════════════
+   SEARCH DEMO
+═══════════════════════════════════════════════ */
+#demo {
+  padding: 5rem 2rem 7rem; max-width: 800px; margin: 0 auto;
+  text-align: center;
+}
+.search-box {
+  display: flex; gap: 0; margin-top: 3rem;
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 3px; overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+}
+.search-box:focus-within { border-color: var(--radar); box-shadow: 0 0 30px rgba(0,255,156,.1); }
+.search-input {
+  flex: 1; background: transparent; border: none; outline: none;
+  color: var(--white); font-family: var(--ff-mono); font-size: 1rem;
+  padding: 1.1rem 1.5rem; letter-spacing: .05em;
+}
+.search-input::placeholder { color: var(--muted); }
+.search-btn {
+  background: var(--radar); color: var(--night);
+  border: none; padding: 1.1rem 2rem; cursor: pointer;
+  font-family: var(--ff-disp); font-size: .78rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  transition: background .2s;
+}
+.search-btn:hover { background: #00e68a; }
+.search-hint { font-family: var(--ff-mono); font-size: .78rem; color: var(--muted); margin-top: .8rem; }
+.search-hint span { color: var(--radar); margin: 0 .3rem; cursor: pointer; }
+.search-hint span:hover { text-decoration: underline; }
+
+/* ═══════════════════════════════════════════════
+   CTA SECTION
+═══════════════════════════════════════════════ */
+#cta {
+  padding: 7rem 2rem;
+  background: linear-gradient(135deg, rgba(0,255,156,.04) 0%, rgba(56,189,248,.03) 100%);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.cta-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(0,255,156,.08); border: 1px solid rgba(0,255,156,.2);
+  color: var(--radar); font-family: var(--ff-mono); font-size: .75rem;
+  padding: .4rem 1rem; border-radius: 20px; margin-bottom: 1.5rem;
+  letter-spacing: .1em;
+}
+.cta-badge::before { content: '●'; font-size: .5rem; animation: blip 1.5s ease infinite; }
+.cta-title {
+  font-family: var(--ff-disp); font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900; margin-bottom: 1rem; letter-spacing: -.02em;
+}
+.cta-title em { color: var(--radar); font-style: normal; }
+.cta-sub { font-size: 1rem; color: var(--muted); max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.7; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+footer {
+  background: var(--deep);
+  border-top: 1px solid var(--border);
+  padding: 3rem 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo { font-family: var(--ff-disp); font-size: .9rem; color: var(--radar); }
+.footer-links { display: flex; gap: 2rem; list-style: none; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: .82rem; transition: color .2s; }
+.footer-links a:hover { color: var(--radar); }
+.footer-copy { font-family: var(--ff-mono); font-size: .75rem; color: rgba(136,153,170,.5); }
+
+/* ═══════════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════════ */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════════════
+   GLOW BLOBS
+═══════════════════════════════════════════════ */
+.blob {
+  position: fixed; border-radius: 50%; filter: blur(120px);
+  pointer-events: none; z-index: -1; opacity: .25;
+}
+.blob-1 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,255,156,.15), transparent 70%); top: -200px; right: -100px; }
+.blob-2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(56,189,248,.12), transparent 70%); bottom: 10%; left: -150px; }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+  .radar-wrap { max-width: 340px; }
+  .hero-btns { justify-content: center; }
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .cards-grid { grid-template-columns: 1fr; }
+  .feat-card.wide { grid-column: span 1; }
+  .how-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+  footer { flex-direction: column; text-align: center; }
+}
+@media (max-width: 500px) {
+  .stats-strip { grid-template-columns: 1fr 1fr; }
+  .stat-num { font-size: 2.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="#" class="logo" aria-label="Air Tracker Home">
+    <span class="logo-icon">✈</span> AIR TRACKER
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How it Works</a></li>
+    <li><a href="#airports">Airports</a></li>
+    <li><a href="#tech">Tech Stack</a></li>
+  </ul>
+  <a href="https://flight.bhishmaagroup.in" class="nav-cta" target="_blank" rel="noopener">Track Flight →</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero" aria-label="Hero — Where Is My Flight">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Real-Time Aviation Intelligence &nbsp;·&nbsp; <a href="https://bhishmaagroup.in" target="_blank" style="color:inherit;text-decoration:none;opacity:.7">bhishmaagroup.in</a></p>
+      <h1 class="hero-title">
+        Where Is
+        <span class="line2">My Flight?</span>
+      </h1>
+      <p class="hero-desc">
+        Track any Indian flight live — real-time position, altitude, speed, and ETA.
+        Live departure &amp; arrival boards for 106 airports.
+      </p>
+      <div class="hero-btns">
+        <a href="https://flight.bhishmaagroup.in" class="btn-primary" target="_blank" rel="noopener">✈ Track a Flight</a>
+        <a href="#features" class="btn-secondary">← See Features</a>
+      </div>
+    </div>
+
+    <!-- RADAR SVG -->
+    <div class="radar-wrap" aria-hidden="true">
+      <div class="radar-halo"></div>
+      <svg class="radar-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="rg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#0A1628"/>
+            <stop offset="100%" stop-color="#060A14"/>
+          </radialGradient>
+          <radialGradient id="sweep-grad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00FF9C" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#00FF9C" stop-opacity="0"/>
+          </radialGradient>
+          <clipPath id="circle-clip">
+            <circle cx="250" cy="250" r="230"/>
+          </clipPath>
+        </defs>
+
+        <!-- Background -->
+        <circle cx="250" cy="250" r="248" fill="#060A14" stroke="rgba(0,255,156,0.15)" stroke-width="1"/>
+        <circle cx="250" cy="250" r="230" fill="url(#rg)"/>
+
+        <!-- Concentric rings -->
+        <circle cx="250" cy="250" r="60"  fill="none" stroke="rgba(0,255,156,0.08)" stroke-width="1"/>
+        <circle cx="250" cy="250" r="115" fill="none" stroke="rgba(0,255,156,0.08)" stroke-width="1"/>
+        <circle cx="250" cy="250" r="172" fill="none" stroke="rgba(0,255,156,0.08)" stroke-width="1"/>
+        <circle cx="250" cy="250" r="228" fill="none" stroke="rgba(0,255,156,0.08)" stroke-width="1"/>
+
+        <!-- Crosshairs -->
+        <line x1="22" y1="250" x2="478" y2="250" stroke="rgba(0,255,156,0.06)" stroke-width="1"/>
+        <line x1="250" y1="22" x2="250" y2="478" stroke="rgba(0,255,156,0.06)" stroke-width="1"/>
+        <line x1="88" y1="88" x2="412" y2="412" stroke="rgba(0,255,156,0.04)" stroke-width="1"/>
+        <line x1="412" y1="88" x2="88" y2="412" stroke="rgba(0,255,156,0.04)" stroke-width="1"/>
+
+        <!-- India map simplified outline (stylized) -->
+        <g clip-path="url(#circle-clip)" opacity="0.18">
+          <path d="M210,110 L230,105 L255,108 L275,115 L290,130 L295,148 L288,165 L300,175 L305,190 L298,210 L310,225 L315,245 L308,270 L295,290 L280,310 L265,330 L255,360 L248,380 L240,360 L228,335 L218,315 L205,295 L195,275 L185,258 L178,240 L172,220 L175,200 L168,185 L162,168 L165,148 L175,132 L190,120 Z"
+                fill="none" stroke="#00FF9C" stroke-width="1.5"/>
+          <!-- Sri Lanka -->
+          <path d="M248,392 L255,385 L260,395 L255,405 L248,400 Z" fill="none" stroke="#00FF9C" stroke-width="1"/>
+        </g>
+
+        <!-- Flight trails -->
+        <g clip-path="url(#circle-clip)">
+          <path class="flight-trail" d="M155,180 Q200,160 245,190" fill="none" stroke="rgba(0,255,156,0.25)" stroke-width="1.2"/>
+          <path class="flight-trail" d="M220,260 Q260,230 305,215" fill="none" stroke="rgba(56,189,248,0.2)" stroke-width="1.2" style="animation-delay:.8s"/>
+          <path class="flight-trail" d="M185,310 Q215,285 250,270" fill="none" stroke="rgba(0,255,156,0.2)" stroke-width="1.2" style="animation-delay:1.5s"/>
+          <path class="flight-trail" d="M265,340 Q285,310 300,280" fill="none" stroke="rgba(245,158,11,0.25)" stroke-width="1" style="animation-delay:.4s"/>
+        </g>
+
+        <!-- Sweep -->
+        <g class="sweep" clip-path="url(#circle-clip)">
+          <path d="M250,250 L250,22 A228,228 0 0,1 478,250 Z" fill="url(#sweep-grad)" opacity="0.6"/>
+          <line x1="250" y1="250" x2="250" y2="22" stroke="#00FF9C" stroke-width="1.5" opacity="0.8"/>
+        </g>
+
+        <!-- Blips — flight positions -->
+        <g clip-path="url(#circle-clip)">
+          <!-- DEL area -->
+          <circle class="blip" cx="232" cy="175" r="4" fill="#00FF9C" filter="url(#gf)"/>
+          <circle cx="232" cy="175" r="9" fill="none" stroke="#00FF9C" stroke-width=".5" opacity=".3"/>
+          <!-- BOM area -->
+          <circle class="blip" cx="185" cy="265" r="4" fill="#00FF9C"/>
+          <circle cx="185" cy="265" r="9" fill="none" stroke="#00FF9C" stroke-width=".5" opacity=".3"/>
+          <!-- BLR area -->
+          <circle class="blip" cx="232" cy="310" r="3.5" fill="#38BDF8"/>
+          <!-- CCU area -->
+          <circle class="blip" cx="295" cy="215" r="3.5" fill="#00FF9C"/>
+          <!-- HYD area -->
+          <circle class="blip" cx="252" cy="268" r="3" fill="#F59E0B"/>
+          <!-- MAA area -->
+          <circle class="blip" cx="258" cy="312" r="3" fill="#38BDF8"/>
+          <!-- In-flight 1 -->
+          <circle class="blip" cx="205" cy="200" r="2.5" fill="#00FF9C"/>
+          <!-- In-flight 2 -->
+          <circle class="blip" cx="268" cy="238" r="2.5" fill="#38BDF8"/>
+        </g>
+
+        <!-- Center dot -->
+        <circle cx="250" cy="250" r="3" fill="#00FF9C" opacity=".5"/>
+
+        <!-- Labels -->
+        <text x="236" y="168" font-family="'Share Tech Mono',monospace" font-size="8" fill="#00FF9C" opacity=".7">DEL</text>
+        <text x="168" y="263" font-family="'Share Tech Mono',monospace" font-size="8" fill="#00FF9C" opacity=".7">BOM</text>
+        <text x="237" y="325" font-family="'Share Tech Mono',monospace" font-size="8" fill="#38BDF8" opacity=".7">BLR</text>
+        <text x="298" y="213" font-family="'Share Tech Mono',monospace" font-size="8" fill="#00FF9C" opacity=".7">CCU</text>
+        <text x="258" y="283" font-family="'Share Tech Mono',monospace" font-size="8" fill="#F59E0B" opacity=".7">HYD</text>
+
+        <!-- Bottom label -->
+        <text x="250" y="470" text-anchor="middle" font-family="'Orbitron',monospace" font-size="9" fill="rgba(0,255,156,0.4)" letter-spacing="3">AIR TRACKER — INDIA</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TICKER ═══ -->
+<div class="ticker-bar" aria-label="Live flight status ticker" role="marquee">
+  <div class="ticker-inner">
+    <!-- Set 1 -->
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">AI202</span> DEL → BOM · EN ROUTE · 37,000ft · 842 km/h · ETA 48 min</span>
+    <span class="ticker-item delayed"><span class="status-dot"></span><span class="fl-num">6E456</span> BOM → BLR · DELAYED +22 min · Gate B12</span>
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">UK831</span> DEL → CCU · CRUISING · 35,000ft · 815 km/h</span>
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">SG108</span> BLR → HYD · APPROACHING · ETA 12 min</span>
+    <span class="ticker-item delayed"><span class="status-dot"></span><span class="fl-num">AI130</span> COK → DEL · DELAYED +45 min · Weather</span>
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">6E2175</span> JAI → MAA · EN ROUTE · 33,000ft · ETA 1h 22min</span>
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">AI815</span> DEL → LHR · CRUISING · 39,000ft · 868 km/h</span>
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">QR577</span> DOH → DEL · DESCENDING · ETA 31 min</span>
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">EK225</span> DXB → BOM · FINAL APPROACH · 3,200ft</span>
+    <!-- Set 2 (duplicate for seamless loop) -->
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">AI202</span> DEL → BOM · EN ROUTE · 37,000ft · 842 km/h · ETA 48 min</span>
+    <span class="ticker-item delayed"><span class="status-dot"></span><span class="fl-num">6E456</span> BOM → BLR · DELAYED +22 min · Gate B12</span>
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">UK831</span> DEL → CCU · CRUISING · 35,000ft · 815 km/h</span>
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">SG108</span> BLR → HYD · APPROACHING · ETA 12 min</span>
+    <span class="ticker-item delayed"><span class="status-dot"></span><span class="fl-num">AI130</span> COK → DEL · DELAYED +45 min · Weather</span>
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">6E2175</span> JAI → MAA · EN ROUTE · 33,000ft · ETA 1h 22min</span>
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">AI815</span> DEL → LHR · CRUISING · 39,000ft · 868 km/h</span>
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">QR577</span> DOH → DEL · DESCENDING · ETA 31 min</span>
+    <span class="ticker-item"><span class="status-dot"></span><span class="fl-num">EK225</span> DXB → BOM · FINAL APPROACH · 3,200ft</span>
+  </div>
+</div>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats-strip reveal" role="region" aria-label="Platform statistics">
+  <div class="stat-cell">
+    <div class="stat-num" data-target="106">0</div>
+    <div class="stat-label">Indian Airports</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num" data-target="3">0</div>
+    <div class="stat-label">Live Data Sources</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num" id="stat-refresh">10s</div>
+    <div class="stat-label">Min Refresh Rate</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">24/7</div>
+    <div class="stat-label">Live Monitoring</div>
+  </div>
+</div>
+
+<!-- ═══ FEATURES ═══ -->
+<section id="features" aria-labelledby="feat-title">
+  <div class="features-header reveal">
+    <p class="section-eye">Platform Capabilities</p>
+    <h2 class="section-title" id="feat-title">Built for Real Aviation Ops</h2>
+    <p class="section-sub">Not just a flight number lookup. A complete intelligence layer for tracking, monitoring, and analysing Indian aviation in real time.</p>
+  </div>
+
+  <div class="cards-grid">
+    <article class="feat-card reveal" id="card-live">
+      <span class="card-icon">📡</span>
+      <h3 class="card-title">Live Position Tracking</h3>
+      <p class="card-desc">Real-time lat/lon, altitude (ft), speed (km/h), and heading sourced from ADS-B transponders via OpenSky Network. Updates every 10–120 seconds based on flight phase.</p>
+      <span class="card-tag">ADS-B · OpenSky</span>
+    </article>
+
+    <article class="feat-card reveal" style="animation-delay:.1s">
+      <span class="card-icon">🛬</span>
+      <h3 class="card-title">Airport Dashboard</h3>
+      <p class="card-desc">Live departure & arrival boards just like FIDS screens at airports. See terminal, gate, delay, and status for every flight at DEL, BOM, BLR, and 103 more airports.</p>
+      <span class="card-tag">106 Airports · FIDS</span>
+    </article>
+
+    <article class="feat-card reveal" style="animation-delay:.2s">
+      <span class="card-icon">⏱️</span>
+      <h3 class="card-title">Smart ETA Engine</h3>
+      <p class="card-desc">Haversine great-circle distance calculation combined with real airspeed gives precise ETA in minutes. Updates live as the aircraft descends and decelerates.</p>
+      <span class="card-tag">Haversine · Live ETA</span>
+    </article>
+
+    <article class="feat-card reveal wide" style="animation-delay:.05s">
+      <span class="card-icon">🔄</span>
+      <h3 class="card-title">Adaptive Refresh Engine</h3>
+      <p class="card-desc">No wasted API calls. The background refresh engine polls aggressively (10s) when a flight is landing and backs off to 10 minutes when it's cruising at altitude — saving thousands of API calls per day while keeping data fresh where it matters. Zero external calls when no flight is being tracked.</p>
+      <span class="card-tag">Zero-Waste Polling · APScheduler</span>
+    </article>
+
+    <article class="feat-card reveal" style="animation-delay:.15s">
+      <span class="card-icon">🛡️</span>
+      <h3 class="card-title">3-Layer Cache</h3>
+      <p class="card-desc">Memory → Redis → SQLite cascade ensures instant responses. Cache hit rate stays above 95% for dashboard requests, meaning almost no live API calls on normal usage.</p>
+      <span class="card-tag">Memory · Redis · SQLite</span>
+    </article>
+
+    <article class="feat-card reveal" style="animation-delay:.25s">
+      <span class="card-icon">📲</span>
+      <h3 class="card-title">PWA — Install on Mobile</h3>
+      <p class="card-desc">Progressive Web App with service worker. Install on Android or iOS home screen for a native app experience. Works offline with cached data.</p>
+      <span class="card-tag">PWA · Offline · Service Worker</span>
+    </article>
+
+    <article class="feat-card reveal" style="animation-delay:.1s">
+      <span class="card-icon">🚨</span>
+      <h3 class="card-title">VIP Flight Alerts</h3>
+      <p class="card-desc">Automated alerts for final approach, landing, delay, holding pattern, and diversion. Built for VIP movement coordination and ground handling teams.</p>
+      <span class="card-tag">Real-time Alerts · WebSocket</span>
+    </article>
+
+    <article class="feat-card reveal" style="animation-delay:.2s">
+      <span class="card-icon">🔁</span>
+      <h3 class="card-title">Multi-API Fallback Chain</h3>
+      <p class="card-desc">AirLabs → OpenSky → AviationStack. Quota-aware auto-switching between providers ensures the platform stays live even when one API hits rate limits.</p>
+      <span class="card-tag">Fallback · Quota-Aware</span>
+    </article>
+
+    <article class="feat-card reveal" style="animation-delay:.3s">
+      <span class="card-icon">📈</span>
+      <h3 class="card-title">Flight History & Analytics</h3>
+      <p class="card-desc">Every position update stored as a time-series. Export flight paths as KML (Google Earth) or GeoJSON. Daily traffic reports and delay analytics built in.</p>
+      <span class="card-tag">KML · GeoJSON · Analytics</span>
+    </article>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section id="how" aria-labelledby="how-title">
+  <div class="reveal">
+    <p class="section-eye">Under The Hood</p>
+    <h2 class="section-title" id="how-title">How It Works</h2>
+    <p class="section-sub">A zero-waste data pipeline — from raw ADS-B signals to your dashboard in under a second.</p>
+  </div>
+
+  <div class="how-grid">
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Background Fetch</div>
+          <p class="step-desc">APScheduler silently polls OpenSky (positions every 90s) and AirLabs (schedules every 5 min) in background threads — completely independent of user requests.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">3-Layer Cache Write</div>
+          <p class="step-desc">Fresh data is written simultaneously to RAM, Redis, and SQLite — so it's instantly available in microseconds next time.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">User Requests Dashboard</div>
+          <p class="step-desc">Frontend calls /api/dashboard/DEL — server reads from cache, computes progress %, interpolates position, attaches weather. Zero external API call.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-title">WebSocket Push</div>
+          <p class="step-desc">When new position data arrives for a tracked flight, Socket.IO immediately pushes the update to all connected clients — live without polling.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mockup card -->
+    <div class="mockup reveal" role="img" aria-label="Example flight tracking card for AI202">
+      <div class="mock-header">
+        <span class="mock-fl">✈ AI202</span>
+        <span class="mock-status">● LIVE</span>
+      </div>
+      <div class="mock-row"><span class="mock-key">Route</span><span class="mock-val">DEL → BOM</span></div>
+      <div class="mock-row"><span class="mock-key">Altitude</span><span class="mock-val green">37,000 ft</span></div>
+      <div class="mock-row"><span class="mock-key">Speed</span><span class="mock-val green">842 km/h</span></div>
+      <div class="mock-row"><span class="mock-key">Heading</span><span class="mock-val">228°</span></div>
+      <div class="mock-row"><span class="mock-key">Over</span><span class="mock-val">Ratlam, MP</span></div>
+      <div class="mock-row"><span class="mock-key">ETA Mumbai</span><span class="mock-val green">48 min</span></div>
+      <div class="mock-row"><span class="mock-key">Delay Risk</span><span class="mock-val" style="color:#4ade80">LOW</span></div>
+      <div class="mock-row"><span class="mock-key">Phase</span><span class="mock-val amber">EN_ROUTE</span></div>
+      <div class="progress-bar" aria-label="Flight progress: 63%">
+        <div class="progress-fill"></div>
+      </div>
+      <div class="progress-labels">
+        <span>DEL</span>
+        <span style="color:var(--radar)">63%</span>
+        <span>BOM</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AIRPORTS ═══ -->
+<div id="airports" aria-label="Supported Indian airports">
+  <div class="airports-inner">
+    <p class="section-eye">Coverage</p>
+    <h2 class="section-title reveal">106 Indian Airports. Every Route.</h2>
+  </div>
+  <div class="airports-scroll" aria-hidden="true">
+    <div class="airports-row">
+      <!-- Row 1 -->
+      <span class="airport-pill"><span class="iata">DEL</span><span class="city">New Delhi</span></span>
+      <span class="airport-pill"><span class="iata">BOM</span><span class="city">Mumbai</span></span>
+      <span class="airport-pill"><span class="iata">BLR</span><span class="city">Bengaluru</span></span>
+      <span class="airport-pill"><span class="iata">MAA</span><span class="city">Chennai</span></span>
+      <span class="airport-pill"><span class="iata">CCU</span><span class="city">Kolkata</span></span>
+      <span class="airport-pill"><span class="iata">HYD</span><span class="city">Hyderabad</span></span>
+      <span class="airport-pill"><span class="iata">COK</span><span class="city">Kochi</span></span>
+      <span class="airport-pill"><span class="iata">AMD</span><span class="city">Ahmedabad</span></span>
+      <span class="airport-pill"><span class="iata">JAI</span><span class="city">Jaipur</span></span>
+      <span class="airport-pill"><span class="iata">LKO</span><span class="city">Lucknow</span></span>
+      <span class="airport-pill"><span class="iata">PNQ</span><span class="city">Pune</span></span>
+      <span class="airport-pill"><span class="iata">GOI</span><span class="city">Goa</span></span>
+      <span class="airport-pill"><span class="iata">SXR</span><span class="city">Srinagar</span></span>
+      <span class="airport-pill"><span class="iata">IXL</span><span class="city">Leh</span></span>
+      <span class="airport-pill"><span class="iata">ATQ</span><span class="city">Amritsar</span></span>
+      <span class="airport-pill"><span class="iata">VNS</span><span class="city">Varanasi</span></span>
+      <span class="airport-pill"><span class="iata">GAU</span><span class="city">Guwahati</span></span>
+      <span class="airport-pill"><span class="iata">IXR</span><span class="city">Ranchi</span></span>
+      <span class="airport-pill"><span class="iata">PAT</span><span class="city">Patna</span></span>
+      <span class="airport-pill"><span class="iata">NAG</span><span class="city">Nagpur</span></span>
+      <!-- duplicate for seamless scroll -->
+      <span class="airport-pill"><span class="iata">DEL</span><span class="city">New Delhi</span></span>
+      <span class="airport-pill"><span class="iata">BOM</span><span class="city">Mumbai</span></span>
+      <span class="airport-pill"><span class="iata">BLR</span><span class="city">Bengaluru</span></span>
+      <span class="airport-pill"><span class="iata">MAA</span><span class="city">Chennai</span></span>
+      <span class="airport-pill"><span class="iata">CCU</span><span class="city">Kolkata</span></span>
+      <span class="airport-pill"><span class="iata">HYD</span><span class="city">Hyderabad</span></span>
+      <span class="airport-pill"><span class="iata">COK</span><span class="city">Kochi</span></span>
+      <span class="airport-pill"><span class="iata">AMD</span><span class="city">Ahmedabad</span></span>
+      <span class="airport-pill"><span class="iata">JAI</span><span class="city">Jaipur</span></span>
+      <span class="airport-pill"><span class="iata">LKO</span><span class="city">Lucknow</span></span>
+      <span class="airport-pill"><span class="iata">PNQ</span><span class="city">Pune</span></span>
+      <span class="airport-pill"><span class="iata">GOI</span><span class="city">Goa</span></span>
+      <span class="airport-pill"><span class="iata">SXR</span><span class="city">Srinagar</span></span>
+      <span class="airport-pill"><span class="iata">IXL</span><span class="city">Leh</span></span>
+      <span class="airport-pill"><span class="iata">ATQ</span><span class="city">Amritsar</span></span>
+      <span class="airport-pill"><span class="iata">VNS</span><span class="city">Varanasi</span></span>
+      <span class="airport-pill"><span class="iata">GAU</span><span class="city">Guwahati</span></span>
+      <span class="airport-pill"><span class="iata">IXR</span><span class="city">Ranchi</span></span>
+      <span class="airport-pill"><span class="iata">PAT</span><span class="city">Patna</span></span>
+      <span class="airport-pill"><span class="iata">NAG</span><span class="city">Nagpur</span></span>
+    </div>
+    <div class="airports-row reverse">
+      <span class="airport-pill"><span class="iata">TRV</span><span class="city">Thiruvananthapuram</span></span>
+      <span class="airport-pill"><span class="iata">IDR</span><span class="city">Indore</span></span>
+      <span class="airport-pill"><span class="iata">BBI</span><span class="city">Bhubaneswar</span></span>
+      <span class="airport-pill"><span class="iata">CCJ</span><span class="city">Kozhikode</span></span>
+      <span class="airport-pill"><span class="iata">IXC</span><span class="city">Chandigarh</span></span>
+      <span class="airport-pill"><span class="iata">VTZ</span><span class="city">Visakhapatnam</span></span>
+      <span class="airport-pill"><span class="iata">CJB</span><span class="city">Coimbatore</span></span>
+      <span class="airport-pill"><span class="iata">IXB</span><span class="city">Bagdogra</span></span>
+      <span class="airport-pill"><span class="iata">IXM</span><span class="city">Madurai</span></span>
+      <span class="airport-pill"><span class="iata">TRZ</span><span class="city">Tiruchirappalli</span></span>
+      <span class="airport-pill"><span class="iata">IXE</span><span class="city">Mangaluru</span></span>
+      <span class="airport-pill"><span class="iata">BHO</span><span class="city">Bhopal</span></span>
+      <span class="airport-pill"><span class="iata">DED</span><span class="city">Dehradun</span></span>
+      <span class="airport-pill"><span class="iata">DHM</span><span class="city">Dharamshala</span></span>
+      <span class="airport-pill"><span class="iata">GOX</span><span class="city">Goa Mopa</span></span>
+      <span class="airport-pill"><span class="iata">IMF</span><span class="city">Imphal</span></span>
+      <span class="airport-pill"><span class="iata">UDR</span><span class="city">Udaipur</span></span>
+      <span class="airport-pill"><span class="iata">IXJ</span><span class="city">Jammu</span></span>
+      <span class="airport-pill"><span class="iata">SAG</span><span class="city">Shirdi</span></span>
+      <span class="airport-pill"><span class="iata">CNN</span><span class="city">Kannur</span></span>
+      <!-- duplicate -->
+      <span class="airport-pill"><span class="iata">TRV</span><span class="city">Thiruvananthapuram</span></span>
+      <span class="airport-pill"><span class="iata">IDR</span><span class="city">Indore</span></span>
+      <span class="airport-pill"><span class="iata">BBI</span><span class="city">Bhubaneswar</span></span>
+      <span class="airport-pill"><span class="iata">CCJ</span><span class="city">Kozhikode</span></span>
+      <span class="airport-pill"><span class="iata">IXC</span><span class="city">Chandigarh</span></span>
+      <span class="airport-pill"><span class="iata">VTZ</span><span class="city">Visakhapatnam</span></span>
+      <span class="airport-pill"><span class="iata">CJB</span><span class="city">Coimbatore</span></span>
+      <span class="airport-pill"><span class="iata">IXB</span><span class="city">Bagdogra</span></span>
+      <span class="airport-pill"><span class="iata">IXM</span><span class="city">Madurai</span></span>
+      <span class="airport-pill"><span class="iata">TRZ</span><span class="city">Tiruchirappalli</span></span>
+      <span class="airport-pill"><span class="iata">IXE</span><span class="city">Mangaluru</span></span>
+      <span class="airport-pill"><span class="iata">BHO</span><span class="city">Bhopal</span></span>
+      <span class="airport-pill"><span class="iata">DED</span><span class="city">Dehradun</span></span>
+      <span class="airport-pill"><span class="iata">DHM</span><span class="city">Dharamshala</span></span>
+      <span class="airport-pill"><span class="iata">GOX</span><span class="city">Goa Mopa</span></span>
+      <span class="airport-pill"><span class="iata">IMF</span><span class="city">Imphal</span></span>
+      <span class="airport-pill"><span class="iata">UDR</span><span class="city">Udaipur</span></span>
+      <span class="airport-pill"><span class="iata">IXJ</span><span class="city">Jammu</span></span>
+      <span class="airport-pill"><span class="iata">SAG</span><span class="city">Shirdi</span></span>
+      <span class="airport-pill"><span class="iata">CNN</span><span class="city">Kannur</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TECH STACK ═══ -->
+<section id="tech" aria-labelledby="tech-title">
+  <div class="reveal">
+    <p class="section-eye">Technology</p>
+    <h2 class="section-title" id="tech-title">Open Source Stack. Production Grade.</h2>
+    <p class="section-sub">Built entirely on proven open-source tools — deployable on any VPS for under ₹500/month.</p>
+  </div>
+  <div class="tech-grid">
+    <div class="tech-card reveal"><div class="tech-name">Python + Flask</div><div class="tech-desc">Lightweight REST API server with CORS, rate-limiting, and error handling baked in.</div></div>
+    <div class="tech-card reveal" style="animation-delay:.05s"><div class="tech-name">Flask-SocketIO</div><div class="tech-desc">WebSocket layer for real-time bidirectional push — no polling from frontend.</div></div>
+    <div class="tech-card reveal" style="animation-delay:.1s"><div class="tech-name">SQLAlchemy + SQLite</div><div class="tech-desc">ORM-backed persistent storage with WAL mode for safe concurrent read/write.</div></div>
+    <div class="tech-card reveal" style="animation-delay:.15s"><div class="tech-name">APScheduler</div><div class="tech-desc">Background job scheduler for adaptive polling — the refresh engine that never sleeps.</div></div>
+    <div class="tech-card reveal" style="animation-delay:.2s"><div class="tech-name">OpenSky Network</div><div class="tech-desc">Free ADS-B position data for India — 500+ aircraft simultaneously tracked.</div></div>
+    <div class="tech-card reveal" style="animation-delay:.25s"><div class="tech-name">AirLabs API</div><div class="tech-desc">Schedules, delays, gates, terminals — primary data source for all airports.</div></div>
+    <div class="tech-card reveal" style="animation-delay:.3s"><div class="tech-name">Redis (Optional)</div><div class="tech-desc">Distributed cache layer — enables multi-worker horizontal scaling.</div></div>
+    <div class="tech-card reveal" style="animation-delay:.35s"><div class="tech-name">PWA + Service Worker</div><div class="tech-desc">Installable, offline-capable dashboard for mobile ground teams.</div></div>
+  </div>
+</section>
+
+<!-- ═══ SEARCH DEMO ═══ -->
+<section id="demo" aria-labelledby="demo-title">
+  <div class="reveal">
+    <p class="section-eye">Try it Now</p>
+    <h2 class="section-title" id="demo-title">Track Any Indian Flight</h2>
+    <p class="section-sub" style="margin:0 auto 0;">Enter a flight number, airport code, or city name.</p>
+  </div>
+  <div class="reveal">
+    <div class="search-box" role="search">
+      <label for="flight-input" class="visually-hidden">Flight number or airport</label>
+      <input type="text" id="flight-input" class="search-input"
+        placeholder="AI202 · DEL-BOM · Delhi · 6E456"
+        autocomplete="off" spellcheck="false"
+        aria-label="Enter flight number, route, or airport name">
+      <button class="search-btn" onclick="window.open('https://flight.bhishmaagroup.in','_blank')" aria-label="Track flight">TRACK →</button>
+    </div>
+    <p class="search-hint">
+      Try:
+      <span onclick="fillSearch('AI202')">AI202</span>
+      <span onclick="fillSearch('6E456')">6E456</span>
+      <span onclick="fillSearch('DEL')">DEL</span>
+      <span onclick="fillSearch('BOM-BLR')">BOM-BLR</span>
+      <span onclick="fillSearch('UK831')">UK831</span>
+    </p>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section id="cta" aria-labelledby="cta-title">
+  <div class="cta-badge">● Developed during Internship at AAI · 2026</div>
+  <h2 class="cta-title" id="cta-title">Every Flight. <em>Every Moment.</em></h2>
+  <p class="cta-sub">Built by <strong>enoughsudhanshu</strong> during an internship at <strong style="color:var(--white)">Airports Authority of India</strong>. Live at <a href="https://flight.bhishmaagroup.in" target="_blank" rel="noopener" style="color:var(--radar);text-decoration:none">flight.bhishmaagroup.in</a>.</p>
+  <div class="cta-btns">
+    <a href="https://flight.bhishmaagroup.in" class="btn-primary" target="_blank" rel="noopener">✈ Track a Flight Now</a>
+    <a href="https://bhishmaagroup.in" class="btn-secondary" target="_blank" rel="noopener">🌐 bhishmaagroup.in</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <a href="https://flight.bhishmaagroup.in" class="footer-logo" style="text-decoration:none" target="_blank">✈ AIR TRACKER</a>
+  <ul class="footer-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#airports">Airports</a></li>
+    <li><a href="#tech">Stack</a></li>
+  </ul>
+  <p class="footer-copy">Developed during Internship at Airports Authority of India · Built by <a href="https://bhishmaagroup.in" style="color:var(--radar);text-decoration:none" target="_blank">enoughsudhanshu</a> · 2026</p>
+</footer>
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+/* 3D tilt on feature cards */
+document.querySelectorAll('.feat-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    card.style.transform = `perspective(600px) rotateX(${-y * 8}deg) rotateY(${x * 10}deg) translateZ(8px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(600px) rotateX(0) rotateY(0) translateZ(0)';
+  });
+});
+
+/* Scroll reveal */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* Counter animation */
+function animateCounter(el, target) {
+  let start = 0;
+  const step = target / 40;
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= target) { el.textContent = target; clearInterval(timer); return; }
+    el.textContent = Math.floor(start);
+  }, 30);
+}
+const statsObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('[data-target]').forEach(el => {
+        animateCounter(el, parseInt(el.dataset.target));
+      });
+      statsObserver.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+const statsEl = document.querySelector('.stats-strip');
+if (statsEl) statsObserver.observe(statsEl);
+
+/* Search helpers */
+function fillSearch(val) {
+  document.getElementById('flight-input').value = val;
+  document.getElementById('flight-input').focus();
+}
+function trackFlight() {
+  const val = document.getElementById('flight-input').value.trim();
+  if (val) window.open(`https://flight.bhishmaagroup.in?q=${encodeURIComponent(val)}`, "_blank");
+}
+document.getElementById('flight-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') trackFlight();
+});
+
+/* Smooth nav link scrolling */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+/* Visually-hidden utility (for accessibility) */
+const style = document.createElement('style');
+style.textContent = '.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}';
+document.head.appendChild(style);
+</script>
+</body>
+</html>
