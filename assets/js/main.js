@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <i class="bi bi-envelope-check-fill"></i>
             </div>
             <h3 class="h4 mb-3">Almost there!</h3>
-            <p class="text-muted mb-4">Your message is ready. Click below to open your email app with everything pre-filled, then hit Send.</p>
+            <p class="text-muted mb-4" id="mailStatusText">Opening your email app...</p>
             <a href="${mailtoLink}" class="btn btn-primary-custom mb-2" id="openMailApp">
               <i class="bi bi-send-fill me-2"></i>Open Email App
             </a>
@@ -160,8 +160,41 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         `;
 
-        // Auto-trigger the email app open
+        // --- Try opening the default mail app. If nothing happens (no mail app
+        // registered on the device), auto-fallback to Gmail in the browser. ---
+        let mailAppOpened = false;
+
+        // If the tab loses focus shortly after clicking, a mail app / mail client
+        // most likely opened (desktop mail app, or OS handing off to Gmail app on mobile).
+        const onBlur = () => {
+          mailAppOpened = true;
+        };
+        window.addEventListener('blur', onBlur);
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) mailAppOpened = true;
+        });
+
+        // Attempt to open the default mail client
         window.location.href = mailtoLink;
+
+        // Give the OS/browser a moment to hand off to a mail app.
+        // If the page is still in the foreground after that, assume no mail
+        // app is configured and open Gmail in the browser instead.
+        setTimeout(() => {
+          window.removeEventListener('blur', onBlur);
+          const statusText = document.getElementById('mailStatusText');
+
+          if (!mailAppOpened && !document.hidden) {
+            if (statusText) {
+              statusText.textContent = 'No email app detected — opening Gmail in your browser instead.';
+            }
+            window.open(gmailLink, '_blank');
+          } else {
+            if (statusText) {
+              statusText.textContent = 'Your email app should now be open with the message ready. Just hit Send.';
+            }
+          }
+        }, 1500);
       }
     });
   }
