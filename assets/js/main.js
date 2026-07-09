@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const setTheme = (theme) => {
     htmlElement.setAttribute('data-bs-theme', theme);
     localStorage.setItem('theme', theme);
-    
+
     // Update button icons
     if (themeIcon) {
       if (theme === 'dark') {
@@ -43,14 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Active Nav Link Handler ---
   const currentPath = window.location.pathname;
   const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
-  
+
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
     if (href) {
       // Clean up path matching
       const linkPath = href.replace('../', '').replace('./', '');
       const cleanCurrentPath = currentPath.split('/').pop() || 'index.html';
-      
+
       if (cleanCurrentPath === linkPath || (cleanCurrentPath === '' && linkPath === 'index.html')) {
         link.classList.add('active');
         // If it's a dropdown item, also highlight the parent dropdown toggle
@@ -64,15 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Contact Form Client-side Validation ---
+  // --- Contact Form: Validation + Redirect to Email App (mailto) ---
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (event) => {
       event.preventDefault();
       event.stopPropagation();
-      
+
       let isValid = true;
-      
+
       // Name validation
       const nameInput = document.getElementById('name');
       const nameError = document.getElementById('nameError');
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nameInput.classList.remove('is-invalid');
         nameInput.classList.add('is-valid');
       }
-      
+
       // Email validation
       const emailInput = document.getElementById('email');
       const emailError = document.getElementById('emailError');
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         emailInput.classList.remove('is-invalid');
         emailInput.classList.add('is-valid');
       }
-      
+
       // Subject validation
       const subjectInput = document.getElementById('subject');
       const subjectError = document.getElementById('subjectError');
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         subjectInput.classList.remove('is-invalid');
         subjectInput.classList.add('is-valid');
       }
-      
+
       // Message validation
       const messageInput = document.getElementById('message');
       const messageError = document.getElementById('messageError');
@@ -121,55 +121,47 @@ document.addEventListener('DOMContentLoaded', () => {
         messageInput.classList.remove('is-invalid');
         messageInput.classList.add('is-valid');
       }
-      
-      if (isValid) {
-        // Show loading state on submit button
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.innerHTML;
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...`;
 
-        // Send POST request to FormSubmit.co AJAX endpoint to deliver email to bhishmaagroup@gmail.com
-        fetch("https://formsubmit.co/ajax/bhishmaagroup@gmail.com", {
-          method: "POST",
-          headers: { 
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
-          body: JSON.stringify({
-            name: nameInput.value.trim(),
-            email: emailInput.value.trim(),
-            subject: subjectInput.value.trim(),
-            message: messageInput.value.trim()
-          })
-        })
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            throw new Error("Form submission failed");
-          }
-        })
-        .then(data => {
-          // Display confirmation in the UI
-          const formContainer = contactForm.parentElement;
-          formContainer.innerHTML = `
-            <div class="text-center py-5 animate-fade-in">
-              <div class="display-1 text-success mb-4">
-                <i class="bi bi-check-circle-fill"></i>
-              </div>
-              <h3 class="h4 mb-3">Message Sent Successfully!</h3>
-              <p class="text-muted mb-4">Thank you for reaching out. We have received your message and it has been sent directly to <strong>bhishmaagroup@gmail.com</strong>.</p>
-              <button class="btn btn-primary-custom" onclick="window.location.reload()">Send Another Message</button>
+      if (isValid) {
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const subject = subjectInput.value.trim();
+        const message = messageInput.value.trim();
+
+        const toEmail = 'bhishmaagroup@gmail.com'; // receiving email
+        const emailSubject = `[Website Inquiry] ${subject}`;
+        const emailBody =
+          `Name: ${name}\n` +
+          `Email: ${email}\n` +
+          `Subject: ${subject}\n\n` +
+          `Message:\n${message}`;
+
+        const mailtoLink = `mailto:${toEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${toEmail}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+        // Show confirmation UI with both options, in case the default mail app doesn't open
+        const formContainer = contactForm.parentElement;
+        formContainer.innerHTML = `
+          <div class="text-center py-5 animate-fade-in">
+            <div class="display-1 text-primary mb-4">
+              <i class="bi bi-envelope-check-fill"></i>
             </div>
-          `;
-        })
-        .catch(error => {
-          console.error("Error submitting form:", error);
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnText;
-          alert("Unable to send message. Please try again or email us directly at bhishmaagroup@gmail.com.");
-        });
+            <h3 class="h4 mb-3">Almost there!</h3>
+            <p class="text-muted mb-4">Your message is ready. Click below to open your email app with everything pre-filled, then hit Send.</p>
+            <a href="${mailtoLink}" class="btn btn-primary-custom mb-2" id="openMailApp">
+              <i class="bi bi-send-fill me-2"></i>Open Email App
+            </a>
+            <p class="small text-muted mt-3 mb-0">
+              Email app not opening? <a href="${gmailLink}" target="_blank" rel="noopener noreferrer">Use Gmail instead</a>
+            </p>
+            <div class="mt-4">
+              <button class="btn btn-outline-primary btn-sm" onclick="window.location.reload()">Send Another Message</button>
+            </div>
+          </div>
+        `;
+
+        // Auto-trigger the email app open
+        window.location.href = mailtoLink;
       }
     });
   }
